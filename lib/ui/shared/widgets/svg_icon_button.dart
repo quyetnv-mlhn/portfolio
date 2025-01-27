@@ -7,13 +7,14 @@ class SvgIconButton extends StatelessWidget {
   final Color? color;
   final Color? hoverColor;
   final Color? splashColor;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final double borderRadius;
   final VoidCallback? onTap;
   final EdgeInsetsGeometry padding;
   final String? semanticLabel;
-  final bool allowWebSecurity;
   final BoxFit fit;
   final AlignmentGeometry alignment;
-  final WidgetBuilder? errorBuilder;
 
   const SvgIconButton({
     super.key,
@@ -22,42 +23,53 @@ class SvgIconButton extends StatelessWidget {
     this.color,
     this.hoverColor,
     this.splashColor,
+    this.backgroundColor,
+    this.borderColor,
+    this.borderRadius = 10,
     this.onTap,
-    this.padding = const EdgeInsets.all(8),
+    this.padding = const EdgeInsets.all(10),
     this.semanticLabel,
-    this.allowWebSecurity = true,
     this.fit = BoxFit.contain,
     this.alignment = Alignment.center,
-    this.errorBuilder,
   });
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(48),
-        hoverColor: hoverColor ?? Theme.of(context).hoverColor,
-        splashColor: splashColor ?? Theme.of(context).splashColor,
-        onTap: onTap,
-        child: Padding(
-          padding: padding,
-          child: SvgPicture.asset(
-            assetPath,
-            width: size,
-            height: size,
-            colorFilter: color != null
-                ? ColorFilter.mode(color!, BlendMode.srcIn)
-                : null,
-            semanticsLabel: semanticLabel,
-            fit: fit,
-            alignment: alignment,
-            excludeFromSemantics: true,
-            allowDrawingOutsideViewBox: false,
-            placeholderBuilder: (context) => SizedBox(
+    final theme = Theme.of(context);
+
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(borderRadius),
+        border: Border.all(
+          color:
+              borderColor ?? theme.colorScheme.onSurface.withValues(alpha: 0.9),
+        ),
+        color: backgroundColor ?? theme.colorScheme.surface,
+      ),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(borderRadius),
+          hoverColor: hoverColor ?? theme.hoverColor.withValues(alpha: 0.1),
+          splashColor: splashColor ?? theme.splashColor.withValues(alpha: 0.1),
+          onTap: onTap,
+          child: Padding(
+            padding: padding,
+            child: SvgPicture.asset(
+              assetPath,
               width: size,
               height: size,
-              child: const CircularProgressIndicator(strokeWidth: 2),
+              colorFilter: color != null
+                  ? ColorFilter.mode(color!, BlendMode.srcIn)
+                  : null,
+              semanticsLabel: semanticLabel,
+              fit: fit,
+              alignment: alignment,
+              placeholderBuilder: (context) => SizedBox(
+                width: size,
+                height: size,
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              ),
             ),
           ),
         ),
@@ -65,23 +77,40 @@ class SvgIconButton extends StatelessWidget {
     );
   }
 
-  // Network version
-  SvgIconButton.network({
-    super.key,
+  // Network version with container
+  factory SvgIconButton.network({
+    Key? key,
     required String url,
     required String fallbackAssetPath,
-    this.size = 24,
-    this.color,
-    this.hoverColor,
-    this.splashColor,
-    this.onTap,
-    this.padding = const EdgeInsets.all(8),
-    this.semanticLabel,
-    this.allowWebSecurity = true,
-    this.fit = BoxFit.contain,
-    this.alignment = Alignment.center,
-    this.errorBuilder,
-  }) : assetPath = fallbackAssetPath {
-    // Implement network loading logic with caching
+    double size = 24,
+    Color? color,
+    Color? hoverColor,
+    Color? splashColor,
+    Color? backgroundColor,
+    Color? borderColor,
+    double borderRadius = 10,
+    VoidCallback? onTap,
+    EdgeInsetsGeometry padding = const EdgeInsets.all(10),
+    String? semanticLabel,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+  }) {
+    // Implement network logic here
+    return SvgIconButton(
+      key: key,
+      assetPath: fallbackAssetPath,
+      size: size,
+      color: color,
+      hoverColor: hoverColor,
+      splashColor: splashColor,
+      backgroundColor: backgroundColor,
+      borderColor: borderColor,
+      borderRadius: borderRadius,
+      onTap: onTap,
+      padding: padding,
+      semanticLabel: semanticLabel,
+      fit: fit,
+      alignment: alignment,
+    );
   }
 }

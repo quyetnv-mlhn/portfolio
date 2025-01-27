@@ -86,8 +86,8 @@ flutter:
         - asset: assets/fonts/Mali/Mali-SemiBoldItalic.ttf
 
   assets:
-  - assets/images/
-  - assets/icons/
-  - assets/translations/
-  - assets/env/
-  - assets/fonts/Mali/
+    - assets/images/
+    - assets/icons/
+    - assets/translations/
+    - assets/env/
+    - assets/fonts/Mali/

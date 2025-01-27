@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
+import 'package:portfolio/ui/views/base_screen/widgets/side_info_section.dart';
 
 class BaseScreen extends ConsumerWidget {
   const BaseScreen({super.key});
@@ -13,9 +14,16 @@ class BaseScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        child: _buildScreen(selectedSection),
+      body: Row(
+        children: [
+          const SideInfoSection(),
+          Expanded(
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              child: _buildScreen(selectedSection),
+            ),
+          ),
+        ],
       ),
     );
   }

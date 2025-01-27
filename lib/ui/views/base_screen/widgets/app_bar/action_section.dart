@@ -107,19 +107,11 @@ class _ThemeToggle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: theme.colorScheme.onSurface),
-        color: theme.colorScheme.surface,
-      ),
-      child: SvgIconButton(
-        assetPath:
-            isDarkTheme ? Assets.icons.houseNight : Assets.icons.brightness,
-        size: 24,
-        color: theme.colorScheme.onSurface,
-        onTap: onPressed,
-      ),
+    return SvgIconButton(
+      assetPath:
+          isDarkTheme ? Assets.icons.houseNight : Assets.icons.brightness,
+      color: theme.colorScheme.onSurface,
+      onTap: onPressed,
     );
   }
 }

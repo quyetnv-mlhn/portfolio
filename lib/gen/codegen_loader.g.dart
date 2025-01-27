@@ -16,19 +16,35 @@ class CodegenLoader extends AssetLoader {
 
   static const Map<String, dynamic> en_US = {
     "appTitle": "Portfolio",
+    "home": "Home",
     "about_me": "About Me",
     "my_blogs": "My Blogs",
     "experiences": "Experiences",
     "lifetime": "Lifetime",
-    "contact": "Contact"
+    "contact": "Contact",
+    "name": "I'm Quyet",
+    "social": {
+      "facebook": "Follow me on Facebook",
+      "telegram": "Contact me via Telegram",
+      "github": "Check out my GitHub",
+      "linkedin": "Connect with me on LinkedIn"
+    }
   };
   static const Map<String, dynamic> vi_VN = {
     "appTitle": "Portfolio",
+    "home": "Trang chủ",
     "about_me": "Về tui",
     "my_blogs": "Blogs tui viết",
     "experiences": "Kinh nghiệm",
     "lifetime": "Cuộc sống",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "name": "Đây là Quyết",
+    "social": {
+      "facebook": "Theo dõi tôi trên Facebook",
+      "telegram": "Liên hệ qua Telegram",
+      "github": "Xem GitHub của tôi",
+      "linkedin": "Kết nối trên LinkedIn"
+    }
   };
   static const Map<String, Map<String, dynamic>> mapLocales = {
     "en_US": en_US,

@@ -44,11 +44,24 @@ class $AssetsIconsGen {
   /// File path: assets/icons/brightness.svg
   String get brightness => 'assets/icons/brightness.svg';
 
+  /// File path: assets/icons/facebook.svg
+  String get facebook => 'assets/icons/facebook.svg';
+
+  /// File path: assets/icons/github.svg
+  String get github => 'assets/icons/github.svg';
+
   /// File path: assets/icons/house-night.svg
   String get houseNight => 'assets/icons/house-night.svg';
 
+  /// File path: assets/icons/linkedin.svg
+  String get linkedin => 'assets/icons/linkedin.svg';
+
+  /// File path: assets/icons/telegram.svg
+  String get telegram => 'assets/icons/telegram.svg';
+
   /// List of all assets
-  List<String> get values => [arrow, brightness, houseNight];
+  List<String> get values =>
+      [arrow, brightness, facebook, github, houseNight, linkedin, telegram];
 }
 
 class $AssetsImagesGen {

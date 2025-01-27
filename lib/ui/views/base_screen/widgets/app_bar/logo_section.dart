@@ -6,6 +6,7 @@ import 'package:portfolio/core/configs/app_breakpoints.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/gen/assets.gen.dart';
+import 'package:portfolio/gen/locale_keys.g.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 
 class LogoSection extends ConsumerWidget {
@@ -74,7 +75,7 @@ class LogoSection extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.only(left: spacingL),
           child: Text(
-            'Đây là Quyết'.tr(),
+            LocaleKeys.name.tr(),
             style: theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
               color: theme.colorScheme.primary,
