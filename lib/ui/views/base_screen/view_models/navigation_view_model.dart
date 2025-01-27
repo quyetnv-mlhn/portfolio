@@ -7,7 +7,7 @@ part 'navigation_view_model.g.dart';
 class NavigationState extends _$NavigationState {
   @override
   NavigationSection build() {
-    return NavigationSection.aboutMe;
+    return NavigationSection.home;
   }
 
   void selectSection(NavigationSection section) {

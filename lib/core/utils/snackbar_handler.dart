@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../core/extensions/theme_ext.dart';
-import '../configs/app_sizes.dart';
+import 'package:portfolio/core/extensions/theme_ext.dart';
+import 'package:portfolio/core/configs/app_sizes.dart';
 
 class SnackBarHandler {
   static final SnackBarHandler _instance = SnackBarHandler._internal();
@@ -44,8 +44,8 @@ class SnackBarHandler {
       duration: duration,
       behavior: SnackBarBehavior.floating,
       dismissDirection: dismissDirection,
-      margin: margin ?? paddingAllXS,
-      padding: padding ?? paddingAllS,
+      margin: margin ?? const EdgeInsets.all(spacingXXS),
+      padding: padding ?? const EdgeInsets.all(spacingXS),
       action: onTap != null
           ? SnackBarAction(
               label: actionLabel ?? 'OK'.tr(),
@@ -162,7 +162,7 @@ class AnimatedSnackBarContentState extends State<AnimatedSnackBarContent>
     return SlideTransition(
       position: _offsetAnimation,
       child: Container(
-        padding: paddingAllM,
+        padding: const EdgeInsets.all(spacingM),
         decoration: BoxDecoration(
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(radiusM),
@@ -176,7 +176,7 @@ class AnimatedSnackBarContentState extends State<AnimatedSnackBarContent>
         ),
         child: Row(
           children: [
-            Icon(widget.icon, color: Colors.white, size: iconM),
+            Icon(widget.icon, color: Colors.white, size: iconSizeXS),
             horizontalSpaceS,
             Expanded(
               child: Text(

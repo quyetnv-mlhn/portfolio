@@ -19,11 +19,14 @@ class NavigationSectionWidget extends ConsumerWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: NavigationSection.values
-          .map((section) => _buildNavItem(
-                context,
-                section,
-                ref,
-              ))
+          .where((section) => section != NavigationSection.home)
+          .map(
+            (section) => _buildNavItem(
+              context,
+              section,
+              ref,
+            ),
+          )
           .toList(),
     );
   }
@@ -64,6 +67,7 @@ class NavItem extends StatelessWidget {
       color: isActive
           ? theme.colorScheme.primary
           : theme.textTheme.bodyLarge?.color,
+      fontWeight: FontWeight.w500,
     );
 
     return Padding(

@@ -7,6 +7,7 @@ import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/action_section.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/logo_section.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/navigation_section.dart';
+import 'package:portfolio/ui/shared/widgets/responsive_container.dart';
 
 class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -23,13 +24,22 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
       shadowColor: theme.appBarTheme.shadowColor,
       surfaceTintColor: theme.appBarTheme.surfaceTintColor,
       toolbarHeight: kToolbarHeight,
-      titleSpacing: screenWidth < AppBreakpoints.mobile ? 0 : spaceXL,
-      title: _buildAppBarContent(screenWidth, selectedSection),
+      leadingWidth: 0,
+      titleSpacing: 0,
+      title: ResponsiveContainer(
+        padding: const EdgeInsets.symmetric(
+          vertical: spacingS,
+          horizontal: spacingXL,
+        ),
+        child: _buildAppBarContent(screenWidth, selectedSection),
+      ),
     );
   }
 
   Widget _buildAppBarContent(
-      double screenWidth, NavigationSection selectedSection) {
+    double screenWidth,
+    NavigationSection selectedSection,
+  ) {
     if (screenWidth < AppBreakpoints.mobile) {
       return const _MobileLayout();
     }

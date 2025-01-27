@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../app/provider_observer.dart';
-import '../core/enums/environment_enum.dart';
-import '../core/enums/locale_enum.dart';
-import '../core/utils/logging_utils.dart';
-import '../core/utils/snackbar_handler.dart';
-import '../gen/assets.gen.dart';
-import '../gen/codegen_loader.g.dart';
+import 'package:portfolio/app/provider_observer.dart';
+import 'package:portfolio/core/enums/environment_enum.dart';
+import 'package:portfolio/core/enums/locale_enum.dart';
+import 'package:portfolio/core/utils/logging_utils.dart';
+import 'package:portfolio/core/utils/snackbar_handler.dart';
+import 'package:portfolio/gen/assets.gen.dart';
+import 'package:portfolio/gen/codegen_loader.g.dart';
 
 Future<void> mainCommon({
   required Environment env,
@@ -20,7 +20,8 @@ Future<void> mainCommon({
 }) async {
   runZonedGuarded(
     () async {
-      // final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+      // final widgetsBinding =
+      WidgetsFlutterBinding.ensureInitialized();
       // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
       await dotenv.load(fileName: Assets.env.aEnvDev);

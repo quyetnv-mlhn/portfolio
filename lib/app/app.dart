@@ -6,7 +6,7 @@ import 'package:portfolio/ui/shared/themes/app_themes.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/views/base_screen.dart';
 
-import '../core/utils/snackbar_handler.dart';
+import 'package:portfolio/core/utils/snackbar_handler.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});

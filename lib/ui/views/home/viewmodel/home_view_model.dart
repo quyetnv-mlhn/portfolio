@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/profile_model.dart';
-import '../models/project_model.dart';
-import '../models/banner_model.dart';
+import 'package:portfolio/ui/views/home/models/profile_model.dart';
+import 'package:portfolio/ui/views/home/models/project_model.dart';
+import 'package:portfolio/ui/views/home/models/banner_model.dart';
 
 final homeViewModelProvider = Provider((ref) => HomeViewModel());
 

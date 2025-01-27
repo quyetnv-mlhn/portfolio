@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/configs/app_colors.dart';
 
-import '../../../gen/fonts.gen.dart';
+import 'package:portfolio/gen/fonts.gen.dart';
 
 class AppThemes {
   static final lightTheme = ThemeData(

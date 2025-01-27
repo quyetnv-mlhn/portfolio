@@ -24,7 +24,7 @@ class ThemeModeState extends _$ThemeModeState {
   ThemeModeEnum _getSystemBasedTheme(BuildContext context) {
     final platformBrightness = MediaQuery.platformBrightnessOf(context);
     return platformBrightness == Brightness.dark
-        ? ThemeModeEnum.dark
-        : ThemeModeEnum.light;
+        ? ThemeModeEnum.light
+        : ThemeModeEnum.dark;
   }
 }

@@ -1,4 +1,5 @@
 enum NavigationSection {
+  home,
   aboutMe,
   myBlogs,
   experiences,
@@ -9,6 +10,8 @@ enum NavigationSection {
 extension NavigationSectionExt on NavigationSection {
   String get title {
     switch (this) {
+      case NavigationSection.home:
+        return 'Home';
       case NavigationSection.aboutMe:
         return 'About Me';
       case NavigationSection.myBlogs:
@@ -24,6 +27,8 @@ extension NavigationSectionExt on NavigationSection {
 
   String get key {
     switch (this) {
+      case NavigationSection.home:
+        return 'home';
       case NavigationSection.aboutMe:
         return 'about_me';
       case NavigationSection.myBlogs:

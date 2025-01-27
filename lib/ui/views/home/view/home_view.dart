@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../base_screen/widgets/custom_app_bar.dart';
+import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});

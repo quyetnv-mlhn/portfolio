@@ -22,6 +22,8 @@ class BaseScreen extends ConsumerWidget {
 
   Widget _buildScreen(NavigationSection section) {
     switch (section) {
+      case NavigationSection.home:
+        return const Center(child: Text('Welcome to My Portfolio'));
       case NavigationSection.aboutMe:
         return const Center(child: Text('About Me Screen'));
       case NavigationSection.myBlogs:
