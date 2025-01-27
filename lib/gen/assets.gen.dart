@@ -38,6 +38,9 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrow.svg
+  String get arrow => 'assets/icons/arrow.svg';
+
   /// File path: assets/icons/brightness.svg
   String get brightness => 'assets/icons/brightness.svg';
 
@@ -45,17 +48,22 @@ class $AssetsIconsGen {
   String get houseNight => 'assets/icons/house-night.svg';
 
   /// List of all assets
-  List<String> get values => [brightness, houseNight];
+  List<String> get values => [arrow, brightness, houseNight];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/avatar.jpeg
+  AssetGenImage get avatarJpeg =>
+      const AssetGenImage('assets/images/avatar.jpeg');
+
   /// File path: assets/images/avatar.png
-  AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.png');
+  AssetGenImage get avatarPng =>
+      const AssetGenImage('assets/images/avatar.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [avatar];
+  List<AssetGenImage> get values => [avatarJpeg, avatarPng];
 }
 
 class $AssetsTranslationsGen {

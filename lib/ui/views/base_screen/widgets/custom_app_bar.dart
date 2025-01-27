@@ -23,7 +23,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
       elevation: theme.appBarTheme.elevation,
       shadowColor: theme.appBarTheme.shadowColor,
       surfaceTintColor: theme.appBarTheme.surfaceTintColor,
-      toolbarHeight: kToolbarHeight,
+      toolbarHeight: 80,
       leadingWidth: 0,
       titleSpacing: 0,
       title: ResponsiveContainer(
@@ -52,7 +52,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(80);
 }
 
 class _DesktopLayout extends StatelessWidget {
@@ -66,17 +66,19 @@ class _DesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const LogoSection(),
-        const Spacer(),
-        NavigationSectionWidget(
-          selectedSection: selectedSection,
-          showText: !isCompact,
-        ),
-        const SizedBox(width: 16),
-        ActionSection(isCompact: isCompact),
-      ],
+    return IntrinsicHeight(
+      child: Row(
+        children: [
+          const LogoSection(),
+          const Spacer(),
+          NavigationSectionWidget(
+            selectedSection: selectedSection,
+            showText: !isCompact,
+          ),
+          const SizedBox(width: 16),
+          ActionSection(isCompact: isCompact),
+        ],
+      ),
     );
   }
 }
