@@ -1,6 +1,24 @@
 {
   "appTitle": "Portfolio",
-  "home": "Home",
+  "home": {
+    "greeting": "Hi! I'm Quyet",
+    "role": "a 'Mobile Engineer'",
+    "sharing": {
+      "line1": "I'll be sharing",
+      "line2": "knowledge and various",
+      "line3": "stories here"
+    },
+    "helping": {
+      "line1": "I hope to help",
+      "line2": "everyone with 'something'",
+      "line3": "when you are here"
+    },
+    "contact": {
+      "line1": "If you want to",
+      "line2": "reach out, feel free to",
+      "line3": "contact me, thank you!"
+    }
+  },
   "about_me": "About Me",
   "my_blogs": "My Blogs",
   "experiences": "Experiences",

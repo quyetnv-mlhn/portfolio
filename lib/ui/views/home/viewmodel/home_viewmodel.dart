@@ -1,0 +1,58 @@
+import 'package:portfolio/gen/assets.gen.dart';
+import 'package:portfolio/gen/locale_keys.g.dart';
+import 'package:portfolio/ui/views/home/models/slide_data.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'home_viewmodel.g.dart';
+
+@riverpod
+class HomeViewmodel extends _$HomeViewmodel {
+  @override
+  int build() {
+    return 0;
+  }
+
+  void setCurrentIndex(int index) => state = index;
+
+  static final slides = [
+    SlideData(
+      positionX: 1150,
+      positionY: 100,
+      messages: [
+        LocaleKeys.home_greeting,
+        LocaleKeys.home_role,
+      ],
+      image: Assets.images.banner.path,
+    ),
+    SlideData(
+      positionX: 1150,
+      positionY: 350,
+      messages: [
+        LocaleKeys.home_sharing_line1,
+        LocaleKeys.home_sharing_line2,
+        LocaleKeys.home_sharing_line3,
+      ],
+      image: Assets.images.banner1.path,
+    ),
+    SlideData(
+      positionX: 200,
+      positionY: 100,
+      messages: [
+        LocaleKeys.home_helping_line1,
+        LocaleKeys.home_helping_line2,
+        LocaleKeys.home_helping_line3,
+      ],
+      image: Assets.images.banner2.path,
+    ),
+    SlideData(
+      positionX: 200,
+      positionY: 100,
+      messages: [
+        LocaleKeys.home_contact_line1,
+        LocaleKeys.home_contact_line2,
+        LocaleKeys.home_contact_line3,
+      ],
+      image: Assets.images.banner3.path,
+    ),
+  ];
+}

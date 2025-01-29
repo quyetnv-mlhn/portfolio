@@ -16,7 +16,25 @@ class CodegenLoader extends AssetLoader {
 
   static const Map<String, dynamic> en_US = {
     "appTitle": "Portfolio",
-    "home": "Home",
+    "home": {
+      "greeting": "Hi! I'm Quyet",
+      "role": "a 'Mobile Engineer'",
+      "sharing": {
+        "line1": "I'll be sharing",
+        "line2": "knowledge and various",
+        "line3": "stories here"
+      },
+      "helping": {
+        "line1": "I hope to help",
+        "line2": "everyone with 'something'",
+        "line3": "when you are here"
+      },
+      "contact": {
+        "line1": "If you want to",
+        "line2": "reach out, feel free to",
+        "line3": "contact me, thank you!"
+      }
+    },
     "about_me": "About Me",
     "my_blogs": "My Blogs",
     "experiences": "Experiences",
@@ -32,7 +50,25 @@ class CodegenLoader extends AssetLoader {
   };
   static const Map<String, dynamic> vi_VN = {
     "appTitle": "Portfolio",
-    "home": "Trang chủ",
+    "home": {
+      "greeting": "Hi! Tôi là Quyết",
+      "role": "một 'Mobile Engineer'",
+      "sharing": {
+        "line1": "Tôi sẽ chia sẻ",
+        "line2": "kiến thức và những",
+        "line3": "câu chuyện ở đây"
+      },
+      "helping": {
+        "line1": "Tôi hy vọng sẽ giúp",
+        "line2": "mọi người 'một điều gì đó'",
+        "line3": "khi bạn ở đây"
+      },
+      "contact": {
+        "line1": "Nếu bạn muốn",
+        "line2": "liên hệ, hãy thoải mái",
+        "line3": "nhắn tin cho tôi, cảm ơn!"
+      }
+    },
     "about_me": "Về tui",
     "my_blogs": "Blogs tui viết",
     "experiences": "Kinh nghiệm",

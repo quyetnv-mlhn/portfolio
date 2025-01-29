@@ -1,0 +1,65 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:portfolio/core/configs/app_sizes.dart';
+import 'package:portfolio/gen/assets.gen.dart';
+
+class SpeechBubbleWidget extends StatelessWidget {
+  final List<String> textLines;
+
+  const SpeechBubbleWidget({
+    super.key,
+    required this.textLines,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: spacingXS,
+      children: [
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            Image.asset(
+              Assets.images.speechBubble.path,
+              width: 200,
+              fit: BoxFit.fitWidth,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: spacingXXS, bottom: spacingL),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: textLines
+                    .map(
+                      (line) => Text(
+                        line.tr(),
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          height: 1.4,
+                          fontSize: 14,
+                          letterSpacing: 0.1,
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
+          ],
+        ),
+        Align(
+          alignment: Alignment.topLeft,
+          child: CircleAvatar(
+            radius: 35,
+            backgroundColor: Colors.transparent,
+            backgroundImage: AssetImage(Assets.images.avatarJpeg.path),
+          ),
+        ),
+      ],
+    );
+  }
+}

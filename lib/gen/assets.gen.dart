@@ -75,8 +75,25 @@ class $AssetsImagesGen {
   AssetGenImage get avatarPng =>
       const AssetGenImage('assets/images/avatar.png');
 
+  /// File path: assets/images/banner.png
+  AssetGenImage get banner => const AssetGenImage('assets/images/banner.png');
+
+  /// File path: assets/images/banner1.png
+  AssetGenImage get banner1 => const AssetGenImage('assets/images/banner1.png');
+
+  /// File path: assets/images/banner2.png
+  AssetGenImage get banner2 => const AssetGenImage('assets/images/banner2.png');
+
+  /// File path: assets/images/banner3.png
+  AssetGenImage get banner3 => const AssetGenImage('assets/images/banner3.png');
+
+  /// File path: assets/images/speech_bubble.png
+  AssetGenImage get speechBubble =>
+      const AssetGenImage('assets/images/speech_bubble.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [avatarJpeg, avatarPng];
+  List<AssetGenImage> get values =>
+      [avatarJpeg, avatarPng, banner, banner1, banner2, banner3, speechBubble];
 }
 
 class $AssetsTranslationsGen {

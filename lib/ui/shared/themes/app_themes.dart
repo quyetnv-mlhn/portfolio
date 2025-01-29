@@ -28,6 +28,7 @@ class AppThemes {
         fontSize: 16,
         color: AppColors.textLight,
         height: 1.6,
+        fontWeight: FontWeight.w500,
       ),
       titleMedium: TextStyle(
         fontSize: 18,
@@ -83,6 +84,7 @@ class AppThemes {
         fontSize: 16,
         color: AppColors.textDark,
         height: 1.6,
+        fontWeight: FontWeight.w500,
       ),
       titleMedium: TextStyle(
         fontSize: 18,

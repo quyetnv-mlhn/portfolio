@@ -4,6 +4,7 @@ import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/side_info_section.dart';
+import 'package:portfolio/ui/views/home/view/home_screen.dart';
 
 class BaseScreen extends ConsumerWidget {
   const BaseScreen({super.key});
@@ -31,7 +32,7 @@ class BaseScreen extends ConsumerWidget {
   Widget _buildScreen(NavigationSection section) {
     switch (section) {
       case NavigationSection.home:
-        return const Center(child: Text('Welcome to My Portfolio'));
+        return const HomeScreen();
       case NavigationSection.aboutMe:
         return const Center(child: Text('About Me Screen'));
       case NavigationSection.myBlogs:
