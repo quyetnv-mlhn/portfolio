@@ -1,10 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/ui/views/home/viewmodel/home_viewmodel.dart';
 import 'package:portfolio/ui/views/home/widgets/carousel_indicators.dart';
-import 'package:portfolio/ui/views/home/widgets/slide_item.dart';
+import 'package:portfolio/ui/views/home/widgets/home_carousel.dart';
+import 'package:portfolio/ui/views/home/widgets/speech_bubbles_layer.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -18,22 +18,15 @@ class HomeScreen extends ConsumerWidget {
       child: Stack(
         children: [
           // Background Carousel
-          CarouselSlider.builder(
-            itemCount: HomeViewmodel.slides.length,
-            options: CarouselOptions(
-              height: double.infinity,
-              viewportFraction: 1,
-              autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 5),
-              onPageChanged: (index, _) {
-                ref.read(homeViewmodelProvider.notifier).setCurrentIndex(index);
-              },
-            ),
-            itemBuilder: (context, index, _) {
-              return SlideItem(
-                data: HomeViewmodel.slides[index],
-              );
+          HomeCarousel(
+            onPageChanged: (index) {
+              ref.read(homeViewmodelProvider.notifier).setCurrentIndex(index);
             },
+          ),
+
+          // Speech Bubbles Layer
+          SpeechBubblesLayer(
+            currentIndex: currentIndex,
           ),
 
           // Carousel Indicators
