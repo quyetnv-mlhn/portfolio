@@ -14,14 +14,19 @@ class SpeechBubblesLayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final centerPosition = context.width / 2 - 35;
+    final width = context.width;
+    final height = context.height;
     return Stack(
       children: HomeViewmodel.slides.asMap().entries.map((entry) {
         final index = entry.key;
         final slide = entry.value;
 
+        final left = width * slide.positionX;
+        final top = height * slide.positionY;
+
         return Positioned(
-          left: context.isMobile ? centerPosition : slide.positionX,
-          top: context.isMobile ? null : slide.positionY,
+          left: context.isMobile ? centerPosition : left,
+          top: context.isMobile ? null : top,
           bottom: context.isMobile ? 30 : null,
           child: AnimatedOpacity(
             duration: const Duration(milliseconds: 400),

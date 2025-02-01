@@ -8,9 +8,7 @@ import 'package:portfolio/ui/views/base_screen/view_models/language_view_model.d
 import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model.dart';
 
 class ActionSection extends ConsumerWidget {
-  final bool isCompact;
-
-  const ActionSection({super.key, this.isCompact = false});
+  const ActionSection({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,7 +24,7 @@ class ActionSection extends ConsumerWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (!isCompact) LanguageSwitcher(currentLocale: currentLocale),
+        LanguageSwitcher(currentLocale: currentLocale),
         ThemeToggle(isDarkTheme: currentThemeMode == ThemeModeEnum.dark),
       ],
     );

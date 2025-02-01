@@ -5,6 +5,8 @@ import 'package:portfolio/core/enums/screen_size.dart';
 extension ResponsiveExtension on BuildContext {
   double get width => MediaQuery.of(this).size.width;
 
+  double get height => MediaQuery.of(this).size.height;
+
   ScreenSize get screenSize {
     final width = MediaQuery.of(this).size.width;
     if (width < AppBreakpoints.mobile) return ScreenSize.mobile;

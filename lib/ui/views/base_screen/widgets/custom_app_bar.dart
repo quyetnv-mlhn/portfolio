@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
-import 'package:portfolio/core/configs/app_breakpoints.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/core/enums/screen_size.dart';
+import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/action_section.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/logo_section.dart';
@@ -25,13 +25,14 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
       elevation: theme.appBarTheme.elevation,
       shadowColor: theme.appBarTheme.shadowColor,
       surfaceTintColor: theme.appBarTheme.surfaceTintColor,
-      toolbarHeight: kToolbarHeight + 16, // 80
+      toolbarHeight: kToolbarHeight + 16,
+      // 80
       leadingWidth: 0,
       titleSpacing: 0,
       actions: _buildActions(context, screenSize),
       title: ResponsiveContainer(
         padding: _getResponsivePadding(screenSize),
-        child: _buildAppBarContent(screenWidth, selectedSection),
+        child: _buildAppBarContent(context, selectedSection),
       ),
     );
   }
@@ -49,17 +50,14 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   }
 
   Widget _buildAppBarContent(
-    double screenWidth,
+    BuildContext context,
     NavigationSection selectedSection,
   ) {
-    if (screenWidth < AppBreakpoints.mobile) {
+    if (context.isMobile || context.isTablet) {
       return const Row(children: [LogoSection()]);
     }
 
-    return _DesktopLayout(
-      selectedSection: selectedSection,
-      isCompact: ScreenSize.fromWidth(screenWidth) == ScreenSize.tablet,
-    );
+    return _DesktopLayout(selectedSection: selectedSection);
   }
 
   EdgeInsets _getResponsivePadding(ScreenSize size) {
@@ -87,12 +85,8 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
 class _DesktopLayout extends StatelessWidget {
   final NavigationSection selectedSection;
-  final bool isCompact;
 
-  const _DesktopLayout({
-    required this.selectedSection,
-    this.isCompact = false,
-  });
+  const _DesktopLayout({required this.selectedSection});
 
   @override
   Widget build(BuildContext context) {
@@ -100,13 +94,17 @@ class _DesktopLayout extends StatelessWidget {
       child: Row(
         children: [
           const LogoSection(),
-          const Spacer(),
-          NavigationSectionWidget(
-            selectedSection: selectedSection,
-            showText: !isCompact,
+          Expanded(
+            child: FittedBox(
+              alignment: Alignment.centerRight,
+              fit: BoxFit.scaleDown,
+              child: NavigationSectionWidget(
+                selectedSection: selectedSection,
+              ),
+            ),
           ),
           const SizedBox(width: 16),
-          ActionSection(isCompact: isCompact),
+          const ActionSection(),
         ],
       ),
     );

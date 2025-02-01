@@ -6,12 +6,10 @@ import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model
 
 class NavigationSectionWidget extends ConsumerWidget {
   final NavigationSection selectedSection;
-  final bool showText;
 
   const NavigationSectionWidget({
     super.key,
     required this.selectedSection,
-    this.showText = true,
   });
 
   @override
@@ -39,7 +37,6 @@ class NavigationSectionWidget extends ConsumerWidget {
     return NavItem(
       title: section.key,
       isActive: section == selectedSection,
-      showText: showText,
       onTap: () =>
           ref.read(navigationStateProvider.notifier).selectSection(section),
     );
@@ -49,7 +46,6 @@ class NavigationSectionWidget extends ConsumerWidget {
 class NavItem extends StatelessWidget {
   final String title;
   final bool isActive;
-  final bool showText;
   final VoidCallback onTap;
 
   const NavItem({
@@ -57,7 +53,6 @@ class NavItem extends StatelessWidget {
     required this.title,
     required this.isActive,
     required this.onTap,
-    this.showText = true,
   });
 
   @override

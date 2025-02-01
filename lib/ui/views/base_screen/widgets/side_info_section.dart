@@ -40,6 +40,7 @@ class SideInfoSection extends StatelessWidget {
       width: 80,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Spacer(flex: 2),
           _VerticalName(),

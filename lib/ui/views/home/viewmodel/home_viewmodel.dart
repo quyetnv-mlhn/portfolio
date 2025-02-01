@@ -16,8 +16,8 @@ class HomeViewmodel extends _$HomeViewmodel {
 
   static final slides = [
     SlideData(
-      positionX: 1150,
-      positionY: 100,
+      positionX: 0.7,
+      positionY: 0.115,
       messages: [
         LocaleKeys.home_greeting,
         LocaleKeys.home_role,
@@ -25,8 +25,8 @@ class HomeViewmodel extends _$HomeViewmodel {
       image: Assets.images.banner.path,
     ),
     SlideData(
-      positionX: 1150,
-      positionY: 350,
+      positionX: 0.7,
+      positionY: 0.4,
       messages: [
         LocaleKeys.home_sharing_line1,
         LocaleKeys.home_sharing_line2,
@@ -35,8 +35,8 @@ class HomeViewmodel extends _$HomeViewmodel {
       image: Assets.images.banner1.path,
     ),
     SlideData(
-      positionX: 200,
-      positionY: 100,
+      positionX: 0.112,
+      positionY: 0.115,
       messages: [
         LocaleKeys.home_helping_line1,
         LocaleKeys.home_helping_line2,
@@ -45,8 +45,8 @@ class HomeViewmodel extends _$HomeViewmodel {
       image: Assets.images.banner2.path,
     ),
     SlideData(
-      positionX: 200,
-      positionY: 100,
+      positionX: 0.112,
+      positionY: 0.115,
       messages: [
         LocaleKeys.home_contact_line1,
         LocaleKeys.home_contact_line2,
