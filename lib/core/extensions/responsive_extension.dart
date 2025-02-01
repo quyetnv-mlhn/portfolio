@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/configs/app_breakpoints.dart';
-import 'package:portfolio/ui/shared/widgets/responsive_builder.dart';
+import 'package:portfolio/core/enums/screen_size.dart';
 
 extension ResponsiveExtension on BuildContext {
-  ScreenType get screenType {
+  double get width => MediaQuery.of(this).size.width;
+
+  ScreenSize get screenSize {
     final width = MediaQuery.of(this).size.width;
-    if (width < AppBreakpoints.mobile) return ScreenType.mobile;
-    if (width < AppBreakpoints.tablet) return ScreenType.tablet;
-    if (width < AppBreakpoints.desktop) return ScreenType.desktop;
-    return ScreenType.desktopLarge;
+    if (width < AppBreakpoints.mobile) return ScreenSize.mobile;
+    if (width < AppBreakpoints.tablet) return ScreenSize.tablet;
+    if (width < AppBreakpoints.desktop) return ScreenSize.desktop;
+    return ScreenSize.desktopLarge;
   }
 
-  bool get isMobile => screenType == ScreenType.mobile;
-  bool get isTablet => screenType == ScreenType.tablet;
-  bool get isDesktop => screenType == ScreenType.desktop;
-  bool get isDesktopLarge => screenType == ScreenType.desktopLarge;
+  bool get isMobile => screenSize == ScreenSize.mobile;
 
-  double get contentPadding {
-    switch (screenType) {
-      case ScreenType.mobile:
-        return AppBreakpoints.contentPaddingMobile;
-      case ScreenType.tablet:
-        return AppBreakpoints.contentPaddingTablet;
-      case ScreenType.desktop:
-      case ScreenType.desktopLarge:
-        return AppBreakpoints.contentPaddingDesktop;
-    }
-  }
+  bool get isTablet => screenSize == ScreenSize.tablet;
+
+  bool get isDesktop => screenSize == ScreenSize.desktop;
+
+  bool get isDesktopLarge => screenSize == ScreenSize.desktopLarge;
 }

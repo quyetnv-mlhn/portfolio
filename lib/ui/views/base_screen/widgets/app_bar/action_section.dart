@@ -10,18 +10,13 @@ import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model
 class ActionSection extends ConsumerWidget {
   final bool isCompact;
 
-  const ActionSection({
-    super.key,
-    this.isCompact = false,
-  });
+  const ActionSection({super.key, this.isCompact = false});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
     final currentLocale = ref.watch(languageStateProvider);
     final themeModeState = ref.watch(themeModeStateProvider);
 
-    // Handle theme mode dynamically
     final currentThemeMode = themeModeState == ThemeModeEnum.system
         ? (MediaQuery.platformBrightnessOf(context) == Brightness.dark
             ? ThemeModeEnum.dark
@@ -31,40 +26,47 @@ class ActionSection extends ConsumerWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (!isCompact) ...[
-          _buildLanguageButton(
-            label: 'VI',
-            isActive: currentLocale == LocaleEnum.vi,
-            onPressed: () {
-              if (currentLocale != LocaleEnum.vi) {
-                ref
-                    .read(languageStateProvider.notifier)
-                    .toggleLanguage(context);
-              }
-            },
-            theme: theme,
-          ),
-          const Text('|'),
-          _buildLanguageButton(
-            label: 'EN',
-            isActive: currentLocale == LocaleEnum.en,
-            onPressed: () {
-              if (currentLocale != LocaleEnum.en) {
-                ref
-                    .read(languageStateProvider.notifier)
-                    .toggleLanguage(context);
-              }
-            },
-            theme: theme,
-          ),
-          const SizedBox(width: 16),
-        ],
-        _ThemeToggle(
-          isDarkTheme: currentThemeMode == ThemeModeEnum.dark,
+        if (!isCompact) LanguageSwitcher(currentLocale: currentLocale),
+        ThemeToggle(isDarkTheme: currentThemeMode == ThemeModeEnum.dark),
+      ],
+    );
+  }
+}
+
+class LanguageSwitcher extends ConsumerWidget {
+  final LocaleEnum currentLocale;
+
+  const LanguageSwitcher({super.key, required this.currentLocale});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _buildLanguageButton(
+          label: 'VI',
+          isActive: currentLocale == LocaleEnum.vi,
           onPressed: () {
-            ref.read(themeModeStateProvider.notifier).toggleTheme(context);
+            if (currentLocale != LocaleEnum.vi) {
+              ref.read(languageStateProvider.notifier).toggleLanguage(context);
+            }
           },
+          theme: theme,
         ),
+        const Text('|'),
+        _buildLanguageButton(
+          label: 'EN',
+          isActive: currentLocale == LocaleEnum.en,
+          onPressed: () {
+            if (currentLocale != LocaleEnum.en) {
+              ref.read(languageStateProvider.notifier).toggleLanguage(context);
+            }
+          },
+          theme: theme,
+        ),
+        const SizedBox(width: 16),
       ],
     );
   }
@@ -95,23 +97,21 @@ class ActionSection extends ConsumerWidget {
   }
 }
 
-class _ThemeToggle extends StatelessWidget {
-  final VoidCallback onPressed;
+class ThemeToggle extends ConsumerWidget {
   final bool isDarkTheme;
 
-  const _ThemeToggle({
-    required this.onPressed,
-    required this.isDarkTheme,
-  });
+  const ThemeToggle({super.key, required this.isDarkTheme});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return SvgIconButton(
       assetPath:
           isDarkTheme ? Assets.icons.houseNight : Assets.icons.brightness,
       color: theme.colorScheme.onSurface,
-      onTap: onPressed,
+      onTap: () {
+        ref.read(themeModeStateProvider.notifier).toggleTheme(context);
+      },
     );
   }
 }

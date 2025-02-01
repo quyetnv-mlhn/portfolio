@@ -2,6 +2,7 @@
 
 abstract class LocaleKeys {
   static const appTitle = 'appTitle';
+  static const home_title = 'home.title';
   static const home_greeting = 'home.greeting';
   static const home_role = 'home.role';
   static const home_sharing_line1 = 'home.sharing.line1';

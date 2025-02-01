@@ -58,8 +58,7 @@ class _VerticalName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textStyle = theme.textTheme.titleLarge?.copyWith(
-      fontWeight: FontWeight.w600,
+    final textStyle = theme.textTheme.bodyLarge?.copyWith(
       color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
       height: 1,
     );

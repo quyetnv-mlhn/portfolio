@@ -17,6 +17,7 @@ class CodegenLoader extends AssetLoader {
   static const Map<String, dynamic> en_US = {
     "appTitle": "Portfolio",
     "home": {
+      "title": "Home",
       "greeting": "Hi! I'm Quyet",
       "role": "a 'Mobile Engineer'",
       "sharing": {
@@ -51,6 +52,7 @@ class CodegenLoader extends AssetLoader {
   static const Map<String, dynamic> vi_VN = {
     "appTitle": "Portfolio",
     "home": {
+      "title": "Trang chủ",
       "greeting": "Hi! Tôi là Quyết",
       "role": "một 'Mobile Engineer'",
       "sharing": {

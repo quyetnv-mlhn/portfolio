@@ -1,34 +1,35 @@
 {
-  "appTitle": "Portfolio",
-  "home": {
-    "greeting": "Hi! Tôi là Quyết",
-    "role": "một 'Mobile Engineer'",
-    "sharing": {
-      "line1": "Tôi sẽ chia sẻ",
-      "line2": "kiến thức và những",
-      "line3": "câu chuyện ở đây"
+    "appTitle": "Portfolio",
+    "home": {
+        "title": "Trang chủ",
+        "greeting": "Hi! Tôi là Quyết",
+        "role": "một 'Mobile Engineer'",
+        "sharing": {
+            "line1": "Tôi sẽ chia sẻ",
+            "line2": "kiến thức và những",
+            "line3": "câu chuyện ở đây"
+        },
+        "helping": {
+            "line1": "Tôi hy vọng sẽ giúp",
+            "line2": "mọi người 'một điều gì đó'",
+            "line3": "khi bạn ở đây"
+        },
+        "contact": {
+            "line1": "Nếu bạn muốn",
+            "line2": "liên hệ, hãy thoải mái",
+            "line3": "nhắn tin cho tôi, cảm ơn!"
+        }
     },
-    "helping": {
-      "line1": "Tôi hy vọng sẽ giúp",
-      "line2": "mọi người 'một điều gì đó'",
-      "line3": "khi bạn ở đây"
-    },
-    "contact": {
-      "line1": "Nếu bạn muốn",
-      "line2": "liên hệ, hãy thoải mái",
-      "line3": "nhắn tin cho tôi, cảm ơn!"
+    "about_me": "Về tui",
+    "my_blogs": "Blogs tui viết",
+    "experiences": "Kinh nghiệm",
+    "lifetime": "Cuộc sống",
+    "contact": "Liên hệ",
+    "name": "Đây là Quyết",
+    "social": {
+        "facebook": "Theo dõi tôi trên Facebook",
+        "telegram": "Liên hệ qua Telegram",
+        "github": "Xem GitHub của tôi",
+        "linkedin": "Kết nối trên LinkedIn"
     }
-  },
-  "about_me": "Về tui",
-  "my_blogs": "Blogs tui viết",
-  "experiences": "Kinh nghiệm",
-  "lifetime": "Cuộc sống",
-  "contact": "Liên hệ",
-  "name": "Đây là Quyết",
-  "social": {
-    "facebook": "Theo dõi tôi trên Facebook",
-    "telegram": "Liên hệ qua Telegram",
-    "github": "Xem GitHub của tôi",
-    "linkedin": "Kết nối trên LinkedIn"
-  }
 }

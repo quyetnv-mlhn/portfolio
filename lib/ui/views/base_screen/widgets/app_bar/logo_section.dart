@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/core/configs/app_breakpoints.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
+import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/gen/locale_keys.g.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
@@ -15,7 +15,6 @@ class LogoSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final screenWidth = MediaQuery.of(context).size.width;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -26,16 +25,16 @@ class LogoSection extends ConsumerWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildAvatar(theme),
+            _buildAvatar(theme, isMobile: context.isMobile),
             const SizedBox(width: 8),
-            if (screenWidth >= AppBreakpoints.mobile) _buildLogoWithText(theme),
+            if (!context.isMobile) _buildLogoWithText(theme),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildAvatar(ThemeData theme) {
+  Widget _buildAvatar(ThemeData theme, {required isMobile}) {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -48,7 +47,7 @@ class LogoSection extends ConsumerWidget {
         ],
       ),
       child: CircleAvatar(
-        radius: 35,
+        radius: isMobile ? 20 : 35,
         backgroundImage: AssetImage(Assets.images.avatarJpeg.path),
       ),
     );
