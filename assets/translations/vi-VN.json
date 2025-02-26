@@ -20,7 +20,22 @@
             "line3": "nhắn tin cho tôi, cảm ơn!"
         }
     },
-    "about_me": "Về tui",
+    "about_me": {
+        "name": "Về tui",
+        "title": "Tôi Là Ai ?",
+        "intro": {
+            "part1": "Hiện tại, tôi là một ",
+            "role": "Flutter Developer",
+            "part2": ", và tôi cũng đang ",
+            "exploring": "tìm hiểu mobile native",
+            "part3": " để mở rộng kỹ năng của mình."
+        },
+        "bullet_point_1": "Tôi có niềm đam mê mãnh liệt với mobile development, luôn háo hức khám phá công nghệ mới và cải thiện hiệu suất, UI/UX, và trải nghiệm người dùng của các ứng dụng tôi xây dựng.",
+        "bullet_point_2": "Tôi tin vào việc học tập và tự hoàn thiện suốt đời. Dù là làm chủ một ngôn ngữ lập trình mới, tối ưu hóa hiệu quả code, hay nâng cao kỹ năng giao tiếp tiếng Anh, tôi luôn nỗ lực để phát triển.",
+        "bullet_point_3": "Tôi luôn biết ơn những người mentors và đồng nghiệp đã giúp tôi trưởng thành, hướng dẫn tôi vượt qua các thách thức kỹ thuật và phát triển sự nghiệp.",
+        "bullet_point_4": "Tôi thích chia sẻ kiến thức và tham gia cộng đồng developer, dù là thông qua thảo luận, mentoring, hay các dự án hợp tác.",
+        "bullet_point_5": "À, đây là nơi tôi ghi lại hành trình của mình, từ phát triển Flutter đến học tiếng Anh và hơn thế nữa. Nếu bạn quan tâm, hãy kết nối nhé!"
+    },
     "my_blogs": "Blogs tui viết",
     "experiences": "Kinh nghiệm",
     "lifetime": "Cuộc sống",

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/ui/views/home/viewmodel/home_viewmodel.dart';
+import 'package:portfolio/ui/views/home/view_model/home_view_model.dart';
 import 'package:portfolio/ui/views/home/widgets/slide_item.dart';
 
 class HomeCarousel extends ConsumerWidget {
@@ -15,7 +15,7 @@ class HomeCarousel extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CarouselSlider.builder(
-      itemCount: HomeViewmodel.slides.length,
+      itemCount: HomeViewModel.slides.length,
       options: CarouselOptions(
         height: double.infinity,
         viewportFraction: 1,
@@ -25,7 +25,7 @@ class HomeCarousel extends ConsumerWidget {
       ),
       itemBuilder: (context, index, _) {
         return SlideItem(
-          data: HomeViewmodel.slides[index],
+          data: HomeViewModel.slides[index],
         );
       },
     );

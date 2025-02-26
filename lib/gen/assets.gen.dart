@@ -87,13 +87,24 @@ class $AssetsImagesGen {
   /// File path: assets/images/banner3.png
   AssetGenImage get banner3 => const AssetGenImage('assets/images/banner3.png');
 
+  /// File path: assets/images/chill.png
+  AssetGenImage get chill => const AssetGenImage('assets/images/chill.png');
+
   /// File path: assets/images/speech_bubble.png
   AssetGenImage get speechBubble =>
       const AssetGenImage('assets/images/speech_bubble.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [avatarJpeg, avatarPng, banner, banner1, banner2, banner3, speechBubble];
+  List<AssetGenImage> get values => [
+        avatarJpeg,
+        avatarPng,
+        banner,
+        banner1,
+        banner2,
+        banner3,
+        chill,
+        speechBubble
+      ];
 }
 
 class $AssetsTranslationsGen {

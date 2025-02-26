@@ -32,7 +32,7 @@ extension NavigationSectionExt on NavigationSection {
       case NavigationSection.home:
         return LocaleKeys.home_title;
       case NavigationSection.aboutMe:
-        return LocaleKeys.about_me;
+        return LocaleKeys.about_me_name;
       case NavigationSection.myBlogs:
         return LocaleKeys.my_blogs;
       case NavigationSection.experiences:

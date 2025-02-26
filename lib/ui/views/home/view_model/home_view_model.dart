@@ -3,10 +3,10 @@ import 'package:portfolio/gen/locale_keys.g.dart';
 import 'package:portfolio/ui/views/home/models/slide_data.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'home_viewmodel.g.dart';
+part 'home_view_model.g.dart';
 
 @riverpod
-class HomeViewmodel extends _$HomeViewmodel {
+class HomeViewModel extends _$HomeViewModel {
   @override
   int build() {
     return 0;

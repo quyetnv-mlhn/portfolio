@@ -5,6 +5,7 @@ import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/core/enums/screen_size.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/ui/shared/widgets/responsive_builder.dart';
+import 'package:portfolio/ui/views/about_me/views/about_me_screen.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/drawer/mobile_drawer.dart';
@@ -25,15 +26,21 @@ class BaseScreen extends ConsumerWidget {
           context.isMobile || context.isTablet ? const MobileDrawer() : null,
       endDrawerEnableOpenDragGesture: false,
       body: ResponsiveBuilder(
-        builder: (_, __, screenType) => Row(
+        builder: (_, __, screenType) => Stack(
           children: [
-            if (screenType != ScreenSize.mobile) const SideInfoSection(),
-            Expanded(
-              child: Padding(
+            if (selectedSection == NavigationSection.home)
+              Padding(
                 padding: _getResponsivePadding(screenSize),
                 child: _buildContent(selectedSection),
+              )
+            else
+              SingleChildScrollView(
+                child: Padding(
+                  padding: _getResponsivePadding(screenSize),
+                  child: _buildContent(selectedSection),
+                ),
               ),
-            ),
+            if (screenType != ScreenSize.mobile) const SideInfoSection(),
           ],
         ),
       ),
@@ -43,27 +50,28 @@ class BaseScreen extends ConsumerWidget {
   EdgeInsets _getResponsivePadding(ScreenSize size) {
     return switch (size) {
       ScreenSize.mobile => const EdgeInsets.symmetric(
-          horizontal: 0,
+          horizontal: spacingM,
           vertical: spacingS,
         ),
       ScreenSize.tablet => const EdgeInsets.symmetric(
-          horizontal: spacingXL,
-          vertical: spacingM,
-        ),
+            horizontal: spacingXL,
+            vertical: spacingM,
+          ) +
+          const EdgeInsets.symmetric(horizontal: 70),
       ScreenSize.desktop ||
       ScreenSize.desktopLarge =>
         const EdgeInsets.symmetric(
-          horizontal: spacingXXL,
-          vertical: spacingL,
-        ),
+              horizontal: spacingXXL,
+              vertical: spacingL,
+            ) +
+            const EdgeInsets.symmetric(horizontal: 70),
     };
   }
 
   Widget _buildContent(NavigationSection selectedSection) =>
       switch (selectedSection) {
         NavigationSection.home => const HomeScreen(),
-        NavigationSection.aboutMe =>
-          const _PlaceholderScreen(title: 'About Me Screen'),
+        NavigationSection.aboutMe => const AboutMeScreen(),
         NavigationSection.myBlogs =>
           const _PlaceholderScreen(title: 'My Blogs Screen'),
         NavigationSection.experiences =>

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
-import 'package:portfolio/ui/views/home/viewmodel/home_viewmodel.dart';
+import 'package:portfolio/ui/views/home/view_model/home_view_model.dart';
 import 'package:portfolio/ui/views/home/widgets/speech_bubble.dart';
 
 class SpeechBubblesLayer extends StatelessWidget {
@@ -17,7 +17,7 @@ class SpeechBubblesLayer extends StatelessWidget {
     final width = context.width;
     final height = context.height;
     return Stack(
-      children: HomeViewmodel.slides.asMap().entries.map((entry) {
+      children: HomeViewModel.slides.asMap().entries.map((entry) {
         final index = entry.key;
         final slide = entry.value;
 

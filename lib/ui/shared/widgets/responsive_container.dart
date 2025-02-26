@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/configs/app_breakpoints.dart';
 
 class ResponsiveContainer extends StatelessWidget {
   final Widget child;
@@ -21,7 +20,7 @@ class ResponsiveContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget content = Container(
       constraints: BoxConstraints(
-        maxWidth: maxWidth ?? AppBreakpoints.maxWidthDesktopLarge,
+        maxWidth: maxWidth ?? 1280,
       ),
       padding: padding,
       color: backgroundColor,
