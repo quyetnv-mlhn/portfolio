@@ -5,20 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "my_portfolio",
+            "name": "portfolio",
             "request": "launch",
             "type": "dart",
             "program": "lib/flavors/main_dev.dart"
         },
         {
-            "name": "my_portfolio (profile mode)",
+            "name": "portfolio (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
             "program": "lib/flavors/main_stg.dart"
         },
         {
-            "name": "my_portfolio (release mode)",
+            "name": "portfolio (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
