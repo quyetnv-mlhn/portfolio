@@ -15,11 +15,12 @@ class ActionSection extends ConsumerWidget {
     final currentLocale = ref.watch(languageStateProvider);
     final themeModeState = ref.watch(themeModeStateProvider);
 
-    final currentThemeMode = themeModeState == ThemeModeEnum.system
-        ? (MediaQuery.platformBrightnessOf(context) == Brightness.dark
-            ? ThemeModeEnum.dark
-            : ThemeModeEnum.light)
-        : themeModeState;
+    final currentThemeMode =
+        themeModeState == ThemeModeEnum.system
+            ? (MediaQuery.platformBrightnessOf(context) == Brightness.dark
+                ? ThemeModeEnum.dark
+                : ThemeModeEnum.light)
+            : themeModeState;
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -85,9 +86,10 @@ class LanguageSwitcher extends ConsumerWidget {
       child: Text(
         label,
         style: theme.textTheme.bodyLarge?.copyWith(
-          color: isActive
-              ? theme.colorScheme.primary
-              : theme.textTheme.bodyLarge?.color,
+          color:
+              isActive
+                  ? theme.colorScheme.primary
+                  : theme.textTheme.bodyLarge?.color,
           fontWeight: FontWeight.w700,
         ),
       ),

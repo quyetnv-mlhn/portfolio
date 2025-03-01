@@ -19,9 +19,7 @@ class ResponsiveContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget content = Container(
-      constraints: BoxConstraints(
-        maxWidth: maxWidth ?? 1280,
-      ),
+      constraints: BoxConstraints(maxWidth: maxWidth ?? 1280),
       padding: padding,
       color: backgroundColor,
       child: child,

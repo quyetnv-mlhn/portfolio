@@ -4,7 +4,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:portfolio/app/provider_observer.dart';
 import 'package:portfolio/core/enums/environment_enum.dart';
 import 'package:portfolio/core/enums/locale_enum.dart';
@@ -18,34 +17,31 @@ Future<void> mainCommon({
   required String envFilePath,
   required Widget child,
 }) async {
-  runZonedGuarded(
-    () async {
-      // final widgetsBinding =
-      WidgetsFlutterBinding.ensureInitialized();
-      // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  runZonedGuarded(() async {
+    // final widgetsBinding =
+    WidgetsFlutterBinding.ensureInitialized();
+    // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-      await dotenv.load(fileName: Assets.env.aEnvDev);
+    await dotenv.load(fileName: Assets.env.aEnvDev);
 
-      // Initialize localization
-      await _initializeLocalization();
+    // Initialize localization
+    await _initializeLocalization();
 
-      // Run the app
-      runApp(
-        EasyLocalization(
-          supportedLocales: LocaleEnum.values.map((e) => e.locale).toList(),
-          path: 'assets/translations',
-          fallbackLocale: LocaleEnum.en.locale,
-          startLocale: LocaleEnum.en.locale,
-          assetLoader: const CodegenLoader(),
-          child: ProviderScope(
-            observers: [MyObserver(maxWidth: 180)],
-            child: child,
-          ),
+    // Run the app
+    runApp(
+      EasyLocalization(
+        supportedLocales: LocaleEnum.values.map((e) => e.locale).toList(),
+        path: 'assets/translations',
+        fallbackLocale: LocaleEnum.en.locale,
+        startLocale: LocaleEnum.en.locale,
+        assetLoader: const CodegenLoader(),
+        child: ProviderScope(
+          observers: [MyObserver(maxWidth: 180)],
+          child: child,
         ),
-      );
-    },
-    _handleError,
-  );
+      ),
+    );
+  }, _handleError);
 }
 
 // Function to initialize localization

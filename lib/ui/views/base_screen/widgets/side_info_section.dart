@@ -66,12 +66,13 @@ class _VerticalName extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: SideInfoSection._nameLetters.split('').map((char) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6),
-          child: Text(char, style: textStyle),
-        );
-      }).toList(),
+      children:
+          SideInfoSection._nameLetters.split('').map((char) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Text(char, style: textStyle),
+            );
+          }).toList(),
     );
   }
 }
@@ -85,19 +86,20 @@ class _SocialLinks extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: SideInfoSection._socialLinks.map((social) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: spacingL),
-          child: Tooltip(
-            message: social.tooltip.tr(),
-            child: SvgIconButton(
-              assetPath: social.icon,
-              backgroundColor: _getBackgroundColor(social.icon, theme),
-              onTap: () => UrlLauncherUtils.launchURL(social.url),
-            ),
-          ),
-        );
-      }).toList(),
+      children:
+          SideInfoSection._socialLinks.map((social) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: spacingL),
+              child: Tooltip(
+                message: social.tooltip.tr(),
+                child: SvgIconButton(
+                  assetPath: social.icon,
+                  backgroundColor: _getBackgroundColor(social.icon, theme),
+                  onTap: () => UrlLauncherUtils.launchURL(social.url),
+                ),
+              ),
+            );
+          }).toList(),
     );
   }
 

@@ -46,11 +46,7 @@ class LoggerUtils {
   }
 
   /// Log debug message
-  static void d(
-    dynamic message, {
-    dynamic error,
-    StackTrace? stackTrace,
-  }) =>
+  static void d(dynamic message, {dynamic error, StackTrace? stackTrace}) =>
       log(
         level: Level.debug,
         message: message,
@@ -59,11 +55,7 @@ class LoggerUtils {
       );
 
   /// Log info message
-  static void i(
-    dynamic message, {
-    dynamic error,
-    StackTrace? stackTrace,
-  }) =>
+  static void i(dynamic message, {dynamic error, StackTrace? stackTrace}) =>
       log(
         level: Level.info,
         message: message,
@@ -72,11 +64,7 @@ class LoggerUtils {
       );
 
   /// Log warning message
-  static void w(
-    dynamic message, {
-    dynamic error,
-    StackTrace? stackTrace,
-  }) =>
+  static void w(dynamic message, {dynamic error, StackTrace? stackTrace}) =>
       log(
         level: Level.warning,
         message: message,
@@ -85,11 +73,7 @@ class LoggerUtils {
       );
 
   /// Log error message
-  static void e(
-    dynamic message, {
-    dynamic error,
-    StackTrace? stackTrace,
-  }) =>
+  static void e(dynamic message, {dynamic error, StackTrace? stackTrace}) =>
       log(
         level: Level.error,
         message: message,
@@ -98,11 +82,7 @@ class LoggerUtils {
       );
 
   /// Log trace message
-  static void t(
-    dynamic message, {
-    dynamic error,
-    StackTrace? stackTrace,
-  }) =>
+  static void t(dynamic message, {dynamic error, StackTrace? stackTrace}) =>
       log(
         level: Level.trace,
         message: message,
@@ -111,11 +91,7 @@ class LoggerUtils {
       );
 
   /// Log fatal message
-  static void f(
-    dynamic message, {
-    dynamic error,
-    StackTrace? stackTrace,
-  }) =>
+  static void f(dynamic message, {dynamic error, StackTrace? stackTrace}) =>
       log(
         level: Level.fatal,
         message: message,

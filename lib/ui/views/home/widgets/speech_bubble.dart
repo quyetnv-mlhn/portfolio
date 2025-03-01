@@ -21,10 +21,7 @@ class SpeechBubbleWidget extends StatelessWidget {
       tween: Tween(begin: 0.0, end: 1.0),
       duration: const Duration(milliseconds: 400),
       builder: (context, value, child) {
-        return Transform.scale(
-          scale: value,
-          child: child,
-        );
+        return Transform.scale(scale: value, child: child);
       },
       child: Column(
         key: ValueKey(index),
@@ -46,23 +43,24 @@ class SpeechBubbleWidget extends StatelessWidget {
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  children: textLines.map((line) {
-                    return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: Text(
-                        line.tr(),
-                        key: ValueKey('$index-$line'),
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          height: 1.4,
-                          fontSize: 14,
-                          letterSpacing: 0.1,
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    );
-                  }).toList(),
+                  children:
+                      textLines.map((line) {
+                        return AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          child: Text(
+                            line.tr(),
+                            key: ValueKey('$index-$line'),
+                            style: theme.textTheme.bodyLarge?.copyWith(
+                              height: 1.4,
+                              fontSize: 14,
+                              letterSpacing: 0.1,
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        );
+                      }).toList(),
                 ),
               ),
             ],

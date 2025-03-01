@@ -18,10 +18,7 @@ class HomeViewModel extends _$HomeViewModel {
     SlideData(
       positionX: 0.7,
       positionY: 0.115,
-      messages: [
-        LocaleKeys.home_greeting,
-        LocaleKeys.home_role,
-      ],
+      messages: [LocaleKeys.home_greeting, LocaleKeys.home_role],
       image: Assets.images.banner.path,
     ),
     SlideData(

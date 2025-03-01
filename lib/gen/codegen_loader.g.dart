@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters
+// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters, constant_identifier_names
 
 import 'dart:ui';
 
@@ -14,7 +14,7 @@ class CodegenLoader extends AssetLoader {
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String, dynamic> en_US = {
+  static const Map<String, dynamic> _en_US = {
     "appTitle": "Portfolio",
     "home": {
       "title": "Home",
@@ -23,18 +23,18 @@ class CodegenLoader extends AssetLoader {
       "sharing": {
         "line1": "I will share",
         "line2": "knowledge and",
-        "line3": "stories here"
+        "line3": "stories here",
       },
       "helping": {
         "line1": "I hope to help",
         "line2": "everyone with 'something'",
-        "line3": "while you are here"
+        "line3": "while you are here",
       },
       "contact": {
         "line1": "If you want to",
         "line2": "contact me, feel free to",
-        "line3": "send me a message, thanks!"
-      }
+        "line3": "send me a message, thanks!",
+      },
     },
     "about_me": {
       "name": "About Me",
@@ -44,7 +44,7 @@ class CodegenLoader extends AssetLoader {
         "role": "Flutter Developer",
         "part2": ", and I am also ",
         "exploring": "exploring mobile native",
-        "part3": " to expand my skills."
+        "part3": " to expand my skills.",
       },
       "bullet_point_1":
           "I have a strong passion for mobile development, always eager to explore new technologies and improve the performance, UI/UX, and overall user experience of the apps I build.",
@@ -55,7 +55,7 @@ class CodegenLoader extends AssetLoader {
       "bullet_point_4":
           "I enjoy sharing knowledge and engaging with the developer community, whether through discussions, mentorship, or collaborative projects.",
       "bullet_point_5":
-          "Oh, this place is where I document my journey, from Flutter development to English learning and beyond. If you're interested, feel free to connect!"
+          "Oh, this place is where I document my journey, from Flutter development to English learning and beyond. If you're interested, feel free to connect!",
     },
     "my_blogs": "My Blogs",
     "experiences": "Experiences",
@@ -66,10 +66,10 @@ class CodegenLoader extends AssetLoader {
       "facebook": "Follow me on Facebook",
       "telegram": "Contact via Telegram",
       "github": "Check out my GitHub",
-      "linkedin": "Connect on LinkedIn"
-    }
+      "linkedin": "Connect on LinkedIn",
+    },
   };
-  static const Map<String, dynamic> vi_VN = {
+  static const Map<String, dynamic> _vi_VN = {
     "appTitle": "Portfolio",
     "home": {
       "title": "Trang chủ",
@@ -78,18 +78,18 @@ class CodegenLoader extends AssetLoader {
       "sharing": {
         "line1": "Tôi sẽ chia sẻ",
         "line2": "kiến thức và những",
-        "line3": "câu chuyện ở đây"
+        "line3": "câu chuyện ở đây",
       },
       "helping": {
         "line1": "Tôi hy vọng sẽ giúp",
         "line2": "mọi người 'một điều gì đó'",
-        "line3": "khi bạn ở đây"
+        "line3": "khi bạn ở đây",
       },
       "contact": {
         "line1": "Nếu bạn muốn",
         "line2": "liên hệ, hãy thoải mái",
-        "line3": "nhắn tin cho tôi, cảm ơn!"
-      }
+        "line3": "nhắn tin cho tôi, cảm ơn!",
+      },
     },
     "about_me": {
       "name": "Về tui",
@@ -99,7 +99,7 @@ class CodegenLoader extends AssetLoader {
         "role": "Flutter Developer",
         "part2": ", và tôi cũng đang ",
         "exploring": "tìm hiểu mobile native",
-        "part3": " để mở rộng kỹ năng của mình."
+        "part3": " để mở rộng kỹ năng của mình.",
       },
       "bullet_point_1":
           "Tôi có niềm đam mê mãnh liệt với mobile development, luôn háo hức khám phá công nghệ mới và cải thiện hiệu suất, UI/UX, và trải nghiệm người dùng của các ứng dụng tôi xây dựng.",
@@ -110,7 +110,7 @@ class CodegenLoader extends AssetLoader {
       "bullet_point_4":
           "Tôi thích chia sẻ kiến thức và tham gia cộng đồng developer, dù là thông qua thảo luận, mentoring, hay các dự án hợp tác.",
       "bullet_point_5":
-          "À, đây là nơi tôi ghi lại hành trình của mình, từ phát triển Flutter đến học tiếng Anh và hơn thế nữa. Nếu bạn quan tâm, hãy kết nối nhé!"
+          "À, đây là nơi tôi ghi lại hành trình của mình, từ phát triển Flutter đến học tiếng Anh và hơn thế nữa. Nếu bạn quan tâm, hãy kết nối nhé!",
     },
     "my_blogs": "Blogs tui viết",
     "experiences": "Kinh nghiệm",
@@ -121,11 +121,11 @@ class CodegenLoader extends AssetLoader {
       "facebook": "Theo dõi tôi trên Facebook",
       "telegram": "Liên hệ qua Telegram",
       "github": "Xem GitHub của tôi",
-      "linkedin": "Kết nối trên LinkedIn"
-    }
+      "linkedin": "Kết nối trên LinkedIn",
+    },
   };
   static const Map<String, Map<String, dynamic>> mapLocales = {
-    "en_US": en_US,
-    "vi_VN": vi_VN
+    "en_US": _en_US,
+    "vi_VN": _vi_VN,
   };
 }

@@ -46,14 +46,15 @@ class SnackBarHandler {
       dismissDirection: dismissDirection,
       margin: margin ?? const EdgeInsets.all(spacingXXS),
       padding: padding ?? const EdgeInsets.all(spacingXS),
-      action: onTap != null
-          ? SnackBarAction(
-              label: actionLabel ?? 'OK'.tr(),
-              backgroundColor: backgroundColor,
-              onPressed: onTap,
-              textColor: Colors.white,
-            )
-          : null,
+      action:
+          onTap != null
+              ? SnackBarAction(
+                label: actionLabel ?? 'OK'.tr(),
+                backgroundColor: backgroundColor,
+                onPressed: onTap,
+                textColor: Colors.white,
+              )
+              : null,
     );
 
     scaffoldMessengerKey?.currentState?.showSnackBar(snackBar);
@@ -140,12 +141,7 @@ class AnimatedSnackBarContentState extends State<AnimatedSnackBarContent>
     _offsetAnimation = Tween<Offset>(
       begin: const Offset(0, -1.0), // Starts above the screen
       end: Offset.zero, // Ends at the final position (visible)
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeOut,
-      ),
-    );
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
     // Play the forward animation (show the SnackBar)
     _controller.forward();

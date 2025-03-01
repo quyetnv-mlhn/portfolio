@@ -59,17 +59,19 @@ class SvgIconButton extends StatelessWidget {
               assetPath,
               width: size,
               height: size,
-              colorFilter: color != null
-                  ? ColorFilter.mode(color!, BlendMode.srcIn)
-                  : null,
+              colorFilter:
+                  color != null
+                      ? ColorFilter.mode(color!, BlendMode.srcIn)
+                      : null,
               semanticsLabel: semanticLabel,
               fit: fit,
               alignment: alignment,
-              placeholderBuilder: (context) => SizedBox(
-                width: size,
-                height: size,
-                child: const CircularProgressIndicator(strokeWidth: 2),
-              ),
+              placeholderBuilder:
+                  (context) => SizedBox(
+                    width: size,
+                    height: size,
+                    child: const CircularProgressIndicator(strokeWidth: 2),
+                  ),
             ),
           ),
         ),
