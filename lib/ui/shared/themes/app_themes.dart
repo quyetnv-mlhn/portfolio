@@ -51,9 +51,7 @@ class AppThemes {
       color: AppColors.surfaceLight,
       elevation: 2,
       margin: const EdgeInsets.all(8),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     ),
     dividerTheme: const DividerThemeData(
       color: AppColors.dividerLight,
@@ -107,9 +105,7 @@ class AppThemes {
       color: AppColors.surfaceDark,
       elevation: 2,
       margin: const EdgeInsets.all(8),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     ),
     dividerTheme: const DividerThemeData(
       color: AppColors.dividerDark,

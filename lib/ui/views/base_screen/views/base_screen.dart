@@ -26,23 +26,24 @@ class BaseScreen extends ConsumerWidget {
           context.isMobile || context.isTablet ? const MobileDrawer() : null,
       endDrawerEnableOpenDragGesture: false,
       body: ResponsiveBuilder(
-        builder: (_, __, screenType) => Stack(
-          children: [
-            if (selectedSection == NavigationSection.home)
-              Padding(
-                padding: _getResponsivePadding(screenSize),
-                child: _buildContent(selectedSection),
-              )
-            else
-              SingleChildScrollView(
-                child: Padding(
-                  padding: _getResponsivePadding(screenSize),
-                  child: _buildContent(selectedSection),
-                ),
-              ),
-            if (screenType != ScreenSize.mobile) const SideInfoSection(),
-          ],
-        ),
+        builder:
+            (_, __, screenType) => Stack(
+              children: [
+                if (selectedSection == NavigationSection.home)
+                  Padding(
+                    padding: _getResponsivePadding(screenSize),
+                    child: _buildContent(selectedSection),
+                  )
+                else
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: _getResponsivePadding(screenSize),
+                      child: _buildContent(selectedSection),
+                    ),
+                  ),
+                if (screenType != ScreenSize.mobile) const SideInfoSection(),
+              ],
+            ),
       ),
     );
   }
@@ -50,20 +51,14 @@ class BaseScreen extends ConsumerWidget {
   EdgeInsets _getResponsivePadding(ScreenSize size) {
     return switch (size) {
       ScreenSize.mobile => const EdgeInsets.symmetric(
-          horizontal: spacingM,
-          vertical: spacingS,
-        ),
-      ScreenSize.tablet => const EdgeInsets.symmetric(
-            horizontal: spacingXL,
-            vertical: spacingM,
-          ) +
-          const EdgeInsets.symmetric(horizontal: 70),
-      ScreenSize.desktop ||
-      ScreenSize.desktopLarge =>
-        const EdgeInsets.symmetric(
-              horizontal: spacingXXL,
-              vertical: spacingL,
-            ) +
+        horizontal: spacingM,
+        vertical: spacingS,
+      ),
+      ScreenSize.tablet =>
+        const EdgeInsets.symmetric(horizontal: spacingXL, vertical: spacingM) +
+            const EdgeInsets.symmetric(horizontal: 70),
+      ScreenSize.desktop || ScreenSize.desktopLarge =>
+        const EdgeInsets.symmetric(horizontal: spacingXXL, vertical: spacingL) +
             const EdgeInsets.symmetric(horizontal: 70),
     };
   }
@@ -72,14 +67,18 @@ class BaseScreen extends ConsumerWidget {
       switch (selectedSection) {
         NavigationSection.home => const HomeScreen(),
         NavigationSection.aboutMe => const AboutMeScreen(),
-        NavigationSection.myBlogs =>
-          const _PlaceholderScreen(title: 'My Blogs Screen'),
-        NavigationSection.experiences =>
-          const _PlaceholderScreen(title: 'Experiences Screen'),
-        NavigationSection.lifetime =>
-          const _PlaceholderScreen(title: 'Lifetime Screen'),
-        NavigationSection.contact =>
-          const _PlaceholderScreen(title: 'Contact Screen'),
+        NavigationSection.myBlogs => const _PlaceholderScreen(
+          title: 'My Blogs Screen',
+        ),
+        NavigationSection.experiences => const _PlaceholderScreen(
+          title: 'Experiences Screen',
+        ),
+        NavigationSection.lifetime => const _PlaceholderScreen(
+          title: 'Lifetime Screen',
+        ),
+        NavigationSection.contact => const _PlaceholderScreen(
+          title: 'Contact Screen',
+        ),
       };
 }
 

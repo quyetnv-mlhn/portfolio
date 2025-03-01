@@ -19,9 +19,10 @@ class LogoSection extends ConsumerWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () => ref
-            .read(navigationStateProvider.notifier)
-            .selectSection(NavigationSection.home),
+        onTap:
+            () => ref
+                .read(navigationStateProvider.notifier)
+                .selectSection(NavigationSection.home),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [

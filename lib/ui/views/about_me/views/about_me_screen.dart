@@ -18,11 +18,11 @@ class AboutMeScreen extends StatelessWidget {
   const AboutMeScreen({super.key});
 
   ScreenType _getScreenType(double width) => switch (width) {
-        <= AppBreakpoints.mobile => ScreenType.mobile,
-        <= AppBreakpoints.tablet => ScreenType.tablet,
-        <= AppBreakpoints.desktop => ScreenType.desktop,
-        _ => ScreenType.desktopLarge,
-      };
+    <= AppBreakpoints.mobile => ScreenType.mobile,
+    <= AppBreakpoints.tablet => ScreenType.tablet,
+    <= AppBreakpoints.desktop => ScreenType.desktop,
+    _ => ScreenType.desktopLarge,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -52,19 +52,18 @@ class AboutMeScreen extends StatelessWidget {
     ScreenType screenType,
     BoxConstraints constraints,
     bool isDesktop,
-  ) =>
-      Flexible(
-        flex: isDesktop ? 1 : 0,
-        child: ProfileImageSection(
-          screenType: screenType,
-          constraints: constraints,
-        ),
-      );
+  ) => Flexible(
+    flex: isDesktop ? 1 : 0,
+    child: ProfileImageSection(
+      screenType: screenType,
+      constraints: constraints,
+    ),
+  );
 
   Widget _buildSpacer(bool isDesktop) => SizedBox(
-        width: isDesktop ? spacingXXL : 0,
-        height: isDesktop ? 0 : _spacingBetweenSections,
-      );
+    width: isDesktop ? spacingXXL : 0,
+    height: isDesktop ? 0 : _spacingBetweenSections,
+  );
 
   Widget _buildContentSection(ScreenType screenType, bool isDesktop) =>
       Flexible(
@@ -94,42 +93,39 @@ class ProfileImageSection extends StatelessWidget {
   }
 
   Widget _buildDesktopLayout(bool isLargeScreen) => Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              top: AboutMeScreen._desktopImageTopPadding,
-            ),
-            child: _buildImage(isLargeScreen),
-          ),
-          const Positioned(
-            right: AboutMeScreen._speechBubbleRightPadding,
-            top: 0,
-            child: SpeechBubbleWidget(
-              index: 0,
-              textLines: [LocaleKeys.home_greeting],
-            ),
-          ),
-        ],
-      );
+    alignment: Alignment.topCenter,
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(
+          top: AboutMeScreen._desktopImageTopPadding,
+        ),
+        child: _buildImage(isLargeScreen),
+      ),
+      const Positioned(
+        right: AboutMeScreen._speechBubbleRightPadding,
+        top: 0,
+        child: SpeechBubbleWidget(
+          index: 0,
+          textLines: [LocaleKeys.home_greeting],
+        ),
+      ),
+    ],
+  );
 
   Widget _buildMobileLayout() => const Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(width: AboutMeScreen._mobileSpeechBubbleOffset),
-          SpeechBubbleWidget(
-            index: 0,
-            textLines: [LocaleKeys.home_greeting],
-          ),
-        ],
-      );
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      SizedBox(width: AboutMeScreen._mobileSpeechBubbleOffset),
+      SpeechBubbleWidget(index: 0, textLines: [LocaleKeys.home_greeting]),
+    ],
+  );
 
   Widget _buildImage(bool isLargeScreen) => Image.asset(
-        Assets.images.chill.path,
-        fit: BoxFit.contain,
-        width: isLargeScreen ? null : constraints.maxWidth * _imageWidthRatio,
-      );
+    Assets.images.chill.path,
+    fit: BoxFit.contain,
+    width: isLargeScreen ? null : constraints.maxWidth * _imageWidthRatio,
+  );
 }
 
 class AboutMeContent extends StatelessWidget {
@@ -144,16 +140,13 @@ class AboutMeContent extends StatelessWidget {
 
   final ScreenType screenType;
 
-  const AboutMeContent({
-    required this.screenType,
-    super.key,
-  });
+  const AboutMeContent({required this.screenType, super.key});
 
   TextStyle _getBaseTextStyle(BuildContext context) {
     return Theme.of(context).textTheme.bodyLarge?.copyWith(
-              fontSize: _defaultTextStyle.fontSize,
-              height: _defaultTextStyle.height,
-            ) ??
+          fontSize: _defaultTextStyle.fontSize,
+          height: _defaultTextStyle.height,
+        ) ??
         _defaultTextStyle;
   }
 
@@ -213,10 +206,7 @@ class AboutMeContent extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            backgroundColor,
-            backgroundColor.withValues(alpha: 0.3),
-          ],
+          colors: [backgroundColor, backgroundColor.withValues(alpha: 0.3)],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
@@ -275,10 +265,8 @@ class AboutMeContent extends StatelessWidget {
 
     return bulletPoints
         .map(
-          (text) => _buildBulletPoint(
-            context,
-            child: Text(text, style: baseStyle),
-          ),
+          (text) =>
+              _buildBulletPoint(context, child: Text(text, style: baseStyle)),
         )
         .toList();
   }

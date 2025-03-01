@@ -60,8 +60,15 @@ class $AssetsIconsGen {
   String get telegram => 'assets/icons/telegram.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [arrow, brightness, facebook, github, houseNight, linkedin, telegram];
+  List<String> get values => [
+    arrow,
+    brightness,
+    facebook,
+    github,
+    houseNight,
+    linkedin,
+    telegram,
+  ];
 }
 
 class $AssetsImagesGen {
@@ -96,15 +103,15 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        avatarJpeg,
-        avatarPng,
-        banner,
-        banner1,
-        banner2,
-        banner3,
-        chill,
-        speechBubble
-      ];
+    avatarJpeg,
+    avatarPng,
+    banner,
+    banner1,
+    banner2,
+    banner3,
+    chill,
+    speechBubble,
+  ];
 }
 
 class $AssetsTranslationsGen {
@@ -165,24 +172,24 @@ class $AssetsFontsMaliGen {
 
   /// List of all assets
   List<String> get values => [
-        maliBold,
-        maliBoldItalic,
-        maliExtraLight,
-        maliExtraLightItalic,
-        maliItalic,
-        maliLight,
-        maliLightItalic,
-        maliMedium,
-        maliMediumItalic,
-        maliRegular,
-        maliSemiBold,
-        maliSemiBoldItalic,
-        ofl
-      ];
+    maliBold,
+    maliBoldItalic,
+    maliExtraLight,
+    maliExtraLightItalic,
+    maliItalic,
+    maliLight,
+    maliLightItalic,
+    maliMedium,
+    maliMediumItalic,
+    maliRegular,
+    maliSemiBold,
+    maliSemiBoldItalic,
+    ofl,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
@@ -192,11 +199,7 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -224,7 +227,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -256,15 +259,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

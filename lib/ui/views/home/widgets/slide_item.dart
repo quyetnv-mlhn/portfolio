@@ -4,10 +4,7 @@ import 'package:portfolio/ui/views/home/models/slide_data.dart';
 class SlideItem extends StatelessWidget {
   final SlideData data;
 
-  const SlideItem({
-    super.key,
-    required this.data,
-  });
+  const SlideItem({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

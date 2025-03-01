@@ -24,9 +24,7 @@ class HomeScreen extends ConsumerWidget {
         ),
 
         // Speech Bubbles Layer
-        SpeechBubblesLayer(
-          currentIndex: currentIndex,
-        ),
+        SpeechBubblesLayer(currentIndex: currentIndex),
 
         // Carousel Indicators
         Positioned(

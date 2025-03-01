@@ -27,15 +27,18 @@ class MyObserver extends ProviderObserver {
     const String horizontalLine = '─';
 
     // Compute max key length for formatting
-    final int maxKeyLength = bodyParts.keys
-        .fold<int>(0, (max, key) => key.length > max ? key.length : max);
+    final int maxKeyLength = bodyParts.keys.fold<int>(
+      0,
+      (max, key) => key.length > max ? key.length : max,
+    );
     final int prefixWidth = maxKeyLength + 4; // 4 = '├─ ' + ': ' length
 
     bodyParts.forEach((key, value) {
       final bool isLastKey = key == bodyParts.keys.last;
 
       // Create prefix for the first line and continuation
-      final String firstLinePrefix = '${isLastKey ? '└' : '├'}$horizontalLine '
+      final String firstLinePrefix =
+          '${isLastKey ? '└' : '├'}$horizontalLine '
           '${key.padRight(maxKeyLength)}: ';
       final String continuationPrefix =
           (isLastKey ? ' ' : verticalLine) + ' '.padRight(maxKeyLength + 4);
@@ -97,13 +100,10 @@ class MyObserver extends ProviderObserver {
     Object? value,
     ProviderContainer container,
   ) {
-    _printLog(
-      _colored('🟢 PROVIDER INITIALIZED', green),
-      {
-        'Provider': _colored(_providerName(provider), magenta),
-        'Value': _colored(value.toString(), yellow),
-      },
-    );
+    _printLog(_colored('🟢 PROVIDER INITIALIZED', green), {
+      'Provider': _colored(_providerName(provider), magenta),
+      'Value': _colored(value.toString(), yellow),
+    });
   }
 
   @override
@@ -111,10 +111,9 @@ class MyObserver extends ProviderObserver {
     ProviderBase<Object?> provider,
     ProviderContainer container,
   ) {
-    _printLog(
-      _colored('🔴 PROVIDER DISPOSED', red),
-      {'Provider': _colored(_providerName(provider), magenta)},
-    );
+    _printLog(_colored('🔴 PROVIDER DISPOSED', red), {
+      'Provider': _colored(_providerName(provider), magenta),
+    });
   }
 
   @override
@@ -125,14 +124,11 @@ class MyObserver extends ProviderObserver {
     ProviderContainer container,
   ) {
     if (previousValue != newValue) {
-      _printLog(
-        _colored('🔄 PROVIDER UPDATED', yellow),
-        {
-          'Provider': _colored(_providerName(provider), magenta),
-          'Previous': _colored(previousValue.toString(), red),
-          'Current': _colored(newValue.toString(), green),
-        },
-      );
+      _printLog(_colored('🔄 PROVIDER UPDATED', yellow), {
+        'Provider': _colored(_providerName(provider), magenta),
+        'Previous': _colored(previousValue.toString(), red),
+        'Current': _colored(newValue.toString(), green),
+      });
     }
   }
 
@@ -143,14 +139,11 @@ class MyObserver extends ProviderObserver {
     StackTrace stackTrace,
     ProviderContainer container,
   ) {
-    _printLog(
-      _colored('❌ PROVIDER ERROR', red),
-      {
-        'Provider': _colored(_providerName(provider), magenta),
-        'Error': _colored(error.toString(), red),
-        'Stack trace': '\n${stackTrace.toString()}',
-      },
-    );
+    _printLog(_colored('❌ PROVIDER ERROR', red), {
+      'Provider': _colored(_providerName(provider), magenta),
+      'Error': _colored(error.toString(), red),
+      'Stack trace': '\n${stackTrace.toString()}',
+    });
   }
 
   // Colors text based on platform and environment

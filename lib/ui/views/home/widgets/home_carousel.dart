@@ -7,10 +7,7 @@ import 'package:portfolio/ui/views/home/widgets/slide_item.dart';
 class HomeCarousel extends ConsumerWidget {
   final void Function(int) onPageChanged;
 
-  const HomeCarousel({
-    super.key,
-    required this.onPageChanged,
-  });
+  const HomeCarousel({super.key, required this.onPageChanged});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,9 +21,7 @@ class HomeCarousel extends ConsumerWidget {
         onPageChanged: (index, _) => onPageChanged(index),
       ),
       itemBuilder: (context, index, _) {
-        return SlideItem(
-          data: HomeViewModel.slides[index],
-        );
+        return SlideItem(data: HomeViewModel.slides[index]);
       },
     );
   }

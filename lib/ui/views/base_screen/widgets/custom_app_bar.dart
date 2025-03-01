@@ -63,19 +63,15 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   EdgeInsets _getResponsivePadding(ScreenSize size) {
     return switch (size) {
       ScreenSize.mobile => const EdgeInsets.symmetric(
-          vertical: spacingXS,
-          horizontal: spacingM,
-        ),
+        vertical: spacingXS,
+        horizontal: spacingM,
+      ),
       ScreenSize.tablet => const EdgeInsets.symmetric(
-          vertical: spacingS,
-          horizontal: spacingL,
-        ),
-      ScreenSize.desktop ||
-      ScreenSize.desktopLarge =>
-        const EdgeInsets.symmetric(
-          vertical: spacingS,
-          horizontal: spacingXL,
-        ),
+        vertical: spacingS,
+        horizontal: spacingL,
+      ),
+      ScreenSize.desktop || ScreenSize.desktopLarge =>
+        const EdgeInsets.symmetric(vertical: spacingS, horizontal: spacingXL),
     };
   }
 
@@ -98,9 +94,7 @@ class _DesktopLayout extends StatelessWidget {
             child: FittedBox(
               alignment: Alignment.centerRight,
               fit: BoxFit.scaleDown,
-              child: NavigationSectionWidget(
-                selectedSection: selectedSection,
-              ),
+              child: NavigationSectionWidget(selectedSection: selectedSection),
             ),
           ),
           const SizedBox(width: 16),

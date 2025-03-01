@@ -6,10 +6,7 @@ import 'package:portfolio/ui/views/home/widgets/speech_bubble.dart';
 class SpeechBubblesLayer extends StatelessWidget {
   final int currentIndex;
 
-  const SpeechBubblesLayer({
-    super.key,
-    required this.currentIndex,
-  });
+  const SpeechBubblesLayer({super.key, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +14,28 @@ class SpeechBubblesLayer extends StatelessWidget {
     final width = context.width;
     final height = context.height;
     return Stack(
-      children: HomeViewModel.slides.asMap().entries.map((entry) {
-        final index = entry.key;
-        final slide = entry.value;
+      children:
+          HomeViewModel.slides.asMap().entries.map((entry) {
+            final index = entry.key;
+            final slide = entry.value;
 
-        final left = width * slide.positionX;
-        final top = height * slide.positionY;
+            final left = width * slide.positionX;
+            final top = height * slide.positionY;
 
-        return Positioned(
-          left: context.isMobile ? centerPosition : left,
-          top: context.isMobile ? null : top,
-          bottom: context.isMobile ? 30 : null,
-          child: AnimatedOpacity(
-            duration: const Duration(milliseconds: 400),
-            opacity: currentIndex == index ? 1.0 : 0.0,
-            child: SpeechBubbleWidget(
-              textLines: slide.messages,
-              index: index,
-            ),
-          ),
-        );
-      }).toList(),
+            return Positioned(
+              left: context.isMobile ? centerPosition : left,
+              top: context.isMobile ? null : top,
+              bottom: context.isMobile ? 30 : null,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 400),
+                opacity: currentIndex == index ? 1.0 : 0.0,
+                child: SpeechBubbleWidget(
+                  textLines: slide.messages,
+                  index: index,
+                ),
+              ),
+            );
+          }).toList(),
     );
   }
 }

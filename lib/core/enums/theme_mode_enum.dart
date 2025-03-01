@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum ThemeModeEnum {
-  light,
-  dark,
-  system,
-}
+enum ThemeModeEnum { light, dark, system }
 
 extension ThemeModeX on ThemeModeEnum {
   bool get isLight => this == ThemeModeEnum.light;

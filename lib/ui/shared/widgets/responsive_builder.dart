@@ -6,7 +6,8 @@ class ResponsiveBuilder extends StatelessWidget {
     BuildContext context,
     BoxConstraints constraints,
     ScreenSize screenSize,
-  ) builder;
+  )
+  builder;
   final bool useLayoutBuilder;
 
   const ResponsiveBuilder({

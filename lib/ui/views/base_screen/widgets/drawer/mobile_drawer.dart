@@ -33,18 +33,19 @@ class MobileDrawer extends ConsumerWidget {
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: NavigationSection.values.map((section) {
-                    return _DrawerItem(
-                      section: section,
-                      isSelected: section == selectedSection,
-                      onTap: () {
-                        ref
-                            .read(navigationStateProvider.notifier)
-                            .selectSection(section);
-                        Navigator.pop(context);
-                      },
-                    );
-                  }).toList(),
+                  children:
+                      NavigationSection.values.map((section) {
+                        return _DrawerItem(
+                          section: section,
+                          isSelected: section == selectedSection,
+                          onTap: () {
+                            ref
+                                .read(navigationStateProvider.notifier)
+                                .selectSection(section);
+                            Navigator.pop(context);
+                          },
+                        );
+                      }).toList(),
                 ),
               ),
             ),
@@ -90,9 +91,10 @@ class _DrawerItem extends StatelessWidget {
           child: Text(
             section.key.tr(),
             style: theme.textTheme.titleMedium?.copyWith(
-              color: isSelected
-                  ? theme.colorScheme.primary
-                  : theme.colorScheme.onSurface,
+              color:
+                  isSelected
+                      ? theme.colorScheme.primary
+                      : theme.colorScheme.onSurface,
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
           ),
