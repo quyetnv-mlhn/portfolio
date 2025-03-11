@@ -1,7 +1,6 @@
 // File: lib/core/configs/app_themes.dart
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/configs/app_colors.dart';
-
 import 'package:portfolio/gen/fonts.gen.dart';
 
 class AppThemes {
@@ -33,7 +32,7 @@ class AppThemes {
       titleMedium: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: AppColors.primaryLight,
+        color: AppColors.textLight,
       ),
     ),
     appBarTheme: const AppBarTheme(
@@ -87,7 +86,7 @@ class AppThemes {
       titleMedium: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: AppColors.primaryDark,
+        color: AppColors.textDark,
       ),
     ),
     appBarTheme: const AppBarTheme(

@@ -50,3 +50,6 @@ assets/env/.env.stg
 # Generated code
 *.g.dart
 !/lib/gen/**/*.g.dart
+
+# FVM Version Cache
+.fvm/

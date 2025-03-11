@@ -5,15 +5,15 @@ import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/core/enums/screen_size.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/ui/shared/widgets/responsive_builder.dart';
-import 'package:portfolio/ui/views/about_me/views/about_me_screen.dart';
-import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
+import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/drawer/mobile_drawer.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/side_info_section.dart';
-import 'package:portfolio/ui/views/home/view/home_screen.dart';
 
 class BaseScreen extends ConsumerWidget {
-  const BaseScreen({super.key});
+  final Widget child;
+
+  const BaseScreen({required this.child, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,13 +32,13 @@ class BaseScreen extends ConsumerWidget {
                 if (selectedSection == NavigationSection.home)
                   Padding(
                     padding: _getResponsivePadding(screenSize),
-                    child: _buildContent(selectedSection),
+                    child: child,
                   )
                 else
                   SingleChildScrollView(
                     child: Padding(
                       padding: _getResponsivePadding(screenSize),
-                      child: _buildContent(selectedSection),
+                      child: child,
                     ),
                   ),
                 if (screenType != ScreenSize.mobile) const SideInfoSection(),
@@ -62,31 +62,4 @@ class BaseScreen extends ConsumerWidget {
             const EdgeInsets.symmetric(horizontal: 70),
     };
   }
-
-  Widget _buildContent(NavigationSection selectedSection) =>
-      switch (selectedSection) {
-        NavigationSection.home => const HomeScreen(),
-        NavigationSection.aboutMe => const AboutMeScreen(),
-        NavigationSection.myBlogs => const _PlaceholderScreen(
-          title: 'My Blogs Screen',
-        ),
-        NavigationSection.experiences => const _PlaceholderScreen(
-          title: 'Experiences Screen',
-        ),
-        NavigationSection.lifetime => const _PlaceholderScreen(
-          title: 'Lifetime Screen',
-        ),
-        NavigationSection.contact => const _PlaceholderScreen(
-          title: 'Contact Screen',
-        ),
-      };
-}
-
-class _PlaceholderScreen extends StatelessWidget {
-  final String title;
-
-  const _PlaceholderScreen({required this.title});
-
-  @override
-  Widget build(BuildContext context) => Center(child: Text(title));
 }

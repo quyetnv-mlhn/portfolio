@@ -29,9 +29,13 @@ class NavigationSectionWidget extends ConsumerWidget {
     return NavItem(
       title: section.key,
       isActive: section == selectedSection,
-      onTap:
-          () =>
-              ref.read(navigationStateProvider.notifier).selectSection(section),
+      onTap: () {
+        if (section != selectedSection) {
+          ref
+              .read(navigationStateProvider.notifier)
+              .selectSection(section, context);
+        }
+      },
     );
   }
 }

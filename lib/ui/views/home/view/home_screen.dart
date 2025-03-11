@@ -13,30 +13,30 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currentIndex = ref.watch(homeViewModelProvider);
+    final size = MediaQuery.of(context).size;
 
-    return Stack(
-      children: [
-        // Background Carousel
-        HomeCarousel(
-          onPageChanged: (index) {
-            ref.read(homeViewModelProvider.notifier).setCurrentIndex(index);
-          },
-        ),
-
-        // Speech Bubbles Layer
-        SpeechBubblesLayer(currentIndex: currentIndex),
-
-        // Carousel Indicators
-        Positioned(
-          bottom: context.isMobile ? 0 : spacingXL,
-          left: 0,
-          right: 0,
-          child: CarouselIndicators(
-            itemCount: HomeViewModel.slides.length,
-            currentIndex: currentIndex,
+    return SizedBox(
+      width: size.width,
+      height: size.height,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          HomeCarousel(
+            onPageChanged:
+                ref.read(homeViewModelProvider.notifier).setCurrentIndex,
           ),
-        ),
-      ],
+          SpeechBubblesLayer(currentIndex: currentIndex),
+          Positioned(
+            bottom: context.isMobile ? 0 : spacingXL,
+            left: 0,
+            right: 0,
+            child: CarouselIndicators(
+              itemCount: HomeViewModel.slides.length,
+              currentIndex: currentIndex,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

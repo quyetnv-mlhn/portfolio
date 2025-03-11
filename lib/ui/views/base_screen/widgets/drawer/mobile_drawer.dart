@@ -41,7 +41,7 @@ class MobileDrawer extends ConsumerWidget {
                           onTap: () {
                             ref
                                 .read(navigationStateProvider.notifier)
-                                .selectSection(section);
+                                .selectSection(section, context);
                             Navigator.pop(context);
                           },
                         );

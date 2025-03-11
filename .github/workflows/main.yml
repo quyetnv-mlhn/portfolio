@@ -14,7 +14,11 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.4'
+          flutter-version: '3.29.1'
+          
+      - name: Check Flutter version
+        run: flutter --version
+        
       - name: Create env files
         run: |
           echo "BASE_URL=" > assets/env/.env.dev
@@ -28,7 +32,7 @@ jobs:
         run: flutter clean && flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs && dart run easy_localization:generate -S assets/translations -O lib/gen && dart run easy_localization:generate -S assets/translations -s en-US.json -O lib/gen -o locale_keys.g.dart -f keys && dart fix --apply && dart format .
         
       - name: Build
-        run: flutter build web --release --base-href /portfolio/ -t lib/flavors/main_dev.dart --web-renderer canvaskit
+        run: flutter build web --release --base-href /portfolio/ -t lib/flavors/main_dev.dart canvaskit
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
