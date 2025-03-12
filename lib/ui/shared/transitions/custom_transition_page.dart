@@ -1,38 +1,41 @@
+// lib/ui/shared/transitions/app_transition_page.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-CustomTransitionPage<T> customTransitionPage<T>({
+Page<dynamic> buildCustomTransitionPage({
+  required GoRouterState state,
   required Widget child,
-  LocalKey? key,
+  required Color backgroundColor,
 }) {
-  return CustomTransitionPage<T>(
-    key: key,
+  return CustomTransitionPage(
+    key: state.pageKey,
     child: child,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      // Slide animation from 100px below
-      final offsetAnimation = Tween<Offset>(
-        begin: const Offset(0, 0.1), // 10% of screen height ≈ 100px
+      final customCurve = CurveTween(curve: Curves.easeOutQuint);
+
+      // Slide animation from bottom with custom curve
+      final slideTween = Tween<Offset>(
+        begin: const Offset(0, 0.08), // Even more subtle slide
         end: Offset.zero,
-      ).animate(
-        CurvedAnimation(
-          parent: animation,
-          curve: Curves.easeOutExpo, // Fast at start, slow at end
+      ).chain(customCurve);
+
+      // Fade-in animation starting from 0.5 instead of 0
+      final fadeTween = Tween<double>(begin: 0.5, end: 1.0).chain(customCurve);
+
+      return Container(
+        color: backgroundColor,
+        child: FadeTransition(
+          opacity: animation.drive(fadeTween),
+          child: SlideTransition(
+            position: animation.drive(slideTween),
+            child: child,
+          ),
         ),
       );
-
-      // Fade animation with same timing
-      final fadeAnimation = Tween<double>(
-        begin: 0.0,
-        end: 1.0,
-      ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut));
-
-      return SlideTransition(
-        position: offsetAnimation,
-        child: FadeTransition(opacity: fadeAnimation, child: child),
-      );
     },
-    transitionDuration: const Duration(milliseconds: 600),
-    reverseTransitionDuration: const Duration(milliseconds: 600),
+    transitionDuration: const Duration(
+      milliseconds: 2000,
+    ), // Increased to 2 seconds
     maintainState: false,
     opaque: true,
   );

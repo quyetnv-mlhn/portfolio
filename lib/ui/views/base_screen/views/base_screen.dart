@@ -29,18 +29,22 @@ class BaseScreen extends ConsumerWidget {
         builder:
             (_, __, screenType) => Stack(
               children: [
-                if (selectedSection == NavigationSection.home)
-                  Padding(
-                    padding: _getResponsivePadding(screenSize),
-                    child: child,
-                  )
-                else
-                  SingleChildScrollView(
-                    child: Padding(
+                selectedSection == NavigationSection.home
+                    ? Padding(
                       padding: _getResponsivePadding(screenSize),
                       child: child,
+                    )
+                    : SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: MediaQuery.of(context).size.height,
+                        ),
+                        child: Padding(
+                          padding: _getResponsivePadding(screenSize),
+                          child: child,
+                        ),
+                      ),
                     ),
-                  ),
                 if (screenType != ScreenSize.mobile) const SideInfoSection(),
               ],
             ),

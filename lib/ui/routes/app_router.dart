@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/ui/shared/transitions/custom_transition_page.dart';
 import 'package:portfolio/ui/views/about_me/views/about_me_screen.dart';
 import 'package:portfolio/ui/views/base_screen/views/base_screen.dart';
 import 'package:portfolio/ui/views/experience/views/experience_screen.dart';
 import 'package:portfolio/ui/views/home/view/home_screen.dart';
 
-final _rootNavigatorKey = GlobalKey<NavigatorState>();
-final _shellNavigatorKey = GlobalKey<NavigatorState>();
-
 class AppRouter {
-  // Route names
   static const String home = '/';
   static const String aboutMe = '/about-me';
   static const String myBlogs = '/my-blogs';
   static const String experiences = '/experiences';
   static const String lifetime = '/lifetime';
   static const String contact = '/contact';
+
+  static final GlobalKey<NavigatorState> _rootNavigatorKey =
+      GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> _shellNavigatorKey =
+      GlobalKey<NavigatorState>();
 
   static final router = GoRouter(
     debugLogDiagnostics: true,
@@ -24,70 +26,66 @@ class AppRouter {
     routes: <RouteBase>[
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
-        builder:
-            (context, state, child) =>
-                BaseScreen(key: ValueKey(state.uri.path), child: child),
+        builder: (context, state, child) {
+          return BaseScreen(child: child);
+        },
         routes: [
           GoRoute(
             path: home,
             pageBuilder:
-                (context, state) => NoTransitionPage(
-                  key: state.pageKey,
-                  child: HomeScreen(key: UniqueKey()),
+                (context, state) => buildCustomTransitionPage(
+                  state: state,
+                  child: HomeScreen(),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
           GoRoute(
             path: aboutMe,
             pageBuilder:
-                (context, state) => NoTransitionPage(
-                  key: state.pageKey,
-                  child: AboutMeScreen(key: UniqueKey()),
+                (context, state) => buildCustomTransitionPage(
+                  state: state,
+                  child: AboutMeScreen(),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
           GoRoute(
             path: myBlogs,
             pageBuilder:
-                (context, state) => NoTransitionPage(
-                  key: state.pageKey,
-                  child: Center(
-                    key: UniqueKey(),
-                    child: Text('My Blogs Screen'),
-                  ),
+                (context, state) => buildCustomTransitionPage(
+                  state: state,
+                  child: Center(child: Text('My Blogs Screen')),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
           GoRoute(
             path: experiences,
             pageBuilder:
-                (context, state) => NoTransitionPage(
-                  key: state.pageKey,
-                  child: ExperienceScreen(key: UniqueKey()),
+                (context, state) => buildCustomTransitionPage(
+                  state: state,
+                  child: ExperienceScreen(),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
           GoRoute(
             path: lifetime,
             pageBuilder:
-                (context, state) => NoTransitionPage(
-                  key: state.pageKey,
-                  child: Center(
-                    key: UniqueKey(),
-                    child: Text('Lifetime Screen'),
-                  ),
+                (context, state) => buildCustomTransitionPage(
+                  state: state,
+                  child: Center(child: Text('Lifetime Screen')),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
           GoRoute(
             path: contact,
             pageBuilder:
-                (context, state) => NoTransitionPage(
-                  key: state.pageKey,
-                  child: Center(
-                    key: UniqueKey(),
-                    child: Text('Contact Screen'),
-                  ),
+                (context, state) => buildCustomTransitionPage(
+                  state: state,
+                  child: Center(child: Text('Contact Screen')),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
         ],
       ),
     ],
-    observers: [NavigatorObserver()],
   );
 }

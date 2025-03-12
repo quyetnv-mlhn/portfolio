@@ -10,12 +10,12 @@ import 'package:portfolio/ui/shared/widgets/responsive_container.dart';
 import 'package:portfolio/ui/views/home/widgets/speech_bubble.dart';
 
 class AboutMeScreen extends StatelessWidget {
-  static const _spacingBetweenSections = spacingXL;
-  static const _desktopImageTopPadding = 80.0;
-  static const _speechBubbleRightPadding = 20.0;
-  static const _mobileSpeechBubbleOffset = 90.0;
-
   const AboutMeScreen({super.key});
+
+  static const _desktopImageTopPadding = 80.0;
+  static const _mobileSpeechBubbleOffset = 90.0;
+  static const _spacingBetweenSections = spacingXL;
+  static const _speechBubbleRightPadding = 20.0;
 
   ScreenType _getScreenType(double width) => switch (width) {
     <= AppBreakpoints.mobile => ScreenType.mobile,
@@ -23,6 +23,29 @@ class AboutMeScreen extends StatelessWidget {
     <= AppBreakpoints.desktop => ScreenType.desktop,
     _ => ScreenType.desktopLarge,
   };
+
+  Widget _buildImageSection(
+    ScreenType screenType,
+    BoxConstraints constraints,
+    bool isDesktop,
+  ) => Flexible(
+    flex: isDesktop ? 1 : 0,
+    child: ProfileImageSection(
+      screenType: screenType,
+      constraints: constraints,
+    ),
+  );
+
+  Widget _buildSpacer(bool isDesktop) => SizedBox(
+    width: isDesktop ? spacingXXL : 0,
+    height: isDesktop ? 0 : _spacingBetweenSections,
+  );
+
+  Widget _buildContentSection(ScreenType screenType, bool isDesktop) =>
+      Flexible(
+        flex: isDesktop ? 1 : 0,
+        child: AboutMeContent(screenType: screenType),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -47,50 +70,19 @@ class AboutMeScreen extends StatelessWidget {
       ),
     );
   }
-
-  Widget _buildImageSection(
-    ScreenType screenType,
-    BoxConstraints constraints,
-    bool isDesktop,
-  ) => Flexible(
-    flex: isDesktop ? 1 : 0,
-    child: ProfileImageSection(
-      screenType: screenType,
-      constraints: constraints,
-    ),
-  );
-
-  Widget _buildSpacer(bool isDesktop) => SizedBox(
-    width: isDesktop ? spacingXXL : 0,
-    height: isDesktop ? 0 : _spacingBetweenSections,
-  );
-
-  Widget _buildContentSection(ScreenType screenType, bool isDesktop) =>
-      Flexible(
-        flex: isDesktop ? 1 : 0,
-        child: AboutMeContent(screenType: screenType),
-      );
 }
 
 class ProfileImageSection extends StatelessWidget {
-  static const _imageWidthRatio = 0.7;
-
-  final ScreenType screenType;
-  final BoxConstraints constraints;
-
   const ProfileImageSection({
     required this.screenType,
     required this.constraints,
     super.key,
   });
 
-  @override
-  Widget build(BuildContext context) {
-    final isLargeScreen = screenType.isDesktop;
-    return isLargeScreen
-        ? _buildDesktopLayout(isLargeScreen)
-        : _buildMobileLayout();
-  }
+  final BoxConstraints constraints;
+  final ScreenType screenType;
+
+  static const _imageWidthRatio = 0.7;
 
   Widget _buildDesktopLayout(bool isLargeScreen) => Stack(
     alignment: Alignment.topCenter,
@@ -126,43 +118,71 @@ class ProfileImageSection extends StatelessWidget {
     fit: BoxFit.contain,
     width: isLargeScreen ? null : constraints.maxWidth * _imageWidthRatio,
   );
+
+  @override
+  Widget build(BuildContext context) {
+    final isLargeScreen = screenType.isDesktop;
+    return isLargeScreen
+        ? _buildDesktopLayout(isLargeScreen)
+        : _buildMobileLayout();
+  }
 }
 
-class AboutMeContent extends StatelessWidget {
+class AboutMeContent extends StatefulWidget {
+  const AboutMeContent({required this.screenType, super.key});
+
+  // Change to StatefulWidget
+  final ScreenType screenType;
+
+  @override
+  State<AboutMeContent> createState() => _AboutMeContentState();
+}
+
+class _AboutMeContentState extends State<AboutMeContent>
+    with SingleTickerProviderStateMixin {
+  static const _animationSpeed = Duration(milliseconds: 120);
+  static const _bulletPoint = "• ";
   static const _defaultTextStyle = TextStyle(fontSize: 18, height: 1.7);
+  static const _highlightDuration = Duration(milliseconds: 1200);
+  static const _initialDelay = Duration(milliseconds: 800);
   static const _titleStyle = TextStyle(
     fontSize: 32.0,
     fontWeight: FontWeight.bold,
     color: Colors.blueAccent,
   );
-  static const _animationSpeed = Duration(milliseconds: 100);
-  static const _bulletPoint = "• ";
 
-  final ScreenType screenType;
+  late AnimationController _contentAnimationController;
+  bool _showTitle = false;
 
-  const AboutMeContent({required this.screenType, super.key});
-
-  TextStyle _getBaseTextStyle(BuildContext context) {
-    return Theme.of(context).textTheme.bodyLarge?.copyWith(
-          fontSize: _defaultTextStyle.fontSize,
-          height: _defaultTextStyle.height,
-        ) ??
-        _defaultTextStyle;
+  @override
+  void dispose() {
+    _contentAnimationController.dispose();
+    super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _buildAnimatedTitle(context),
-        const SizedBox(height: spacingXL),
-        _buildContentSection(context),
-      ],
+  void initState() {
+    super.initState();
+    _contentAnimationController = AnimationController(
+      vsync: this,
+      duration: _highlightDuration,
     );
+
+    Future.delayed(_initialDelay, () {
+      if (mounted) {
+        setState(() {
+          _showTitle = true;
+          _contentAnimationController.forward();
+        });
+      }
+    });
   }
 
   Widget _buildAnimatedTitle(BuildContext context) {
+    if (!_showTitle) {
+      return Text('|', style: _titleStyle, textAlign: TextAlign.center);
+    }
+
     return AnimatedTextKit(
       animatedTexts: [
         TypewriterAnimatedText(
@@ -176,8 +196,49 @@ class AboutMeContent extends StatelessWidget {
       isRepeatingAnimation: false,
       displayFullTextOnTap: true,
       stopPauseOnTap: true,
-      repeatForever: false,
     );
+  }
+
+  Widget _buildHighlightedText(
+    BuildContext context, {
+    required String text,
+    required Color backgroundColor,
+    required TextStyle baseStyle,
+  }) {
+    return AnimatedBuilder(
+      animation: _contentAnimationController,
+      builder: (context, child) {
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                backgroundColor,
+                backgroundColor.withValues(alpha: 0.3),
+                Colors.transparent,
+              ],
+              stops: [
+                0.0,
+                _contentAnimationController.value,
+                _contentAnimationController.value,
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Text(text, style: baseStyle),
+        );
+      },
+    );
+  }
+
+  TextStyle _getBaseTextStyle(BuildContext context) {
+    return Theme.of(context).textTheme.bodyLarge?.copyWith(
+          fontSize: _defaultTextStyle.fontSize,
+          height: _defaultTextStyle.height,
+        ) ??
+        _defaultTextStyle;
   }
 
   // Keep this implementation
@@ -191,28 +252,6 @@ class AboutMeContent extends StatelessWidget {
           Expanded(child: child),
         ],
       ),
-    );
-  }
-
-  // Remove the duplicate _buildBulletPoint method that was here
-
-  Widget _buildHighlightedText(
-    BuildContext context, {
-    required String text,
-    required Color backgroundColor,
-    required TextStyle baseStyle,
-  }) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [backgroundColor, backgroundColor.withValues(alpha: 0.3)],
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-        ),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Text(text, style: baseStyle),
     );
   }
 
@@ -269,5 +308,17 @@ class AboutMeContent extends StatelessWidget {
               _buildBulletPoint(context, child: Text(text, style: baseStyle)),
         )
         .toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _buildAnimatedTitle(context),
+        const SizedBox(height: spacingXL),
+        _buildContentSection(context),
+      ],
+    );
   }
 }
