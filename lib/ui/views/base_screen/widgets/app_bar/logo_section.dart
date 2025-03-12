@@ -22,7 +22,7 @@ class LogoSection extends ConsumerWidget {
         onTap:
             () => ref
                 .read(navigationStateProvider.notifier)
-                .selectSection(NavigationSection.home),
+                .selectSection(NavigationSection.home, context),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -78,7 +78,6 @@ class LogoSection extends ConsumerWidget {
             LocaleKeys.name.tr(),
             style: theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
-              color: theme.colorScheme.primary,
             ),
           ),
         ),

@@ -1,6 +1,6 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:portfolio/core/configs/app_breakpoints.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/enums/screen_type.dart';
@@ -155,14 +155,14 @@ class AboutMeContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _buildAnimatedTitle(),
+        _buildAnimatedTitle(context),
         const SizedBox(height: spacingXL),
         _buildContentSection(context),
       ],
     );
   }
 
-  Widget _buildAnimatedTitle() {
+  Widget _buildAnimatedTitle(BuildContext context) {
     return AnimatedTextKit(
       animatedTexts: [
         TypewriterAnimatedText(

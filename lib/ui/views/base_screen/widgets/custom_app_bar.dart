@@ -4,11 +4,11 @@ import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/core/enums/screen_size.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
+import 'package:portfolio/ui/shared/widgets/responsive_container.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/action_section.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/logo_section.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/app_bar/navigation_section.dart';
-import 'package:portfolio/ui/shared/widgets/responsive_container.dart';
 
 class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -26,7 +26,6 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
       shadowColor: theme.appBarTheme.shadowColor,
       surfaceTintColor: theme.appBarTheme.surfaceTintColor,
       toolbarHeight: kToolbarHeight + 16,
-      // 80
       leadingWidth: 0,
       titleSpacing: 0,
       actions: _buildActions(context, screenSize),

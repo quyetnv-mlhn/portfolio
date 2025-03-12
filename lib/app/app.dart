@@ -2,11 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/enums/theme_mode_enum.dart';
+import 'package:portfolio/core/utils/snackbar_handler.dart';
+import 'package:portfolio/ui/routes/app_router.dart';
 import 'package:portfolio/ui/shared/themes/app_themes.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model.dart';
-import 'package:portfolio/ui/views/base_screen/views/base_screen.dart';
-
-import 'package:portfolio/core/utils/snackbar_handler.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -16,7 +15,7 @@ class App extends ConsumerWidget {
     final currentTheme = ref.watch(themeModeStateProvider);
 
     return _EagerInitialization(
-      child: MaterialApp(
+      child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         scaffoldMessengerKey: SnackBarHandler.scaffoldMessengerKey,
         localizationsDelegates: context.localizationDelegates,
@@ -25,7 +24,7 @@ class App extends ConsumerWidget {
         theme: AppThemes.lightTheme,
         darkTheme: AppThemes.darkTheme,
         themeMode: currentTheme.themeMode,
-        home: const BaseScreen(),
+        routerConfig: AppRouter.router,
       ),
     );
   }
