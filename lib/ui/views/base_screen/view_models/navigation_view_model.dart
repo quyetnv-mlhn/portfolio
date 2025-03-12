@@ -45,7 +45,7 @@ class NavigationState extends _$NavigationState {
     };
 
     if (context.mounted) {
-      context.pushReplacement(path);
+      context.go(path);
     }
   }
 }

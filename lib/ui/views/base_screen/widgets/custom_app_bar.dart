@@ -22,6 +22,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
     return AppBar(
       backgroundColor: theme.appBarTheme.backgroundColor,
+      automaticallyImplyLeading: false,
       elevation: theme.appBarTheme.elevation,
       shadowColor: theme.appBarTheme.shadowColor,
       surfaceTintColor: theme.appBarTheme.surfaceTintColor,
