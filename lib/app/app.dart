@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/enums/theme_mode_enum.dart';
 import 'package:portfolio/core/utils/snackbar_handler.dart';
+import 'package:portfolio/domain/repositories/work_experience_repository.dart';
 import 'package:portfolio/ui/routes/app_router.dart';
 import 'package:portfolio/ui/shared/themes/app_themes.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model.dart';
@@ -37,7 +38,11 @@ class _EagerInitialization extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Open local storage
+    _initRepository(ref);
     return child;
+  }
+
+  void _initRepository(WidgetRef ref) {
+    ref.watch(workExperienceRepositoryProvider);
   }
 }

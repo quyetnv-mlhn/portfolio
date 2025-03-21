@@ -59,6 +59,29 @@ class CodegenLoader extends AssetLoader {
     },
     "my_blogs": "My Blogs",
     "experiences": "Experiences",
+    "experience": {
+      "title": "My Experience",
+      "subtitle": "Everything I have learned and done is summarized here!",
+      "description": "Details can be viewed below.",
+      "timeline": {
+        "present": "Present",
+        "skills": "Skills",
+        "responsibilities": "Responsibilities",
+      },
+      "technical_profile": "TECHNICAL PROFILE",
+      "empty": "No experience data available",
+      "error": {"loading": "Failed to load experiences", "retry": "Retry"},
+      "education": {"title": "EDUCATION"},
+      "work_experience": {
+        "title": "WORK EXPERIENCE",
+        "key_responsibilities": "KEY RESPONSIBILITIES",
+        "store_links": {
+          "google_play": "Get it on Google Play",
+          "app_store": "Download on App Store",
+          "website": "Visit the website",
+        },
+      },
+    },
     "lifetime": "Lifetime",
     "contact": "Contact",
     "name": "I'm Quyet",
@@ -68,6 +91,7 @@ class CodegenLoader extends AssetLoader {
       "github": "Check out my GitHub",
       "linkedin": "Connect on LinkedIn",
     },
+    "common": {"retry": "Retry"},
   };
   static const Map<String, dynamic> _vi_VN = {
     "appTitle": "Portfolio",
@@ -114,6 +138,32 @@ class CodegenLoader extends AssetLoader {
     },
     "my_blogs": "Blogs tui viết",
     "experiences": "Kinh nghiệm",
+    "experience": {
+      "title": "Kinh Nghiệm Của Tôi",
+      "subtitle": "Tất cả những gì tôi đã học và làm được tổng hợp ở đây!",
+      "description": "Chi tiết có thể xem bên dưới.",
+      "timeline": {
+        "present": "Hiện tại",
+        "skills": "Kỹ năng",
+        "responsibilities": "Trách nhiệm",
+      },
+      "technical_profile": "KỸ NĂNG CHUYÊN MÔN",
+      "empty": "Chưa có dữ liệu kinh nghiệm",
+      "error": {
+        "loading": "Không thể tải dữ liệu kinh nghiệm",
+        "retry": "Thử lại",
+      },
+      "education": {"title": "HỌC VẤN"},
+      "work_experience": {
+        "title": "KINH NGHIỆM LÀM VIỆC",
+        "key_responsibilities": "TRÁCH NHIỆM CHÍNH",
+        "store_links": {
+          "google_play": "Tải về từ Google Play",
+          "app_store": "Tải về từ App Store",
+          "website": "Xem trên Website",
+        },
+      },
+    },
     "lifetime": "Cuộc sống",
     "contact": "Liên hệ",
     "name": "Đây là Quyết",
@@ -123,6 +173,7 @@ class CodegenLoader extends AssetLoader {
       "github": "Xem GitHub của tôi",
       "linkedin": "Kết nối trên LinkedIn",
     },
+    "common": {"retry": "Thử lại"},
   };
   static const Map<String, Map<String, dynamic>> mapLocales = {
     "en_US": _en_US,
