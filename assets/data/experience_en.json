@@ -1,0 +1,205 @@
+{
+  "technical_profile": [
+    "I am a Flutter Developer with over two years of experience in cross-platform mobile development. My focus is on building scalable and high-performance applications using Flutter and Riverpod. I continuously improve my skills in state management, clean architecture, and UI/UX optimization.",
+    "I am proficient in Kotlin (Android) and have implemented biometric authentication and AES/RSA encryption. These solutions enhance security and protect sensitive user data.",
+    "In Odoo Mobile development, I have integrated ERP systems via RESTful APIs, ensuring smooth data synchronization. I am also familiar with WebSocket and GraphQL to improve real-time data exchange.",
+    "I have experience managing CI/CD pipelines with GitHub Actions, Fastlane, and Firebase App Distribution. These tools help streamline deployment and testing processes.",
+    "I value clean code and maintainable architecture. I actively participate in code reviews and mentor junior developers.",
+    "I am also interested in Flutter Web, exploring ways to enhance web experiences with smooth, interactive UI."
+  ],
+  "education": [
+    {
+      "major": "COMPUTER ENGINEERING",
+      "university": "VNU UNIVERSITY OF ENGINEERING AND TECHNOLOGY",
+      "period": "Sep 2019 – Dec 2023",
+      "location": "Hanoi, Vietnam",
+      "image": "assets/images/university_logo.png"
+    }
+  ],
+  "companies": [
+    {
+      "period": "Feb 2023 - Present",
+      "name": "Bac Ha Software (BHSoft)",
+      "position": "FLUTTER DEVELOPER",
+      "logo": "assets/images/BHSoft_logo.png",
+      "projects": [
+        {
+          "period": "Mar 2025 - Mar 2025",
+          "title": "World Time Zones Converter",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A mobile application designed to simplify global time management. World Time Zones Converter allows users to effortlessly track and convert time across multiple cities, with a user-friendly interface and real-time updates. Available on Google Play and App Store.",
+          "main_tasks": [
+            "Designed and implemented core features such as timezone conversion, city list management, and real-time clock synchronization.",
+            "Integrated the `timezone` package to handle accurate time calculations, including DST adjustments across global regions.",
+            "Optimized UI/UX for intuitive navigation and dynamic scroll synchronization of time displays.",
+            "Managed app deployment and updates on Google Play and App Store, ensuring compatibility and stability."
+          ],
+          "app_store_url": "https://apps.apple.com/vn/app/world-time-zones-converter/id6451461067",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.bhsoft.timebuddy",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Timezone",
+            "GetX",
+            "Firebase"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "2 MM"
+        },
+        {
+          "period": "Sep 2024 - Feb 2025",
+          "title": "ODUMI",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A mobile app that boosts work efficiency for modern businesses. Odumi securely streamlines time management, leave requests, and approvals. Available on Google Play and App Store.",
+          "main_tasks": [
+            "Led front-end mobile development using Flutter, mentoring two team members.",
+            "Developed and implemented core features like time tracking and leave management.",
+            "Conducted code reviews to maintain high code quality and scalability.",
+            "Provided technical support and fostered a collaborative team environment.",
+            "Suggested and implemented UI/UX enhancements for web-to-mobile transitions.",
+            "Managed app deployment and updates on Google Play and App Store."
+          ],
+          "app_store_url": "https://apps.apple.com/vn/app/odumi/id6736432578",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.bhsoft.odoo",
+          "technologies": [
+            "Flutter",
+            "Riverpod",
+            "Python",
+            "Odoo"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "8 MM"
+        },
+        {
+          "period": "Mar 2024 - Sep 2024",
+          "title": "TURBO ONLINE",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "Turbo Image app optimizes job ordering for customers and job management for installers, enabling real-time status updates for enhanced efficiency and service.",
+          "main_tasks": [
+            "Developed advanced features independently.",
+            "Coordinated with Business Analysts and QA teams for sprint planning.",
+            "Conducted comprehensive code reviews.",
+            "Provided issue-resolution support to team members.",
+            "Implemented CI/CD pipelines using Fastlane for seamless APK and IPA distribution.",
+            "Recommended and contributed to UI/UX enhancements during the web-to-mobile transition.",
+            "Managed app deployment on app stores."
+          ],
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.turboimages.online",
+          "app_store_url": "https://apps.apple.com/vn/app/turbo-online/id6477904407",
+          "technologies": [
+            "Flutter",
+            "GetX",
+            "PHP",
+            "NodeJS"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "16 MM"
+        },
+        {
+          "period": "Oct 2023 - Nov 2024",
+          "title": "CAR ANALYZING AND TRADING PLATFORM",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A mobile application providing users with detailed vehicle analysis and trading functionalities.",
+          "main_tasks": [
+            "Contributed to UI/UX design and development to ensure a seamless user experience.",
+            "Successfully integrated APIs for data analysis.",
+            "Optimized application performance through code refactoring.",
+            "Implemented UI/UX improvements for better user interactions."
+          ],
+          "technologies": [
+            "Flutter",
+            "GetX",
+            "NextJS",
+            "NodeJS"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "8 MM"
+        },
+        {
+          "period": "Feb 2023 - Dec 2023",
+          "title": "GLEAN",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A medical chatbot assisting patients with health recommendations, specializing in eye care. The app leverages fine-tuned LLMs to process medical data, including images, text, and conversations, connecting patients with doctors.",
+          "main_tasks": [
+            "Developed chatbot interface and health recommendation system.",
+            "Reviewed and improved code reliability and readability.",
+            "Debugged and optimized LLM integrations.",
+            "Enhanced UI/UX for a patient-friendly experience.",
+            "Managed app deployment with regular updates."
+          ],
+          "technologies": [
+            "Python",
+            "C++",
+            "Keras",
+            "TensorFlow",
+            "Inpainting",
+            "Llama",
+            "Langchain",
+            "Node.js",
+            "React"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "8 MM"
+        }
+      ]
+    },
+    {
+      "period": "Oct 2023 - Feb 2024",
+      "name": "Self Project",
+      "position": "FLUTTER DEVELOPER",
+      "logo": "assets/images/self_project.png",
+      "projects": [
+        {
+          "period": "Dec 2024 - Feb 2025",
+          "title": "Magic Password",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A secure and user-friendly password manager that helps users generate, encrypt, and store passwords safely. Magic Password supports biometric authentication, auto clipboard clearing, and multi-language support. Available on Google Play.",
+          "main_tasks": [
+            "Implemented password encryption and decryption with biometric authentication using `flutter_secure_storage` and `encrypt` packages.",
+            "Developed a password generator with customizable rules for complexity and length.",
+            "Integrated Riverpod for state management to enhance app performance and scalability.",
+            "Designed a responsive and intuitive UI/UX with light and dark mode support.",
+            "Managed app deployment and updates on Google Play, ensuring security and stability."
+          ],
+          "app_store_url": "",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.quyetnv.magic_password",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Riverpod",
+            "Flutter Secure Storage",
+            "Encrypt",
+            "Biometric Authentication"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "1 MM"
+        },
+        {
+          "period": "Mar 2025 - Present",
+          "title": "Personal Portfolio",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A personal portfolio website built with Flutter Web to showcase projects, skills, and professional experience. Designed with a responsive layout for an optimal user experience across devices.",
+          "main_tasks": [
+            "Designed and developed a modern, responsive portfolio website using Flutter Web.",
+            "Implemented interactive UI components with animations for better user engagement.",
+            "Optimized performance and SEO for improved discoverability and loading speed.",
+            "Integrated a contact form with backend email service for direct communication.",
+            "Deployed the website on a reliable hosting platform for public access."
+          ],
+          "app_store_url": "",
+          "google_play_url": "",
+          "website_url": "http://quyetnv.pantech.vn/",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Flutter Web",
+            "SEO Optimization",
+            "Riverpod"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "Solo Project"
+        }
+      ]
+    }
+  ]
+}

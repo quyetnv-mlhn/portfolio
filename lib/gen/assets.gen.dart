@@ -9,6 +9,19 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsDataGen {
+  const $AssetsDataGen();
+
+  /// File path: assets/data/experience_en.json
+  String get experienceEn => 'assets/data/experience_en.json';
+
+  /// File path: assets/data/experience_vi.json
+  String get experienceVi => 'assets/data/experience_vi.json';
+
+  /// List of all assets
+  List<String> get values => [experienceEn, experienceVi];
+}
+
 class $AssetsEnvGen {
   const $AssetsEnvGen();
 
@@ -56,6 +69,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/linkedin.svg
   String get linkedin => 'assets/icons/linkedin.svg';
 
+  /// Directory path: assets/icons/techs
+  $AssetsIconsTechsGen get techs => const $AssetsIconsTechsGen();
+
   /// File path: assets/icons/telegram.svg
   String get telegram => 'assets/icons/telegram.svg';
 
@@ -73,6 +89,10 @@ class $AssetsIconsGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/BHSoft_logo.png
+  AssetGenImage get bHSoftLogo =>
+      const AssetGenImage('assets/images/BHSoft_logo.png');
 
   /// File path: assets/images/avatar.jpeg
   AssetGenImage get avatarJpeg =>
@@ -97,12 +117,21 @@ class $AssetsImagesGen {
   /// File path: assets/images/chill.png
   AssetGenImage get chill => const AssetGenImage('assets/images/chill.png');
 
+  /// File path: assets/images/self_project.png
+  AssetGenImage get selfProject =>
+      const AssetGenImage('assets/images/self_project.png');
+
   /// File path: assets/images/speech_bubble.png
   AssetGenImage get speechBubble =>
       const AssetGenImage('assets/images/speech_bubble.png');
 
+  /// File path: assets/images/university_logo.png
+  AssetGenImage get universityLogo =>
+      const AssetGenImage('assets/images/university_logo.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
+    bHSoftLogo,
     avatarJpeg,
     avatarPng,
     banner,
@@ -110,7 +139,9 @@ class $AssetsImagesGen {
     banner2,
     banner3,
     chill,
+    selfProject,
     speechBubble,
+    universityLogo,
   ];
 }
 
@@ -188,9 +219,94 @@ class $AssetsFontsMaliGen {
   ];
 }
 
+class $AssetsIconsTechsGen {
+  const $AssetsIconsTechsGen();
+
+  /// File path: assets/icons/techs/android.svg
+  String get android => 'assets/icons/techs/android.svg';
+
+  /// File path: assets/icons/techs/aws.svg
+  String get aws => 'assets/icons/techs/aws.svg';
+
+  /// File path: assets/icons/techs/azure.svg
+  String get azure => 'assets/icons/techs/azure.svg';
+
+  /// File path: assets/icons/techs/dart.svg
+  String get dart => 'assets/icons/techs/dart.svg';
+
+  /// File path: assets/icons/techs/database.svg
+  String get database => 'assets/icons/techs/database.svg';
+
+  /// File path: assets/icons/techs/figma.svg
+  String get figma => 'assets/icons/techs/figma.svg';
+
+  /// File path: assets/icons/techs/firebase.svg
+  String get firebase => 'assets/icons/techs/firebase.svg';
+
+  /// File path: assets/icons/techs/flutter copy.svg
+  String get flutterCopy => 'assets/icons/techs/flutter copy.svg';
+
+  /// File path: assets/icons/techs/flutter.svg
+  String get flutter => 'assets/icons/techs/flutter.svg';
+
+  /// File path: assets/icons/techs/github.svg
+  String get github => 'assets/icons/techs/github.svg';
+
+  /// File path: assets/icons/techs/ios.svg
+  String get ios => 'assets/icons/techs/ios.svg';
+
+  /// File path: assets/icons/techs/javascript.svg
+  String get javascript => 'assets/icons/techs/javascript.svg';
+
+  /// File path: assets/icons/techs/nextjs.svg
+  String get nextjs => 'assets/icons/techs/nextjs.svg';
+
+  /// File path: assets/icons/techs/nodejs.svg
+  String get nodejs => 'assets/icons/techs/nodejs.svg';
+
+  /// File path: assets/icons/techs/php.svg
+  String get php => 'assets/icons/techs/php.svg';
+
+  /// File path: assets/icons/techs/python.svg
+  String get python => 'assets/icons/techs/python.svg';
+
+  /// File path: assets/icons/techs/react.svg
+  String get react => 'assets/icons/techs/react.svg';
+
+  /// File path: assets/icons/techs/self.png
+  AssetGenImage get self => const AssetGenImage('assets/icons/techs/self.png');
+
+  /// File path: assets/icons/techs/swift.svg
+  String get swift => 'assets/icons/techs/swift.svg';
+
+  /// List of all assets
+  List<dynamic> get values => [
+    android,
+    aws,
+    azure,
+    dart,
+    database,
+    figma,
+    firebase,
+    flutterCopy,
+    flutter,
+    github,
+    ios,
+    javascript,
+    nextjs,
+    nodejs,
+    php,
+    python,
+    react,
+    self,
+    swift,
+  ];
+}
+
 class Assets {
   const Assets._();
 
+  static const $AssetsDataGen data = $AssetsDataGen();
   static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();

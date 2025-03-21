@@ -38,6 +38,34 @@
     },
     "my_blogs": "My Blogs",
     "experiences": "Experiences",
+    "experience": {
+        "title": "My Experience",
+        "subtitle": "Everything I have learned and done is summarized here!",
+        "description": "Details can be viewed below.",
+        "timeline": {
+            "present": "Present",
+            "skills": "Skills",
+            "responsibilities": "Responsibilities"
+        },
+        "technical_profile": "TECHNICAL PROFILE",
+        "empty": "No experience data available",
+        "error": {
+            "loading": "Failed to load experiences",
+            "retry": "Retry"
+        },
+        "education": {
+            "title": "EDUCATION"
+        },
+        "work_experience": {
+            "title": "WORK EXPERIENCE",
+            "key_responsibilities": "KEY RESPONSIBILITIES",
+            "store_links": {
+                "google_play": "Get it on Google Play",
+                "app_store": "Download on App Store",
+                "website": "Visit the website"
+            }
+        }
+    },
     "lifetime": "Lifetime",
     "contact": "Contact",
     "name": "I'm Quyet",
@@ -46,5 +74,8 @@
         "telegram": "Contact via Telegram",
         "github": "Check out my GitHub",
         "linkedin": "Connect on LinkedIn"
+    },
+    "common": {
+        "retry": "Retry"
     }
 }

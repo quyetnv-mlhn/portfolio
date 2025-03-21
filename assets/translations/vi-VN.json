@@ -38,6 +38,34 @@
     },
     "my_blogs": "Blogs tui viết",
     "experiences": "Kinh nghiệm",
+    "experience": {
+        "title": "Kinh Nghiệm Của Tôi",
+        "subtitle": "Tất cả những gì tôi đã học và làm được tổng hợp ở đây!",
+        "description": "Chi tiết có thể xem bên dưới.",
+        "timeline": {
+            "present": "Hiện tại",
+            "skills": "Kỹ năng",
+            "responsibilities": "Trách nhiệm"
+        },
+        "technical_profile": "KỸ NĂNG CHUYÊN MÔN",
+        "empty": "Chưa có dữ liệu kinh nghiệm",
+        "error": {
+            "loading": "Không thể tải dữ liệu kinh nghiệm",
+            "retry": "Thử lại"
+        },
+        "education": {
+            "title": "HỌC VẤN"
+        },
+        "work_experience": {
+            "title": "KINH NGHIỆM LÀM VIỆC",
+            "key_responsibilities": "TRÁCH NHIỆM CHÍNH",
+            "store_links": {
+                "google_play": "Tải về từ Google Play",
+                "app_store": "Tải về từ App Store",
+                "website": "Xem trên Website"
+            }
+        }
+    },
     "lifetime": "Cuộc sống",
     "contact": "Liên hệ",
     "name": "Đây là Quyết",
@@ -46,5 +74,8 @@
         "telegram": "Liên hệ qua Telegram",
         "github": "Xem GitHub của tôi",
         "linkedin": "Kết nối trên LinkedIn"
+    },
+    "common": {
+        "retry": "Thử lại"
     }
 }
