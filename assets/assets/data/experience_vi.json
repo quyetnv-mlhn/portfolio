@@ -1,0 +1,205 @@
+{
+  "technical_profile": [
+    "Tôi là LÂP TRÌNH VIÊN FLUTTER với hơn hai năm kinh nghiệm trong phát triển ứng dụng đa nền tảng. Tôi tập trung vào xây dựng các ứng dụng có khả năng mở rộng và hiệu suất cao sử dụng Flutter và Riverpod. Tôi liên tục cải thiện kỹ năng trong quản lý trạng thái, kiến trúc sạch và tối ưu hóa UI/UX.",
+    "Tôi thành thạo Kotlin (Android) và đã triển khai xác thực sinh trắc học và mã hóa AES/RSA. Những giải pháp này nâng cao bảo mật và bảo vệ dữ liệu người dùng nhạy cảm.",
+    "Trong phát triển Odoo Mobile, tôi đã tích hợp hệ thống ERP thông qua RESTful APIs, đảm bảo đồng bộ hóa dữ liệu mượt mà. Tôi cũng quen thuộc với WebSocket và GraphQL để cải thiện trao đổi dữ liệu thời gian thực.",
+    "Tôi có kinh nghiệm quản lý CI/CD pipelines với GitHub Actions, Fastlane và Firebase App Distribution. Những công cụ này giúp tối ưu hóa quy trình triển khai và kiểm thử.",
+    "Tôi coi trọng mã nguồn sạch và kiến trúc dễ bảo trì. Tôi tích cực tham gia đánh giá mã nguồn và hướng dẫn các lập trình viên junior.",
+    "Tôi cũng quan tâm đến Flutter Web, khám phá các cách để nâng cao trải nghiệm web với giao diện mượt mà, tương tác."
+  ],
+  "education": [
+    {
+      "major": "KỸ THUẬT MÁY TÍNH",
+      "university": "ĐẠI HỌC CÔNG NGHỆ - ĐẠI HỌC QUỐC GIA HÀ NỘI",
+      "period": "09/2019 – 12/2023",
+      "location": "Hà Nội, Việt Nam",
+      "image": "assets/images/university_logo.png"
+    }
+  ],
+  "companies": [
+    {
+      "period": "02/2023 - Hiện tại",
+      "name": "Bac Ha Software (BHSoft)",
+      "position": "LÂP TRÌNH VIÊN FLUTTER",
+      "logo": "assets/images/BHSoft_logo.png",
+      "projects": [
+        {
+          "period": "03/2025 - 03/2025",
+          "title": "World Time Zones Converter",
+          "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng di động giúp đơn giản hóa việc quản lý thời gian toàn cầu. World Time Zones Converter cho phép người dùng theo dõi và chuyển đổi thời gian giữa các thành phố một cách dễ dàng, với giao diện thân thiện và cập nhật thời gian thực. Có sẵn trên Google Play và App Store.",
+          "main_tasks": [
+            "Thiết kế và triển khai các tính năng chính như chuyển đổi múi giờ, quản lý danh sách thành phố và đồng bộ thời gian thực.",
+            "Tích hợp package `timezone` để xử lý tính toán thời gian chính xác, bao gồm điều chỉnh DST cho các khu vực toàn cầu.",
+            "Tối ưu giao diện người dùng (UI/UX) để điều hướng trực quan và đồng bộ cuộn hiển thị thời gian.",
+            "Quản lý triển khai và cập nhật ứng dụng trên Google Play và App Store, đảm bảo tính tương thích và ổn định."
+          ],
+          "app_store_url": "https://apps.apple.com/vn/app/world-time-zones-converter/id6451461067",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.bhsoft.timebuddy",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Timezone",
+            "GetX",
+            "Firebase"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "2 MM"
+        },
+        {
+          "period": "09/2024 - 02/2025",
+          "title": "ODUMI",
+          "subtitle": "LÂP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng di động nâng cao hiệu quả công việc cho doanh nghiệp hiện đại. Odumi hợp lý hóa quản lý thời gian, yêu cầu nghỉ phép và phê duyệt một cách an toàn. Có sẵn trên Google Play và App Store.",
+          "main_tasks": [
+            "Dẫn dắt phát triển front-end mobile sử dụng Flutter, hướng dẫn hai thành viên trong nhóm.",
+            "Phát triển và triển khai các tính năng cốt lõi như theo dõi thời gian và quản lý nghỉ phép.",
+            "Thực hiện đánh giá mã nguồn để duy trì chất lượng và khả năng mở rộng cao.",
+            "Cung cấp hỗ trợ kỹ thuật và thúc đẩy môi trường làm việc nhóm hiệu quả.",
+            "Đề xuất và triển khai cải tiến UI/UX cho chuyển đổi từ web sang mobile.",
+            "Quản lý triển khai và cập nhật ứng dụng trên Google Play và App Store."
+          ],
+          "app_store_url": "https://apps.apple.com/vn/app/odumi/id6736432578",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.bhsoft.odoo",
+          "technologies": [
+            "Flutter",
+            "Riverpod",
+            "Python",
+            "Odoo"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "8 MM"
+        },
+        {
+          "period": "03/2024 - 09/2024",
+          "title": "TURBO ONLINE",
+          "subtitle": "LÂP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng Turbo Image tối ưu hóa việc đặt hàng cho khách hàng và quản lý công việc cho người lắp đặt, cho phép cập nhật trạng thái thời gian thực để nâng cao hiệu quả và dịch vụ.",
+          "main_tasks": [
+            "Phát triển độc lập các tính năng nâng cao.",
+            "Phối hợp với đội Business Analysts và QA trong lập kế hoạch sprint.",
+            "Thực hiện đánh giá mã nguồn toàn diện.",
+            "Cung cấp hỗ trợ giải quyết vấn đề cho thành viên trong nhóm.",
+            "Triển khai CI/CD pipelines sử dụng Fastlane để phân phối APK và IPA mượt mà.",
+            "Đề xuất và đóng góp cải tiến UI/UX trong quá trình chuyển đổi từ web sang mobile.",
+            "Quản lý triển khai ứng dụng trên các kho ứng dụng."
+          ],
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.turboimages.online",
+          "app_store_url": "https://apps.apple.com/vn/app/turbo-online/id6477904407",
+          "technologies": [
+            "Flutter",
+            "GetX",
+            "PHP",
+            "NodeJS"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "16 MM"
+        },
+        {
+          "period": "10/2023 - 11/2024",
+          "title": "NỀN TẢNG PHÂN TÍCH VÀ GIAO DỊCH XE HƠI",
+          "subtitle": "LÂP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng di động cung cấp cho người dùng các tính năng phân tích và giao dịch xe chi tiết.",
+          "main_tasks": [
+            "Đóng góp vào thiết kế và phát triển UI/UX để đảm bảo trải nghiệm người dùng mượt mà.",
+            "Tích hợp thành công APIs cho phân tích dữ liệu.",
+            "Tối ưu hóa hiệu suất ứng dụng thông qua tái cấu trúc mã nguồn.",
+            "Triển khai cải tiến UI/UX để nâng cao tương tác người dùng."
+          ],
+          "technologies": [
+            "Flutter",
+            "GetX",
+            "NextJS",
+            "NodeJS"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "8 MM"
+        },
+        {
+          "period": "02/2023 - 12/2023",
+          "title": "GLEAN",
+          "subtitle": "LÂP TRÌNH VIÊN FLUTTER",
+          "description": "Chatbot y tế hỗ trợ bệnh nhân với các khuyến nghị sức khỏe, chuyên về chăm sóc mắt. Ứng dụng sử dụng LLMs được tinh chỉnh để xử lý dữ liệu y tế, bao gồm hình ảnh, văn bản và cuộc trò chuyện, kết nối bệnh nhân với bác sĩ.",
+          "main_tasks": [
+            "Phát triển giao diện chatbot và hệ thống khuyến nghị sức khỏe.",
+            "Đánh giá và cải thiện độ tin cậy và khả năng đọc của mã nguồn.",
+            "Gỡ lỗi và tối ưu hóa tích hợp LLM.",
+            "Nâng cao UI/UX để tạo trải nghiệm thân thiện với bệnh nhân.",
+            "Quản lý triển khai ứng dụng với các cập nhật thường xuyên."
+          ],
+          "technologies": [
+            "Python",
+            "C++",
+            "Keras",
+            "TensorFlow",
+            "Inpainting",
+            "Llama",
+            "Langchain",
+            "Node.js",
+            "React"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "8 MM"
+        }
+      ]
+    },
+    {
+      "period": "10/2023 - 02/2024",
+      "name": "Project cá nhân",
+      "position": "LÂP TRÌNH VIÊN FLUTTER",
+      "logo": "assets/images/self_project.png",
+      "projects": [
+        {
+          "period": "12/2024 - 02/2025",
+          "title": "Magic Password",
+          "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng quản lý mật khẩu an toàn và dễ sử dụng, giúp người dùng tạo, mã hóa và lưu trữ mật khẩu một cách bảo mật. Magic Password hỗ trợ xác thực sinh trắc học, tự động xóa clipboard và đa ngôn ngữ. Có sẵn trên Google Play.",
+          "main_tasks": [
+            "Triển khai mã hóa và giải mã mật khẩu với xác thực sinh trắc học sử dụng các gói `flutter_secure_storage` và `encrypt`.",
+            "Phát triển trình tạo mật khẩu với các quy tắc tùy chỉnh về độ phức tạp và độ dài.",
+            "Tích hợp Riverpod để quản lý trạng thái, nâng cao hiệu suất và khả năng mở rộng của ứng dụng.",
+            "Thiết kế giao diện UI/UX đáp ứng và trực quan, hỗ trợ chế độ sáng và tối.",
+            "Quản lý việc phát hành và cập nhật ứng dụng trên Google Play, đảm bảo tính bảo mật và ổn định."
+          ],
+          "app_store_url": "",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.quyetnv.magic_password",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Riverpod",
+            "Flutter Secure Storage",
+            "Encrypt",
+            "Xác thực sinh trắc học"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "1 MM"
+        },
+        {
+          "period": "03/2025 - Hiện tại",
+          "title": "Portfolio Cá Nhân",
+          "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
+          "description": "Trang web portfolio cá nhân được xây dựng bằng Flutter Web để giới thiệu các dự án, kỹ năng và kinh nghiệm nghề nghiệp. Thiết kế giao diện đáp ứng để mang lại trải nghiệm người dùng tối ưu trên mọi thiết bị.",
+          "main_tasks": [
+            "Thiết kế và phát triển trang portfolio hiện đại, đáp ứng với Flutter Web.",
+            "Triển khai các thành phần giao diện tương tác với hiệu ứng hoạt ảnh để tăng cường sự tham gia của người dùng.",
+            "Tối ưu hóa hiệu suất và SEO để cải thiện khả năng phát hiện và tốc độ tải trang.",
+            "Tích hợp biểu mẫu liên hệ với dịch vụ email backend để giao tiếp trực tiếp.",
+            "Triển khai trang web trên nền tảng hosting đáng tin cậy để truy cập công khai."
+          ],
+          "app_store_url": "",
+          "google_play_url": "",
+          "website_url": "http://quyetnv.pantech.vn/",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Flutter Web",
+            "Tối ưu hóa SEO",
+            "Riverpod"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "Dự án cá nhân"
+        }
+      ]
+    }
+  ]
+}
