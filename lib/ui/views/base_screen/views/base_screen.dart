@@ -10,15 +10,35 @@ import 'package:portfolio/ui/views/base_screen/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/drawer/mobile_drawer.dart';
 import 'package:portfolio/ui/views/base_screen/widgets/side_info_section.dart';
 
-class BaseScreen extends ConsumerWidget {
+class BaseScreen extends ConsumerStatefulWidget {
   final Widget child;
 
   const BaseScreen({required this.child, super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<BaseScreen> createState() => _BaseScreenState();
+}
+
+class _BaseScreenState extends ConsumerState<BaseScreen> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final selectedSection = ref.watch(navigationStateProvider);
     final screenSize = ScreenSize.fromWidth(MediaQuery.of(context).size.width);
+
+    // Listen to section changes and reset scroll
+    ref.listen(navigationStateProvider, (previous, next) {
+      if (previous != next && _scrollController.hasClients) {
+        _scrollController.jumpTo(0);
+      }
+    });
 
     return Scaffold(
       appBar: const CustomAppBar(),
@@ -32,16 +52,17 @@ class BaseScreen extends ConsumerWidget {
                 selectedSection == NavigationSection.home
                     ? Padding(
                       padding: _getResponsivePadding(screenSize),
-                      child: child,
+                      child: widget.child,
                     )
                     : SingleChildScrollView(
+                      controller: _scrollController,
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
                           minHeight: MediaQuery.of(context).size.height,
                         ),
                         child: Padding(
                           padding: _getResponsivePadding(screenSize),
-                          child: child,
+                          child: widget.child,
                         ),
                       ),
                     ),

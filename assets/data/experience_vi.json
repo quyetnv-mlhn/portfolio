@@ -150,31 +150,6 @@
       "logo": "assets/images/self_project.png",
       "projects": [
         {
-          "period": "12/2024 - 02/2025",
-          "title": "Magic Password",
-          "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
-          "description": "Ứng dụng quản lý mật khẩu an toàn và dễ sử dụng, giúp người dùng tạo, mã hóa và lưu trữ mật khẩu một cách bảo mật. Magic Password hỗ trợ xác thực sinh trắc học, tự động xóa clipboard và đa ngôn ngữ. Có sẵn trên Google Play.",
-          "main_tasks": [
-            "Triển khai mã hóa và giải mã mật khẩu với xác thực sinh trắc học sử dụng các gói `flutter_secure_storage` và `encrypt`.",
-            "Phát triển trình tạo mật khẩu với các quy tắc tùy chỉnh về độ phức tạp và độ dài.",
-            "Tích hợp Riverpod để quản lý trạng thái, nâng cao hiệu suất và khả năng mở rộng của ứng dụng.",
-            "Thiết kế giao diện UI/UX đáp ứng và trực quan, hỗ trợ chế độ sáng và tối.",
-            "Quản lý việc phát hành và cập nhật ứng dụng trên Google Play, đảm bảo tính bảo mật và ổn định."
-          ],
-          "app_store_url": "",
-          "google_play_url": "https://play.google.com/store/apps/details?id=com.quyetnv.magic_password",
-          "technologies": [
-            "Flutter",
-            "Dart",
-            "Riverpod",
-            "Flutter Secure Storage",
-            "Encrypt",
-            "Xác thực sinh trắc học"
-          ],
-          "location": "Hà Nội, Việt Nam",
-          "size": "1 MM"
-        },
-        {
           "period": "03/2025 - Hiện tại",
           "title": "Portfolio Cá Nhân",
           "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
@@ -198,6 +173,31 @@
           ],
           "location": "Hà Nội, Việt Nam",
           "size": "Dự án cá nhân"
+        },
+        {
+          "period": "12/2024 - 02/2025",
+          "title": "Magic Password",
+          "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng quản lý mật khẩu an toàn và dễ sử dụng, giúp người dùng tạo, mã hóa và lưu trữ mật khẩu một cách bảo mật. Magic Password hỗ trợ xác thực sinh trắc học, tự động xóa clipboard và đa ngôn ngữ. Có sẵn trên Google Play.",
+          "main_tasks": [
+            "Triển khai mã hóa và giải mã mật khẩu với xác thực sinh trắc học sử dụng các gói `flutter_secure_storage` và `encrypt`.",
+            "Phát triển trình tạo mật khẩu với các quy tắc tùy chỉnh về độ phức tạp và độ dài.",
+            "Tích hợp Riverpod để quản lý trạng thái, nâng cao hiệu suất và khả năng mở rộng của ứng dụng.",
+            "Thiết kế giao diện UI/UX đáp ứng và trực quan, hỗ trợ chế độ sáng và tối.",
+            "Quản lý việc phát hành và cập nhật ứng dụng trên Google Play, đảm bảo tính bảo mật và ổn định."
+          ],
+          "app_store_url": "",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.quyetnv.magic_password",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Riverpod",
+            "Flutter Secure Storage",
+            "Encrypt",
+            "Xác thực sinh trắc học"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "1 MM"
         }
       ]
     }
