@@ -150,31 +150,6 @@
       "logo": "assets/images/self_project.png",
       "projects": [
         {
-          "period": "Dec 2024 - Feb 2025",
-          "title": "Magic Password",
-          "subtitle": "FLUTTER DEVELOPER",
-          "description": "A secure and user-friendly password manager that helps users generate, encrypt, and store passwords safely. Magic Password supports biometric authentication, auto clipboard clearing, and multi-language support. Available on Google Play.",
-          "main_tasks": [
-            "Implemented password encryption and decryption with biometric authentication using `flutter_secure_storage` and `encrypt` packages.",
-            "Developed a password generator with customizable rules for complexity and length.",
-            "Integrated Riverpod for state management to enhance app performance and scalability.",
-            "Designed a responsive and intuitive UI/UX with light and dark mode support.",
-            "Managed app deployment and updates on Google Play, ensuring security and stability."
-          ],
-          "app_store_url": "",
-          "google_play_url": "https://play.google.com/store/apps/details?id=com.quyetnv.magic_password",
-          "technologies": [
-            "Flutter",
-            "Dart",
-            "Riverpod",
-            "Flutter Secure Storage",
-            "Encrypt",
-            "Biometric Authentication"
-          ],
-          "location": "Hanoi, Vietnam",
-          "size": "1 MM"
-        },
-        {
           "period": "Mar 2025 - Present",
           "title": "Personal Portfolio",
           "subtitle": "FLUTTER DEVELOPER",
@@ -198,6 +173,31 @@
           ],
           "location": "Hanoi, Vietnam",
           "size": "Solo Project"
+        },
+        {
+          "period": "Dec 2024 - Feb 2025",
+          "title": "Magic Password",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A secure and user-friendly password manager that helps users generate, encrypt, and store passwords safely. Magic Password supports biometric authentication, auto clipboard clearing, and multi-language support. Available on Google Play.",
+          "main_tasks": [
+            "Implemented password encryption and decryption with biometric authentication using `flutter_secure_storage` and `encrypt` packages.",
+            "Developed a password generator with customizable rules for complexity and length.",
+            "Integrated Riverpod for state management to enhance app performance and scalability.",
+            "Designed a responsive and intuitive UI/UX with light and dark mode support.",
+            "Managed app deployment and updates on Google Play, ensuring security and stability."
+          ],
+          "app_store_url": "",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.quyetnv.magic_password",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "Riverpod",
+            "Flutter Secure Storage",
+            "Encrypt",
+            "Biometric Authentication"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "1 MM"
         }
       ]
     }
