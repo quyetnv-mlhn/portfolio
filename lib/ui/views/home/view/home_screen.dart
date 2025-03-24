@@ -12,31 +12,41 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndex = ref.watch(homeViewModelProvider);
+    final homeState = ref.watch(homeViewModelProvider);
     final size = MediaQuery.of(context).size;
 
-    return SizedBox(
-      width: size.width,
-      height: size.height,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          HomeCarousel(
-            onPageChanged:
-                ref.read(homeViewModelProvider.notifier).setCurrentIndex,
-          ),
-          SpeechBubblesLayer(currentIndex: currentIndex),
-          Positioned(
-            bottom: context.isMobile ? 0 : spacingXL,
-            left: 0,
-            right: 0,
-            child: CarouselIndicators(
-              itemCount: HomeViewModel.slides.length,
-              currentIndex: currentIndex,
+    return homeState.when(
+      data:
+          (data) => SizedBox(
+            width: size.width,
+            height: size.height,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                HomeCarousel(
+                  slides: data.$1.slides,
+                  onPageChanged:
+                      ref.read(homeViewModelProvider.notifier).setCurrentIndex,
+                ),
+                SpeechBubblesLayer(
+                  slides: data.$1.slides,
+                  currentIndex: data.$2,
+                  avatarPath: data.$1.avatarPath,
+                ),
+                Positioned(
+                  bottom: context.isMobile ? 0 : spacingXL,
+                  left: 0,
+                  right: 0,
+                  child: CarouselIndicators(
+                    itemCount: data.$1.slides.length,
+                    currentIndex: data.$2,
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (error, stack) => Center(child: Text('Error: $error')),
     );
   }
 }

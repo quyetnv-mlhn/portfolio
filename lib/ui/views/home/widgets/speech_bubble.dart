@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/gen/assets.gen.dart';
@@ -50,7 +49,7 @@ class SpeechBubbleWidget extends StatelessWidget {
                         return AnimatedSwitcher(
                           duration: const Duration(milliseconds: 300),
                           child: Text(
-                            line.tr(),
+                            line,
                             key: ValueKey('$index-$line'),
                             style: theme.textTheme.bodyLarge?.copyWith(
                               height: 1.4,

@@ -13,10 +13,10 @@ class WorkExperienceRepositoryImpl implements WorkExperienceRepository {
       String assetFile;
       switch (locale) {
         case LocaleEnum.en:
-          assetFile = Assets.data.experienceEn;
+          assetFile = Assets.data.experiences.experienceEn;
           break;
         case LocaleEnum.vi:
-          assetFile = Assets.data.experienceVi;
+          assetFile = Assets.data.experiences.experienceVi;
           break;
       }
       final String jsonString = await rootBundle.loadString(assetFile);

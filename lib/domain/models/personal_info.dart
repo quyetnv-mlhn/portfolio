@@ -1,30 +1,27 @@
-class PersonalInfo {
-  final String name;
-  final List<SocialLinkInfo> socialLinks;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const PersonalInfo({required this.name, required this.socialLinks});
+part 'personal_info.freezed.dart';
+part 'personal_info.g.dart';
 
-  factory PersonalInfo.fromJson(Map<String, dynamic> json) {
-    return PersonalInfo(
-      name: json['name'] as String,
-      socialLinks:
-          (json['social_links'] as List)
-              .map((e) => SocialLinkInfo.fromJson(e as Map<String, dynamic>))
-              .toList(),
-    );
-  }
+@freezed
+abstract class PersonalInfo with _$PersonalInfo {
+  const factory PersonalInfo({
+    required String name,
+    @JsonKey(name: 'image_path') required String imagePath,
+    @JsonKey(name: 'social_links') required List<SocialLinkInfo> socialLinks,
+  }) = _PersonalInfo;
+
+  factory PersonalInfo.fromJson(Map<String, dynamic> json) =>
+      _$PersonalInfoFromJson(json);
 }
 
-class SocialLinkInfo {
-  final String platform;
-  final String url;
+@freezed
+abstract class SocialLinkInfo with _$SocialLinkInfo {
+  const factory SocialLinkInfo({
+    required String platform,
+    required String url,
+  }) = _SocialLinkInfo;
 
-  const SocialLinkInfo({required this.platform, required this.url});
-
-  factory SocialLinkInfo.fromJson(Map<String, dynamic> json) {
-    return SocialLinkInfo(
-      platform: json['platform'] as String,
-      url: json['url'] as String,
-    );
-  }
+  factory SocialLinkInfo.fromJson(Map<String, dynamic> json) =>
+      _$SocialLinkInfoFromJson(json);
 }

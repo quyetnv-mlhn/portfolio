@@ -1,55 +1,30 @@
-import 'package:portfolio/gen/assets.gen.dart';
-import 'package:portfolio/gen/locale_keys.g.dart';
-import 'package:portfolio/ui/views/home/models/slide_data.dart';
+import 'package:portfolio/domain/models/home/home_data.dart';
+import 'package:portfolio/domain/repositories/home_repository.dart';
+import 'package:portfolio/ui/views/base_screen/view_models/language_view_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_view_model.g.dart';
 
 @riverpod
 class HomeViewModel extends _$HomeViewModel {
+  int _currentIndex = 0;
+
   @override
-  int build() {
-    return 0;
+  Future<(HomeData, int)> build() async {
+    final repository = ref.read(homeRepositoryProvider);
+    final locale = ref.watch(languageStateProvider);
+    final homeData = await repository.getHomeData(locale);
+    return (homeData, _currentIndex);
   }
 
-  void setCurrentIndex(int index) => state = index;
+  void setCurrentIndex(int index) {
+    state.whenData((value) {
+      _currentIndex = index;
+      state = AsyncData((value.$1, index));
+    });
+  }
 
-  static final slides = [
-    SlideData(
-      positionX: 0.7,
-      positionY: 0.115,
-      messages: [LocaleKeys.home_greeting, LocaleKeys.home_role],
-      image: Assets.images.banner.path,
-    ),
-    SlideData(
-      positionX: 0.7,
-      positionY: 0.4,
-      messages: [
-        LocaleKeys.home_sharing_line1,
-        LocaleKeys.home_sharing_line2,
-        LocaleKeys.home_sharing_line3,
-      ],
-      image: Assets.images.banner1.path,
-    ),
-    SlideData(
-      positionX: 0.112,
-      positionY: 0.115,
-      messages: [
-        LocaleKeys.home_helping_line1,
-        LocaleKeys.home_helping_line2,
-        LocaleKeys.home_helping_line3,
-      ],
-      image: Assets.images.banner2.path,
-    ),
-    SlideData(
-      positionX: 0.112,
-      positionY: 0.115,
-      messages: [
-        LocaleKeys.home_contact_line1,
-        LocaleKeys.home_contact_line2,
-        LocaleKeys.home_contact_line3,
-      ],
-      image: Assets.images.banner3.path,
-    ),
-  ];
+  List<SlideData> get slides => state.valueOrNull?.$1.slides ?? [];
+  String get avatarPath => state.valueOrNull?.$1.avatarPath ?? '';
+  int get currentIndex => state.valueOrNull?.$2 ?? 0;
 }

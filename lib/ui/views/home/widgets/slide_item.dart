@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/views/home/models/slide_data.dart';
+import 'package:portfolio/domain/models/home/home_data.dart';
 
 class SlideItem extends StatelessWidget {
   final SlideData data;
