@@ -296,9 +296,6 @@ class $AssetsIconsTechsGen {
   /// File path: assets/icons/techs/firebase.svg
   String get firebase => 'assets/icons/techs/firebase.svg';
 
-  /// File path: assets/icons/techs/flutter copy.svg
-  String get flutterCopy => 'assets/icons/techs/flutter copy.svg';
-
   /// File path: assets/icons/techs/flutter.svg
   String get flutter => 'assets/icons/techs/flutter.svg';
 
@@ -316,6 +313,9 @@ class $AssetsIconsTechsGen {
 
   /// File path: assets/icons/techs/nodejs.svg
   String get nodejs => 'assets/icons/techs/nodejs.svg';
+
+  /// File path: assets/icons/techs/odoo.svg
+  String get odoo => 'assets/icons/techs/odoo.svg';
 
   /// File path: assets/icons/techs/php.svg
   String get php => 'assets/icons/techs/php.svg';
@@ -341,13 +341,13 @@ class $AssetsIconsTechsGen {
     database,
     figma,
     firebase,
-    flutterCopy,
     flutter,
     github,
     ios,
     javascript,
     nextjs,
     nodejs,
+    odoo,
     php,
     python,
     react,

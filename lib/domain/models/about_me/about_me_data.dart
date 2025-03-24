@@ -8,7 +8,6 @@ abstract class AboutMeData with _$AboutMeData {
   const factory AboutMeData({
     required String greeting,
     @JsonKey(name: 'image_path') required String imagePath,
-    required String title,
     required IntroData intro,
     @JsonKey(name: 'bullet_points') required List<String> bulletPoints,
   }) = _AboutMeData;

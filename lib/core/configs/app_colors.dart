@@ -9,6 +9,7 @@ class AppColors {
   static const surfaceLight = Color(0xFFFFFFFF);
   static const dividerLight = Color(0xFFE5E7EB);
   static const primaryContainerLight = Color(0xFFC3C3C3);
+  static const surfaceContainerHighestLight = Color(0xFFE0E0E0);
 
   // Dark Theme
   static const scaffoldDark = Color(0xFF121212);
@@ -17,6 +18,7 @@ class AppColors {
   static const surfaceDark = Color(0xFF242424);
   static const dividerDark = Color(0xFF2D2D2D);
   static const primaryContainerDark = Color(0xFF162037);
+  static const surfaceContainerHighestDark = Color(0xFF424242);
 
   // Common
   static const accent = Color(0xFF10B981);

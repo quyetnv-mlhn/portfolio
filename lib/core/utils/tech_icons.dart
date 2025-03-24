@@ -14,7 +14,7 @@ class TechIcons {
     'javascript': ('assets/icons/techs/javascript.svg', Icons.code),
     'js': ('assets/icons/techs/javascript.svg', Icons.code),
     'firebase': (
-      'assets/icons/tec5hs/firebase.svg',
+      'assets/icons/techs/firebase.svg',
       Icons.local_fire_department,
     ),
     'aws': ('assets/icons/techs/aws.svg', Icons.cloud),
