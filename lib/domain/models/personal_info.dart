@@ -7,6 +7,7 @@ part 'personal_info.g.dart';
 abstract class PersonalInfo with _$PersonalInfo {
   const factory PersonalInfo({
     required String name,
+    required String introduction,
     @JsonKey(name: 'image_path') required String imagePath,
     @JsonKey(name: 'social_links') required List<SocialLinkInfo> socialLinks,
   }) = _PersonalInfo;

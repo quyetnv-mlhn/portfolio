@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,7 +5,6 @@ import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/gen/assets.gen.dart';
-import 'package:portfolio/gen/locale_keys.g.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/personal_info_view_model.dart';
 
@@ -16,9 +14,9 @@ class LogoSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final avatarPath = ref.watch(
-      personalInfoStateProvider.select((value) => value.value?.imagePath),
-    );
+    final personalInfoAsync = ref.watch(personalInfoStateProvider);
+    final avatarPath = personalInfoAsync.value?.imagePath;
+    final introduction = personalInfoAsync.value?.introduction;
 
     void onTap() => ref
         .read(navigationStateProvider.notifier)
@@ -27,6 +25,7 @@ class LogoSection extends ConsumerWidget {
     return _LogoContent(
       theme: theme,
       avatarPath: avatarPath,
+      intro: introduction,
       isMobile: context.isMobile,
       onTap: onTap,
     );
@@ -36,12 +35,14 @@ class LogoSection extends ConsumerWidget {
 class _LogoContent extends StatelessWidget {
   final ThemeData theme;
   final String? avatarPath;
+  final String? intro;
   final bool isMobile;
   final VoidCallback onTap;
 
   const _LogoContent({
     required this.theme,
     required this.avatarPath,
+    required this.intro,
     required this.isMobile,
     required this.onTap,
   });
@@ -57,7 +58,7 @@ class _LogoContent extends StatelessWidget {
           children: [
             _Avatar(theme: theme, isMobile: isMobile, avatarPath: avatarPath),
             const SizedBox(width: 8),
-            if (!isMobile) _LogoText(theme: theme),
+            if (!isMobile) _LogoText(theme: theme, intro: intro ?? ''),
           ],
         ),
       ),
@@ -99,8 +100,9 @@ class _Avatar extends StatelessWidget {
 
 class _LogoText extends StatelessWidget {
   final ThemeData theme;
+  final String intro;
 
-  const _LogoText({required this.theme});
+  const _LogoText({required this.theme, required this.intro});
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +126,7 @@ class _LogoText extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: spacingL),
           child: Text(
-            LocaleKeys.name.tr(),
+            intro,
             style: theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
