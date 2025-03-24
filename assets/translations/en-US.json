@@ -1,40 +1,11 @@
 {
     "appTitle": "Portfolio",
     "home": {
-        "title": "Home",
-        "greeting": "Hi! I'm Quyet",
-        "role": "a 'Mobile Engineer'",
-        "sharing": {
-            "line1": "I will share",
-            "line2": "knowledge and",
-            "line3": "stories here"
-        },
-        "helping": {
-            "line1": "I hope to help",
-            "line2": "everyone with 'something'",
-            "line3": "while you are here"
-        },
-        "contact": {
-            "line1": "If you want to",
-            "line2": "contact me, feel free to",
-            "line3": "send me a message, thanks!"
-        }
+        "title": "Home"
     },
     "about_me": {
         "name": "About Me",
-        "title": "Who Am I?",
-        "intro": {
-            "part1": "Currently, I am a ",
-            "role": "Flutter Developer",
-            "part2": ", and I am also ",
-            "exploring": "exploring mobile native",
-            "part3": " to expand my skills."
-        },
-        "bullet_point_1": "I have a strong passion for mobile development, always eager to explore new technologies and improve the performance, UI/UX, and overall user experience of the apps I build.",
-        "bullet_point_2": "I believe in lifelong learning and self-improvement. Whether it's mastering a new programming language, optimizing code efficiency, or enhancing my English communication skills, I continuously strive to grow.",
-        "bullet_point_3": "I am always grateful to the mentors and colleagues who have helped me grow, guiding me through both technical challenges and career development.",
-        "bullet_point_4": "I enjoy sharing knowledge and engaging with the developer community, whether through discussions, mentorship, or collaborative projects.",
-        "bullet_point_5": "Oh, this place is where I document my journey, from Flutter development to English learning and beyond. If you're interested, feel free to connect!"
+        "title": "Who Am I?"
     },
     "my_blogs": "My Blogs",
     "experiences": "Experiences",
@@ -68,7 +39,6 @@
     },
     "lifetime": "Lifetime",
     "contact": "Contact",
-    "name": "I'm Quyet",
     "social": {
         "facebook": "Follow me on Facebook",
         "telegram": "Contact via Telegram",
