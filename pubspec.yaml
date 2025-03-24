@@ -65,8 +65,8 @@ dev_dependencies:
   build_runner: ^2.4.15
   freezed: ^3.0.4
   json_serializable: ^6.9.4
-  flutter_gen_runner: ^5.9.0
   riverpod_lint: ^2.6.5
+  flutter_gen_runner: ^5.10.0
 
 flutter:
 
@@ -95,3 +95,4 @@ flutter:
     - assets/env/
     - assets/fonts/Mali/
     - assets/data/
+    - assets/data/about_me/

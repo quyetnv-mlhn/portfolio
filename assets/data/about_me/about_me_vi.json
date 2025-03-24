@@ -1,0 +1,19 @@
+{
+  "greeting": "Xin chào, tôi là Quyết",
+  "image_path": "assets/images/avatar.jpeg",
+  "title": "Về Tôi",
+  "intro": {
+    "part1": "Tôi là ",
+    "role": "Kỹ Sư Mobile",
+    "part2": " với niềm đam mê ",
+    "exploring": "khám phá công nghệ",
+    "part3": " mang lại giá trị thực tiễn và trải nghiệm tuyệt vời cho người dùng."
+  },
+  "bullet_points": [
+    "Tôi đam mê phát triển ứng dụng di động, luôn tìm tòi công nghệ mới để nâng cao hiệu suất, UI/UX và trải nghiệm người dùng.",
+    "Tôi tin vào việc học hỏi suốt đời và không ngừng phát triển bản thân, từ tối ưu hóa hiệu suất code đến cải thiện kỹ năng giao tiếp tiếng Anh.",
+    "Tôi luôn biết ơn những người thầy và đồng nghiệp đã giúp tôi phát triển, không chỉ về mặt kỹ thuật mà còn trong định hướng sự nghiệp.",
+    "Tôi thích chia sẻ kiến thức và kết nối với cộng đồng lập trình viên thông qua thảo luận, hướng dẫn và các dự án hợp tác.",
+    "Đây là nơi tôi ghi lại hành trình của mình, từ Flutter, phát triển phần mềm đến học tiếng Anh và hơn thế nữa. Nếu bạn quan tâm, đừng ngại kết nối với tôi!"
+  ]
+}

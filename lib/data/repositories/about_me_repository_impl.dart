@@ -2,28 +2,28 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:portfolio/core/enums/locale_enum.dart';
-import 'package:portfolio/domain/models/experience/experience_data.dart';
-import 'package:portfolio/domain/repositories/work_experience_repository.dart';
+import 'package:portfolio/domain/models/about_me/about_me_data.dart';
+import 'package:portfolio/domain/repositories/about_me_repository.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 
-class WorkExperienceRepositoryImpl implements WorkExperienceRepository {
+class AboutMeRepositoryImpl implements AboutMeRepository {
   @override
-  Future<ExperienceData> getWorkExperience(LocaleEnum locale) async {
+  Future<AboutMeData> getAboutMeData(LocaleEnum locale) async {
     try {
       String assetFile;
       switch (locale) {
         case LocaleEnum.en:
-          assetFile = Assets.data.experienceEn;
+          assetFile = Assets.data.aboutMe.aboutMeEn;
           break;
         case LocaleEnum.vi:
-          assetFile = Assets.data.experienceVi;
+          assetFile = Assets.data.aboutMe.aboutMeVi;
           break;
       }
       final String jsonString = await rootBundle.loadString(assetFile);
       final json = jsonDecode(jsonString) as Map<String, dynamic>;
-      return ExperienceData.fromJson(json);
+      return AboutMeData.fromJson(json);
     } catch (e, s) {
-      throw Exception('Failed to load work experience data: $e\n$s');
+      throw Exception('Failed to load about me data: $e\n$s');
     }
   }
 }
