@@ -1,0 +1,23 @@
+{
+  "name": "QUYET • NV",
+  "introduction": "I'm Quyet",
+  "image_path": "assets/images/avatar.jpeg",
+  "social_links": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/quyetnv.mlhn/"
+    },
+    {
+      "platform": "telegram",
+      "url": "https://t.me/quyet_xyz"
+    },
+    {
+      "platform": "github",
+      "url": "https://github.com/quyetnv-mlhn"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/in/quyetnv/"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "avatar_path": "assets/images/avatar.jpeg",
+  "slides": [
+    {
+      "position": {
+        "x": 0.7,
+        "y": 0.115
+      },
+      "messages": [
+        "Xin chào, tôi là Quyết",
+        "một 'Mobile Engineer'"
+      ],
+      "image": "assets/images/banner.png"
+    },
+    {
+      "position": {
+        "x": 0.7,
+        "y": 0.4
+      },
+      "messages": [
+        "Tôi sẽ chia sẻ",
+        "kiến thức và những",
+        "câu chuyện tại đây"
+      ],
+      "image": "assets/images/banner1.png"
+    },
+    {
+      "position": {
+        "x": 0.112,
+        "y": 0.115
+      },
+      "messages": [
+        "Tôi hy vọng sẽ giúp",
+        "mọi người được 'điều gì đó'",
+        "khi ghé thăm nơi này"
+      ],
+      "image": "assets/images/banner2.png"
+    },
+    {
+      "position": {
+        "x": 0.112,
+        "y": 0.115
+      },
+      "messages": [
+        "Hãy kết nối nhé!",
+        "Tôi luôn sẵn sàng cho",
+        "những cơ hội mới"
+      ],
+      "image": "assets/images/banner3.png"
+    }
+  ]
+}
