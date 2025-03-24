@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/enums/theme_mode_enum.dart';
 import 'package:portfolio/core/utils/snackbar_handler.dart';
 import 'package:portfolio/domain/repositories/about_me_repository.dart';
+import 'package:portfolio/domain/repositories/home_repository.dart';
 import 'package:portfolio/domain/repositories/personal_info_repository.dart';
 import 'package:portfolio/domain/repositories/work_experience_repository.dart';
 import 'package:portfolio/ui/routes/app_router.dart';
@@ -45,8 +46,9 @@ class _EagerInitialization extends ConsumerWidget {
   }
 
   void _initRepository(WidgetRef ref) {
-    ref.watch(workExperienceRepositoryProvider);
+    ref.watch(homeRepositoryProvider);
     ref.watch(personalInfoRepositoryProvider);
     ref.watch(aboutMeRepositoryProvider);
+    ref.watch(workExperienceRepositoryProvider);
   }
 }

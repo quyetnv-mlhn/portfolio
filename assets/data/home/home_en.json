@@ -1,0 +1,52 @@
+{
+  "avatar_path": "assets/images/avatar.jpeg",
+  "slides": [
+    {
+      "position": {
+        "x": 0.7,
+        "y": 0.115
+      },
+      "messages": [
+        "Hello, I'm Quyet",
+        "a 'Mobile Engineer'"
+      ],
+      "image": "assets/images/banner.png"
+    },
+    {
+      "position": {
+        "x": 0.7,
+        "y": 0.4
+      },
+      "messages": [
+        "I will share",
+        "knowledge and various",
+        "stories here"
+      ],
+      "image": "assets/images/banner1.png"
+    },
+    {
+      "position": {
+        "x": 0.112,
+        "y": 0.115
+      },
+      "messages": [
+        "I hope to help",
+        "everyone with 'something'",
+        "while you are here"
+      ],
+      "image": "assets/images/banner2.png"
+    },
+    {
+      "position": {
+        "x": 0.112,
+        "y": 0.115
+      },
+      "messages": [
+        "Let's connect!",
+        "I'm always open to",
+        "new opportunities"
+      ],
+      "image": "assets/images/banner3.png"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ class PersonalInfoRepositoryImpl implements PersonalInfoRepository {
   Future<PersonalInfo> getPersonalInfo() async {
     try {
       final String jsonString = await rootBundle.loadString(
-        Assets.data.personalInfo,
+        Assets.data.base.personalInfo,
       );
       final json = jsonDecode(jsonString) as Map<String, dynamic>;
       return PersonalInfo.fromJson(json);

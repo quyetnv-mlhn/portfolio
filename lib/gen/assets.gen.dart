@@ -15,17 +15,15 @@ class $AssetsDataGen {
   /// Directory path: assets/data/about_me
   $AssetsDataAboutMeGen get aboutMe => const $AssetsDataAboutMeGen();
 
-  /// File path: assets/data/experience_en.json
-  String get experienceEn => 'assets/data/experience_en.json';
+  /// Directory path: assets/data/base
+  $AssetsDataBaseGen get base => const $AssetsDataBaseGen();
 
-  /// File path: assets/data/experience_vi.json
-  String get experienceVi => 'assets/data/experience_vi.json';
+  /// Directory path: assets/data/experiences
+  $AssetsDataExperiencesGen get experiences =>
+      const $AssetsDataExperiencesGen();
 
-  /// File path: assets/data/personal_info.json
-  String get personalInfo => 'assets/data/personal_info.json';
-
-  /// List of all assets
-  List<String> get values => [experienceEn, experienceVi, personalInfo];
+  /// Directory path: assets/data/home
+  $AssetsDataHomeGen get home => const $AssetsDataHomeGen();
 }
 
 class $AssetsEnvGen {
@@ -175,6 +173,42 @@ class $AssetsDataAboutMeGen {
 
   /// List of all assets
   List<String> get values => [aboutMeEn, aboutMeVi];
+}
+
+class $AssetsDataBaseGen {
+  const $AssetsDataBaseGen();
+
+  /// File path: assets/data/base/personal_info.json
+  String get personalInfo => 'assets/data/base/personal_info.json';
+
+  /// List of all assets
+  List<String> get values => [personalInfo];
+}
+
+class $AssetsDataExperiencesGen {
+  const $AssetsDataExperiencesGen();
+
+  /// File path: assets/data/experiences/experience_en.json
+  String get experienceEn => 'assets/data/experiences/experience_en.json';
+
+  /// File path: assets/data/experiences/experience_vi.json
+  String get experienceVi => 'assets/data/experiences/experience_vi.json';
+
+  /// List of all assets
+  List<String> get values => [experienceEn, experienceVi];
+}
+
+class $AssetsDataHomeGen {
+  const $AssetsDataHomeGen();
+
+  /// File path: assets/data/home/home_en.json
+  String get homeEn => 'assets/data/home/home_en.json';
+
+  /// File path: assets/data/home/home_vi.json
+  String get homeVi => 'assets/data/home/home_vi.json';
+
+  /// List of all assets
+  List<String> get values => [homeEn, homeVi];
 }
 
 class $AssetsFontsMaliGen {
