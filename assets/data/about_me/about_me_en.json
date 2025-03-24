@@ -1,7 +1,6 @@
 {
   "greeting": "Hello, I'm Quyet",
   "image_path": "assets/images/avatar.jpeg",
-  "title": "About Me",
   "intro": {
     "part1": "I am a ",
     "role": "Mobile Engineer",

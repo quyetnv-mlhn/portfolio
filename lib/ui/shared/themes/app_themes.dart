@@ -17,6 +17,7 @@ class AppThemes {
       error: AppColors.error,
       primaryContainer: AppColors.primaryContainerLight,
       onPrimaryContainer: Colors.white,
+      surfaceContainerHighest: AppColors.surfaceContainerHighestLight,
     ),
     textTheme: const TextTheme(
       // Large Display Styles
@@ -151,6 +152,7 @@ class AppThemes {
       error: AppColors.error,
       primaryContainer: AppColors.primaryContainerDark,
       onPrimaryContainer: Colors.white,
+      surfaceContainerHighest: AppColors.surfaceContainerHighestDark,
     ),
     textTheme: const TextTheme(
       // Large Display Styles

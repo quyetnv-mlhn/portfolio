@@ -9,7 +9,11 @@ import 'package:portfolio/domain/repositories/personal_info_repository.dart';
 import 'package:portfolio/domain/repositories/work_experience_repository.dart';
 import 'package:portfolio/ui/routes/app_router.dart';
 import 'package:portfolio/ui/shared/themes/app_themes.dart';
+import 'package:portfolio/ui/views/about_me/view_models/about_me_view_model.dart';
+import 'package:portfolio/ui/views/base_screen/view_models/personal_info_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model.dart';
+import 'package:portfolio/ui/views/experience/view_models/experience_view_model.dart';
+import 'package:portfolio/ui/views/home/view_model/home_view_model.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -41,14 +45,19 @@ class _EagerInitialization extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    _initRepository(ref);
+    _initData(ref);
     return child;
   }
 
-  void _initRepository(WidgetRef ref) {
+  void _initData(WidgetRef ref) {
     ref.watch(homeRepositoryProvider);
     ref.watch(personalInfoRepositoryProvider);
     ref.watch(aboutMeRepositoryProvider);
     ref.watch(workExperienceRepositoryProvider);
+
+    ref.watch(personalInfoStateProvider);
+    ref.watch(homeViewModelProvider);
+    ref.watch(aboutMeStateProvider);
+    ref.watch(experienceViewModelProvider);
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
+import 'package:portfolio/ui/shared/widgets/custom_loading.dart';
 import 'package:portfolio/ui/views/home/view_model/home_view_model.dart';
 import 'package:portfolio/ui/views/home/widgets/carousel_indicators.dart';
 import 'package:portfolio/ui/views/home/widgets/home_carousel.dart';
@@ -45,7 +46,7 @@ class HomeScreen extends ConsumerWidget {
               ],
             ),
           ),
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: () => CustomLoading(size: size),
       error: (error, stack) => Center(child: Text('Error: $error')),
     );
   }

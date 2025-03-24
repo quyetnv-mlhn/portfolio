@@ -1,7 +1,6 @@
 {
   "greeting": "Xin chào, tôi là Quyết",
   "image_path": "assets/images/avatar.jpeg",
-  "title": "Về Tôi",
   "intro": {
     "part1": "Tôi là ",
     "role": "Kỹ Sư Mobile",

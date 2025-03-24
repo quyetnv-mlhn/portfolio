@@ -7,27 +7,115 @@ import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/personal_info_view_model.dart';
+import 'package:shimmer/shimmer.dart';
 
 class LogoSection extends ConsumerWidget {
   const LogoSection({super.key});
+
+  // Group related layout constants
+  static const _layout = (
+    spacing: 8.0,
+    mobileAvatarSize: 40.0,
+    desktopAvatarSize: 70.0,
+    logoTextWidth: 120.0,
+    logoTextHeight: 20.0,
+  );
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final personalInfoAsync = ref.watch(personalInfoStateProvider);
-    final avatarPath = personalInfoAsync.value?.imagePath;
-    final introduction = personalInfoAsync.value?.introduction;
 
-    void onTap() => ref
-        .read(navigationStateProvider.notifier)
-        .selectSection(NavigationSection.home, context);
+    return personalInfoAsync.when(
+      data:
+          (data) => _LogoContent(
+            theme: theme,
+            avatarPath: data.imagePath,
+            intro: data.introduction,
+            isMobile: context.isMobile,
+            onTap:
+                () => ref
+                    .read(navigationStateProvider.notifier)
+                    .selectSection(NavigationSection.home, context),
+          ),
+      loading:
+          () => _LogoLoadingContent(
+            theme: theme,
+            isMobile: context.isMobile,
+            layout: _layout,
+          ),
+      error:
+          (_, __) => _LogoContent(
+            theme: theme,
+            avatarPath: null,
+            intro: null,
+            isMobile: context.isMobile,
+            onTap: () {},
+          ),
+    );
+  }
+}
 
-    return _LogoContent(
-      theme: theme,
-      avatarPath: avatarPath,
-      intro: introduction,
-      isMobile: context.isMobile,
-      onTap: onTap,
+class _LogoLoadingContent extends StatelessWidget {
+  const _LogoLoadingContent({
+    required this.theme,
+    required this.isMobile,
+    required this.layout,
+  });
+
+  final ThemeData theme;
+  final bool isMobile;
+  final ({
+    double spacing,
+    double mobileAvatarSize,
+    double desktopAvatarSize,
+    double logoTextWidth,
+    double logoTextHeight,
+  })
+  layout;
+
+  Widget _buildLoadingAvatar() {
+    final size = isMobile ? layout.mobileAvatarSize : layout.desktopAvatarSize;
+    return Container(
+      width: size,
+      height: size,
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+      ),
+    );
+  }
+
+  Widget _buildLoadingText() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(width: spacingXXL, height: spacingL, color: Colors.white),
+        const SizedBox(height: 4),
+        Container(
+          width: layout.logoTextWidth,
+          height: layout.logoTextHeight,
+          margin: const EdgeInsets.only(left: spacingL),
+          color: Colors.white,
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+      baseColor: theme.colorScheme.surface,
+      highlightColor: theme.colorScheme.surfaceContainerHighest,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _buildLoadingAvatar(),
+          SizedBox(width: layout.spacing),
+          if (!isMobile) _buildLoadingText(),
+        ],
+      ),
     );
   }
 }
