@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
+import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/ui/views/home/view_model/home_view_model.dart';
 import 'package:portfolio/ui/views/home/widgets/speech_bubble.dart';
 
@@ -32,6 +33,7 @@ class SpeechBubblesLayer extends StatelessWidget {
                 child: SpeechBubbleWidget(
                   textLines: slide.messages,
                   index: index,
+                  imagePath: Assets.images.avatarJpeg.path,
                 ),
               ),
             );

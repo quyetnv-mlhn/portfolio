@@ -1,4 +1,3 @@
-import 'package:portfolio/core/enums/locale_enum.dart';
 import 'package:portfolio/domain/repositories/work_experience_repository.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/language_view_model.dart';
 import 'package:portfolio/ui/views/experience/models/experience_state.dart';
@@ -11,11 +10,6 @@ class ExperienceViewModel extends _$ExperienceViewModel {
   @override
   ExperienceState build() {
     state = const ExperienceState();
-
-    ref.listen(languageStateProvider, (_, __) {
-      _loadWorkExperience();
-    });
-
     _loadWorkExperience();
     return state;
   }
@@ -25,8 +19,8 @@ class ExperienceViewModel extends _$ExperienceViewModel {
       state = state.copyWith(isLoading: true, error: null);
 
       final repository = ref.read(workExperienceRepositoryProvider);
-      final locale = ref.read(languageStateProvider).locale;
-      final data = await repository.getWorkExperience(locale.languageCode);
+      final locale = ref.watch(languageStateProvider);
+      final data = await repository.getWorkExperience(locale);
 
       state = state.copyWith(data: data, isLoading: false);
     } catch (e) {

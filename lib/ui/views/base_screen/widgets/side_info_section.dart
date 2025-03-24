@@ -1,105 +1,137 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/utils/url_launcher_utils.dart';
+import 'package:portfolio/domain/models/personal_info.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/gen/locale_keys.g.dart';
 import 'package:portfolio/ui/shared/widgets/svg_icon_button.dart';
+import 'package:portfolio/ui/views/base_screen/view_models/personal_info_view_model.dart';
 
-class SideInfoSection extends StatelessWidget {
+class SideInfoSection extends ConsumerWidget {
   const SideInfoSection({super.key});
 
-  static final _socialLinks = [
-    SocialLink(
-      icon: Assets.icons.facebook,
-      tooltip: LocaleKeys.social_facebook,
-      url: 'https://facebook.com/vanquyet.dev',
-    ),
-    SocialLink(
-      icon: Assets.icons.telegram,
-      tooltip: LocaleKeys.social_telegram,
-      url: 'https://t.me/vanquyet',
-    ),
-    SocialLink(
-      icon: Assets.icons.github,
-      tooltip: LocaleKeys.social_github,
-      url: 'https://github.com/vanquyet',
-    ),
-    SocialLink(
-      icon: Assets.icons.linkedin,
-      tooltip: LocaleKeys.social_linkedin,
-      url: 'https://linkedin.com/in/vanquyet',
-    ),
-  ];
+  static const _sidebarWidth = 70.0;
 
-  static const _nameLetters = 'VĂN • QUYẾT';
+  static final Map<String, String> _platformIcons = {
+    'facebook': Assets.icons.facebook,
+    'telegram': Assets.icons.telegram,
+    'github': Assets.icons.github,
+    'linkedin': Assets.icons.linkedin,
+  };
+
+  static const Map<String, String> _platformTooltips = {
+    'facebook': LocaleKeys.social_facebook,
+    'telegram': LocaleKeys.social_telegram,
+    'github': LocaleKeys.social_github,
+    'linkedin': LocaleKeys.social_linkedin,
+  };
 
   @override
-  Widget build(BuildContext context) {
-    return const SizedBox(
-      width: 70,
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ref
+        .watch(personalInfoStateProvider)
+        .when(
+          loading: () => _buildLoadingState(),
+          error: (error, stackTrace) => _buildErrorState(),
+          data: (data) => _buildContent(data),
+        );
+  }
+
+  Widget _buildLoadingState() => const SizedBox();
+
+  Widget _buildErrorState() => const SizedBox();
+
+  Widget _buildContent(PersonalInfo data) {
+    return SizedBox(
+      width: _sidebarWidth,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Spacer(flex: 2),
-          _VerticalName(),
-          Spacer(flex: 1),
-          _SocialLinks(),
-          Spacer(flex: 2),
+          const Spacer(flex: 2),
+          _VerticalName(name: data.name),
+          const Spacer(flex: 1),
+          _SocialLinks(socialLinks: _mapSocialLinks(data.socialLinks)),
+          const Spacer(flex: 2),
         ],
       ),
     );
   }
+
+  List<SocialLink> _mapSocialLinks(List<SocialLinkInfo> links) {
+    return links
+        .map(
+          (social) => SocialLink(
+            icon: _platformIcons[social.platform] ?? '',
+            tooltip: _platformTooltips[social.platform] ?? '',
+            url: social.url,
+          ),
+        )
+        .toList();
+  }
 }
 
 class _VerticalName extends StatelessWidget {
-  const _VerticalName();
+  final String name;
+  static const double _letterSpacing = 6.0;
+
+  const _VerticalName({required this.name});
 
   @override
   Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children:
+          name.split('').map((char) => _buildLetter(context, char)).toList(),
+    );
+  }
+
+  Widget _buildLetter(BuildContext context, String char) {
     final theme = Theme.of(context);
     final textStyle = theme.textTheme.bodyLarge?.copyWith(
       color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
       height: 1,
     );
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children:
-          SideInfoSection._nameLetters.split('').map((char) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Text(char, style: textStyle),
-            );
-          }).toList(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: _letterSpacing),
+      child: Text(char, style: textStyle),
     );
   }
 }
 
 class _SocialLinks extends StatelessWidget {
-  const _SocialLinks();
+  final List<SocialLink> socialLinks;
+
+  const _SocialLinks({required this.socialLinks});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Column(
       mainAxisSize: MainAxisSize.min,
       children:
-          SideInfoSection._socialLinks.map((social) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: spacingL),
-              child: Tooltip(
-                message: social.tooltip.tr(),
-                child: SvgIconButton(
-                  assetPath: social.icon,
-                  backgroundColor: _getBackgroundColor(social.icon, theme),
-                  onTap: () => UrlLauncherUtils.launchURL(social.url),
-                ),
-              ),
-            );
-          }).toList(),
+          socialLinks
+              .map((social) => _buildSocialButton(context, social))
+              .toList(),
+    );
+  }
+
+  Widget _buildSocialButton(BuildContext context, SocialLink social) {
+    final theme = Theme.of(context);
+    final backgroundColor = _getBackgroundColor(social.icon, theme);
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: spacingL),
+      child: Tooltip(
+        message: social.tooltip.tr(),
+        child: SvgIconButton(
+          assetPath: social.icon,
+          backgroundColor: backgroundColor,
+          onTap: () => UrlLauncherUtils.launchURL(social.url),
+        ),
+      ),
     );
   }
 

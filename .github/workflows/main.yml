@@ -1,14 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [ main ]
-    # Remove pull_request trigger to prevent building on PR creation/update
+  workflow_dispatch:  # Only manual trigger
 
 jobs:
   build:
-    # Only run if the push is from a merged PR
-    if: github.event_name == 'push'
     runs-on: ubuntu-latest
 
     steps:

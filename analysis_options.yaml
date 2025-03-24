@@ -33,3 +33,5 @@ analyzer:
     - lib/gen/**  # Adjust this path to match your generated files
     - lib/**.g.dart      # Ignore all .g.dart files
     - lib/**.freezed.dart # Ignore freezed generated files, adjust as needed
+  errors:
+    invalid_annotation_target: ignore

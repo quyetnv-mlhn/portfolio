@@ -12,14 +12,20 @@ import 'package:flutter/widgets.dart';
 class $AssetsDataGen {
   const $AssetsDataGen();
 
+  /// Directory path: assets/data/about_me
+  $AssetsDataAboutMeGen get aboutMe => const $AssetsDataAboutMeGen();
+
   /// File path: assets/data/experience_en.json
   String get experienceEn => 'assets/data/experience_en.json';
 
   /// File path: assets/data/experience_vi.json
   String get experienceVi => 'assets/data/experience_vi.json';
 
+  /// File path: assets/data/personal_info.json
+  String get personalInfo => 'assets/data/personal_info.json';
+
   /// List of all assets
-  List<String> get values => [experienceEn, experienceVi];
+  List<String> get values => [experienceEn, experienceVi, personalInfo];
 }
 
 class $AssetsEnvGen {
@@ -156,6 +162,19 @@ class $AssetsTranslationsGen {
 
   /// List of all assets
   List<String> get values => [enUS, viVN];
+}
+
+class $AssetsDataAboutMeGen {
+  const $AssetsDataAboutMeGen();
+
+  /// File path: assets/data/about_me/about_me_en.json
+  String get aboutMeEn => 'assets/data/about_me/about_me_en.json';
+
+  /// File path: assets/data/about_me/about_me_vi.json
+  String get aboutMeVi => 'assets/data/about_me/about_me_vi.json';
+
+  /// List of all assets
+  List<String> get values => [aboutMeEn, aboutMeVi];
 }
 
 class $AssetsFontsMaliGen {

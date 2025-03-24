@@ -4,6 +4,7 @@ import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 
 class SpeechBubbleWidget extends StatelessWidget {
+  final String imagePath;
   final List<String> textLines;
   final int index;
 
@@ -11,6 +12,7 @@ class SpeechBubbleWidget extends StatelessWidget {
     super.key,
     required this.textLines,
     required this.index,
+    required this.imagePath,
   });
 
   @override
@@ -70,7 +72,7 @@ class SpeechBubbleWidget extends StatelessWidget {
             child: CircleAvatar(
               radius: 35,
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage(Assets.images.avatarJpeg.path),
+              backgroundImage: AssetImage(imagePath),
             ),
           ),
         ],

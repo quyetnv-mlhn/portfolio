@@ -1,0 +1,19 @@
+{
+  "greeting": "Hello, I'm Quyet",
+  "image_path": "assets/images/avatar.jpeg",
+  "title": "About Me",
+  "intro": {
+    "part1": "I am a ",
+    "role": "Mobile Engineer",
+    "part2": " with a passion for ",
+    "exploring": "exploring technology",
+    "part3": " that provides real-world value and great user experiences."
+  },
+  "bullet_points": [
+    "I have a strong passion for mobile development, always eager to explore new technologies and improve the performance, UI/UX, and overall user experience of the apps I build.",
+    "I believe in lifelong learning and self-improvement. Whether it's optimizing code efficiency, mastering a new programming language, or enhancing my English communication skills, I continuously strive to grow.",
+    "I am always grateful to the mentors and colleagues who have helped me grow, guiding me through both technical challenges and career development.",
+    "I enjoy sharing knowledge and engaging with the developer community, whether through discussions, mentorship, or collaborative projects.",
+    "Oh, this place is where I document my journey - from Flutter development to English learning and beyond. If you're interested, feel free to connect!"
+  ]
+}

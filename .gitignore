@@ -49,7 +49,7 @@ assets/env/.env.stg
 
 # Generated code
 *.g.dart
-!/lib/gen/**/*.g.dart
+*.freezed.dart
 
 # FVM Version Cache
 .fvm/
