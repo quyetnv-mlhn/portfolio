@@ -10,6 +10,12 @@ part 'navigation_view_model.g.dart';
 @Riverpod(keepAlive: true)
 class NavigationState extends _$NavigationState {
   static const _navigationKey = 'selected_navigation';
+  SharedPreferences? _prefs;
+
+  Future<SharedPreferences> get _preferences async {
+    _prefs ??= await SharedPreferences.getInstance();
+    return _prefs!;
+  }
 
   @override
   NavigationSection build() {
@@ -18,9 +24,9 @@ class NavigationState extends _$NavigationState {
   }
 
   Future<void> _restoreState() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await _preferences;
     final savedIndex = prefs.getInt(_navigationKey);
-    if (savedIndex != null) {
+    if (savedIndex != null && savedIndex < NavigationSection.values.length) {
       state = NavigationSection.values[savedIndex];
     }
   }
@@ -29,11 +35,15 @@ class NavigationState extends _$NavigationState {
     NavigationSection section,
     BuildContext context,
   ) async {
+    if (section == state) return;
+
     state = section;
 
     // Save state
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await _preferences;
     await prefs.setInt(_navigationKey, section.index);
+
+    if (!context.mounted) return;
 
     final path = switch (section) {
       NavigationSection.home => AppRouter.home,
@@ -44,8 +54,6 @@ class NavigationState extends _$NavigationState {
       NavigationSection.contact => AppRouter.contact,
     };
 
-    if (context.mounted) {
-      context.go(path);
-    }
+    context.go(path);
   }
 }

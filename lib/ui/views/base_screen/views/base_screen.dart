@@ -31,10 +31,12 @@ class _BaseScreenState extends ConsumerState<BaseScreen> {
   @override
   Widget build(BuildContext context) {
     final selectedSection = ref.watch(navigationStateProvider);
+    final navigationNotifier = ref.read(navigationStateProvider.notifier);
     final screenSize = ScreenSize.fromWidth(MediaQuery.of(context).size.width);
 
     // Listen to section changes and reset scroll
     ref.listen(navigationStateProvider, (previous, next) {
+      navigationNotifier.selectSection(next, context);
       if (previous != next && _scrollController.hasClients) {
         _scrollController.jumpTo(0);
       }
