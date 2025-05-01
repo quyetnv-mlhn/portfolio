@@ -14,6 +14,7 @@ import 'package:portfolio/ui/views/base_screen/view_models/personal_info_view_mo
 import 'package:portfolio/ui/views/base_screen/view_models/theme_mode_view_model.dart';
 import 'package:portfolio/ui/views/experience/view_models/experience_view_model.dart';
 import 'package:portfolio/ui/views/home/view_model/home_view_model.dart';
+import 'package:portfolio/ui/views/skills/view_models/skills_view_model.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -59,5 +60,6 @@ class _EagerInitialization extends ConsumerWidget {
     ref.watch(homeViewModelProvider);
     ref.watch(aboutMeStateProvider);
     ref.watch(experienceViewModelProvider);
+    ref.watch(skillsViewModelProvider);
   }
 }

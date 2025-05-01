@@ -18,7 +18,12 @@ class CodegenLoader extends AssetLoader {
     "appTitle": "Portfolio",
     "home": {"title": "Home"},
     "about_me": {"name": "About Me", "title": "Who Am I?"},
-    "my_blogs": "My Blogs",
+    "my_skills": "My Skills",
+    "skills": {
+      "title": "Technical Skills",
+      "subtitle": "The tools and technologies I work with daily.",
+      "description": "Turning knowledge into impactful projects.",
+    },
     "experiences": "Experiences",
     "experience": {
       "title": "My Experience",
@@ -57,7 +62,12 @@ class CodegenLoader extends AssetLoader {
     "appTitle": "Portfolio",
     "home": {"title": "Trang chủ"},
     "about_me": {"name": "Về tui", "title": "Tôi Là Ai ?"},
-    "my_blogs": "Blogs tui viết",
+    "my_skills": "Kỹ năng",
+    "skills": {
+      "title": "Kỹ Năng Chuyên Môn",
+      "subtitle": "Những công cụ và công nghệ mình sử dụng hằng ngày.",
+      "description": "Biến kiến thức thành những dự án thực tế.",
+    },
     "experiences": "Kinh nghiệm",
     "experience": {
       "title": "Kinh Nghiệm Của Tôi",

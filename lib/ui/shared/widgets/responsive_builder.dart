@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/enums/screen_size.dart';
+import 'package:portfolio/core/enums/screen_type.dart';
 
 class ResponsiveBuilder extends StatelessWidget {
   final Widget Function(
     BuildContext context,
     BoxConstraints constraints,
-    ScreenSize screenSize,
+    ScreenType screenType,
   )
   builder;
   final bool useLayoutBuilder;
@@ -23,14 +23,16 @@ class ResponsiveBuilder extends StatelessWidget {
       return builder(
         context,
         BoxConstraints(maxWidth: width),
-        ScreenSize.fromWidth(width),
+        ScreenType.getScreenTypeFromWidth(width),
       );
     }
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final screenSize = ScreenSize.fromWidth(constraints.maxWidth);
-        return builder(context, constraints, screenSize);
+        final screenType = ScreenType.getScreenTypeFromWidth(
+          constraints.maxWidth,
+        );
+        return builder(context, constraints, screenType);
       },
     );
   }

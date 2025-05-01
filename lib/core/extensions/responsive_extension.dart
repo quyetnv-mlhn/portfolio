@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/configs/app_breakpoints.dart';
-import 'package:portfolio/core/enums/screen_size.dart';
+import 'package:portfolio/core/enums/screen_type.dart';
 
 extension ResponsiveExtension on BuildContext {
   double get width => MediaQuery.of(this).size.width;
 
   double get height => MediaQuery.of(this).size.height;
 
-  ScreenSize get screenSize {
+  ScreenType get screenType {
     final width = MediaQuery.of(this).size.width;
-    if (width < AppBreakpoints.mobile) return ScreenSize.mobile;
-    if (width < AppBreakpoints.tablet) return ScreenSize.tablet;
-    if (width < AppBreakpoints.desktop) return ScreenSize.desktop;
-    return ScreenSize.desktopLarge;
+    return ScreenType.getScreenTypeFromWidth(width);
   }
 
-  bool get isMobile => screenSize == ScreenSize.mobile;
+  bool get isMobile => screenType.isMobile;
 
-  bool get isTablet => screenSize == ScreenSize.tablet;
+  bool get isTablet => screenType.isTablet;
 
-  bool get isDesktop => screenSize == ScreenSize.desktop;
+  bool get isDesktop => screenType.isDesktop;
 
-  bool get isDesktopLarge => screenSize == ScreenSize.desktopLarge;
+  bool get isDesktopLarge => screenType == ScreenType.desktopLarge;
 }

@@ -1,13 +1,6 @@
 import 'package:portfolio/gen/locale_keys.g.dart';
 
-enum NavigationSection {
-  home,
-  aboutMe,
-  myBlogs,
-  experiences,
-  lifetime,
-  contact,
-}
+enum NavigationSection { home, aboutMe, skills, experiences, lifetime, contact }
 
 extension NavigationSectionExt on NavigationSection {
   String get title {
@@ -16,8 +9,8 @@ extension NavigationSectionExt on NavigationSection {
         return 'Home';
       case NavigationSection.aboutMe:
         return 'About Me';
-      case NavigationSection.myBlogs:
-        return 'My Blogs';
+      case NavigationSection.skills:
+        return 'My Skills';
       case NavigationSection.experiences:
         return 'Experiences';
       case NavigationSection.lifetime:
@@ -33,8 +26,8 @@ extension NavigationSectionExt on NavigationSection {
         return LocaleKeys.home_title;
       case NavigationSection.aboutMe:
         return LocaleKeys.about_me_name;
-      case NavigationSection.myBlogs:
-        return LocaleKeys.my_blogs;
+      case NavigationSection.skills:
+        return LocaleKeys.my_skills;
       case NavigationSection.experiences:
         return LocaleKeys.experiences;
       case NavigationSection.lifetime:

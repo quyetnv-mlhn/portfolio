@@ -28,14 +28,23 @@ run_command() {
     print_color "GREEN" "Finished running $1 successfully"
 }
 
+# Check if project uses FVM by looking for .fvm directory
+FLUTTER_CMD="flutter"
+DART_CMD="dart"
+if [ -d ".fvm" ]; then
+    FLUTTER_CMD="fvm flutter"
+    DART_CMD="fvm dart"
+    print_color "YELLOW" "FVM detected, using fvm commands"
+fi
+
 # Run dart fix
-run_command "dart fix" "dart fix --apply" "Dart fix failed, please check the errors and recommit"
+run_command "dart fix" "$DART_CMD fix --apply" "Dart fix failed, please check the errors and recommit"
 
 # Run dart format
-run_command "dart format" "dart format --set-exit-if-changed ." "Dart format applied changes, please stage the changes and recommit"
+run_command "dart format" "$DART_CMD format --set-exit-if-changed ." "Dart format applied changes, please stage the changes and recommit"
 
 # Run flutter analyze
-run_command "flutter analyze" "flutter analyze" "Flutter analyze found issues, please fix them before committing"
+run_command "flutter analyze" "$FLUTTER_CMD analyze" "Flutter analyze found issues, please fix them before committing"
 
 print_color "GREEN" "All checks passed. Proceeding with the commit."
 exit 0

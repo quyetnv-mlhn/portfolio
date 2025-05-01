@@ -1,4 +1,4 @@
-import 'package:portfolio/core/constants/durations.dart';
+import 'package:portfolio/core/constants/constants.dart';
 import 'package:portfolio/domain/models/home/home_data.dart';
 import 'package:portfolio/domain/repositories/home_repository.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/language_view_model.dart';
@@ -15,7 +15,7 @@ class HomeViewModel extends _$HomeViewModel {
     final repository = ref.read(homeRepositoryProvider);
     final locale = ref.watch(languageStateProvider);
     final apiCall = repository.getHomeData(locale);
-    final minLoadingTime = Future.delayed(Durations.minLoadingTime);
+    final minLoadingTime = Future.delayed(Constants.minLoadingTime);
     final [homeData, _] = await Future.wait([apiCall, minLoadingTime]);
     return (homeData as HomeData, _currentIndex);
   }

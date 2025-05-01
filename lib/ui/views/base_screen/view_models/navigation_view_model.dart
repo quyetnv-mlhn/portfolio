@@ -48,7 +48,7 @@ class NavigationState extends _$NavigationState {
     final path = switch (section) {
       NavigationSection.home => AppRouter.home,
       NavigationSection.aboutMe => AppRouter.aboutMe,
-      NavigationSection.myBlogs => AppRouter.myBlogs,
+      NavigationSection.skills => AppRouter.mySkills,
       NavigationSection.experiences => AppRouter.experiences,
       NavigationSection.lifetime => AppRouter.lifetime,
       NavigationSection.contact => AppRouter.contact,

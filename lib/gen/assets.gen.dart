@@ -24,6 +24,9 @@ class $AssetsDataGen {
 
   /// Directory path: assets/data/home
   $AssetsDataHomeGen get home => const $AssetsDataHomeGen();
+
+  /// Directory path: assets/data/skills
+  $AssetsDataSkillsGen get skills => const $AssetsDataSkillsGen();
 }
 
 class $AssetsEnvGen {
@@ -209,6 +212,19 @@ class $AssetsDataHomeGen {
 
   /// List of all assets
   List<String> get values => [homeEn, homeVi];
+}
+
+class $AssetsDataSkillsGen {
+  const $AssetsDataSkillsGen();
+
+  /// File path: assets/data/skills/skills_en.json
+  String get skillsEn => 'assets/data/skills/skills_en.json';
+
+  /// File path: assets/data/skills/skills_vi.json
+  String get skillsVi => 'assets/data/skills/skills_vi.json';
+
+  /// List of all assets
+  List<String> get values => [skillsEn, skillsVi];
 }
 
 class $AssetsFontsMaliGen {
