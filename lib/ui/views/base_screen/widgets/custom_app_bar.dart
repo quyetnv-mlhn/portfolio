@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
 import 'package:portfolio/core/enums/navigation_section_enum.dart';
-import 'package:portfolio/core/enums/screen_size.dart';
+import 'package:portfolio/core/enums/screen_type.dart';
 import 'package:portfolio/core/extensions/responsive_extension.dart';
 import 'package:portfolio/ui/shared/widgets/responsive_container.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/navigation_view_model.dart';
@@ -18,7 +18,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     final selectedSection = ref.watch(navigationStateProvider);
     final theme = Theme.of(context);
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenSize = ScreenSize.fromWidth(screenWidth);
+    final screenType = ScreenType.getScreenTypeFromWidth(screenWidth);
 
     return AppBar(
       backgroundColor: theme.appBarTheme.backgroundColor,
@@ -29,20 +29,20 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
       toolbarHeight: kToolbarHeight + 16,
       leadingWidth: 0,
       titleSpacing: 0,
-      actions: _buildActions(context, screenSize),
+      actions: _buildActions(context, screenType),
       title: ResponsiveContainer(
-        padding: _getResponsivePadding(screenSize),
+        padding: _getResponsivePadding(screenType),
         child: _buildAppBarContent(context, selectedSection),
       ),
     );
   }
 
-  List<Widget>? _buildActions(BuildContext context, ScreenSize screenSize) {
-    if (screenSize != ScreenSize.mobile) return null;
+  List<Widget>? _buildActions(BuildContext context, ScreenType screenType) {
+    if (screenType != ScreenType.mobile) return null;
 
     return [
       IconButton(
-        padding: _getResponsivePadding(screenSize),
+        padding: _getResponsivePadding(screenType),
         icon: const Icon(Icons.menu),
         onPressed: () => Scaffold.of(context).openEndDrawer(),
       ),
@@ -60,17 +60,17 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return _DesktopLayout(selectedSection: selectedSection);
   }
 
-  EdgeInsets _getResponsivePadding(ScreenSize size) {
-    return switch (size) {
-      ScreenSize.mobile => const EdgeInsets.symmetric(
+  EdgeInsets _getResponsivePadding(ScreenType type) {
+    return switch (type) {
+      ScreenType.mobile => const EdgeInsets.symmetric(
         vertical: spacingXS,
         horizontal: spacingM,
       ),
-      ScreenSize.tablet => const EdgeInsets.symmetric(
+      ScreenType.tablet => const EdgeInsets.symmetric(
         vertical: spacingS,
         horizontal: spacingL,
       ),
-      ScreenSize.desktop || ScreenSize.desktopLarge =>
+      ScreenType.desktop || ScreenType.desktopLarge =>
         const EdgeInsets.symmetric(vertical: spacingS, horizontal: spacingXL),
     };
   }

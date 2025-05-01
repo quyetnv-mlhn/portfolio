@@ -1,4 +1,4 @@
-import 'package:portfolio/core/constants/durations.dart';
+import 'package:portfolio/core/constants/constants.dart';
 import 'package:portfolio/domain/repositories/work_experience_repository.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/language_view_model.dart';
 import 'package:portfolio/ui/views/experience/models/experience_state.dart';
@@ -23,7 +23,7 @@ class ExperienceViewModel extends _$ExperienceViewModel {
       final locale = ref.watch(languageStateProvider);
 
       final apiCall = repository.getWorkExperience(locale);
-      final minLoadingTime = Future.delayed(Durations.minLoadingTime);
+      final minLoadingTime = Future.delayed(Constants.minLoadingTime);
       final [data, _] = await Future.wait([apiCall, minLoadingTime]);
 
       state = state.copyWith(data: data, isLoading: false);

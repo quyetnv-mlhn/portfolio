@@ -5,11 +5,12 @@ import 'package:portfolio/ui/views/about_me/views/about_me_screen.dart';
 import 'package:portfolio/ui/views/base_screen/views/base_screen.dart';
 import 'package:portfolio/ui/views/experience/views/experience_screen.dart';
 import 'package:portfolio/ui/views/home/view/home_screen.dart';
+import 'package:portfolio/ui/views/skills/views/skills_screen.dart';
 
 class AppRouter {
   static const String home = '/';
   static const String aboutMe = '/about-me';
-  static const String myBlogs = '/my-blogs';
+  static const String mySkills = '/my-skills';
   static const String experiences = '/experiences';
   static const String lifetime = '/lifetime';
   static const String contact = '/contact';
@@ -49,11 +50,11 @@ class AppRouter {
                 ),
           ),
           GoRoute(
-            path: myBlogs,
+            path: mySkills,
             pageBuilder:
                 (context, state) => buildCustomTransitionPage(
                   state: state,
-                  child: Center(child: Text('My Blogs Screen')),
+                  child: SkillsScreen(),
                   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),

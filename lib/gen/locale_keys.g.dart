@@ -9,7 +9,11 @@ abstract class LocaleKeys {
   static const about_me_name = 'about_me.name';
   static const about_me_title = 'about_me.title';
   static const about_me = 'about_me';
-  static const my_blogs = 'my_blogs';
+  static const my_skills = 'my_skills';
+  static const skills_title = 'skills.title';
+  static const skills_subtitle = 'skills.subtitle';
+  static const skills_description = 'skills.description';
+  static const skills = 'skills';
   static const experiences = 'experiences';
   static const experience_title = 'experience.title';
   static const experience_subtitle = 'experience.subtitle';

@@ -13,7 +13,7 @@ This portfolio website serves as a digital showcase of my work, skills, and expe
 - Bilingual support (English/Vietnamese)
 - Interactive UI elements
 - Project showcase with detailed descriptions
-- Technical blog section
+- Technical skills section
 - Professional contact information
 - Comprehensive social media integration
 - Animated text and UI components

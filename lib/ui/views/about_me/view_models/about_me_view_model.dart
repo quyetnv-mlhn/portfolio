@@ -1,4 +1,4 @@
-import 'package:portfolio/core/constants/durations.dart';
+import 'package:portfolio/core/constants/constants.dart';
 import 'package:portfolio/domain/models/about_me/about_me_data.dart';
 import 'package:portfolio/domain/repositories/about_me_repository.dart';
 import 'package:portfolio/ui/views/base_screen/view_models/language_view_model.dart';
@@ -14,7 +14,7 @@ class AboutMeState extends _$AboutMeState {
       final locale = ref.watch(languageStateProvider);
       final repository = ref.read(aboutMeRepositoryProvider);
       final apiCall = repository.getAboutMeData(locale);
-      final minLoadingTime = Future.delayed(Durations.minLoadingTime);
+      final minLoadingTime = Future.delayed(Constants.minLoadingTime);
       await Future.wait([apiCall, minLoadingTime]);
       return apiCall;
     } catch (e, stackTrace) {

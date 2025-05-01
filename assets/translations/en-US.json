@@ -7,7 +7,12 @@
         "name": "About Me",
         "title": "Who Am I?"
     },
-    "my_blogs": "My Blogs",
+    "my_skills": "My Skills",
+    "skills": {
+        "title": "Technical Skills",
+        "subtitle": "The tools and technologies I work with daily.",
+        "description": "Turning knowledge into impactful projects."
+    },
     "experiences": "Experiences",
     "experience": {
         "title": "My Experience",

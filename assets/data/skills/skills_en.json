@@ -1,0 +1,105 @@
+{
+  "categories": [
+    {
+      "title": "Programming Languages",
+      "skills": [
+        "Dart",
+        "C",
+        "C++",
+        "Java",
+        "Python"
+      ],
+      "icon": "code"
+    },
+    {
+      "title": "Architectures",
+      "skills": [
+        "OOP",
+        "MVC",
+        "Clean Architecture",
+        "Very good layered architecture"
+      ],
+      "icon": "architecture"
+    },
+    {
+      "title": "Mobile Development",
+      "skills": [
+        "Flutter",
+        "Android Native"
+      ],
+      "icon": "smartphone"
+    },
+    {
+      "title": "Networking & WebRTC",
+      "skills": [
+        "WebRTC",
+        "HTTP"
+      ],
+      "icon": "wifi"
+    },
+    {
+      "title": "Backend & API",
+      "skills": [
+        "Odoo",
+        "REST API",
+        "GraphQL",
+        "Firebase Functions"
+      ],
+      "icon": "api"
+    },
+    {
+      "title": "Databases",
+      "skills": [
+        "Cloud Firestore",
+        "MySQL",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "icon": "storage"
+    },
+    {
+      "title": "Security & Encryption",
+      "skills": [
+        "AES Encryption",
+        "Biometric Authentication",
+        "OAuth 2.0"
+      ],
+      "icon": "lock"
+    },
+    {
+      "title": "CI/CD & Automation",
+      "skills": [
+        "Fastlane",
+        "GitHub Actions"
+      ],
+      "icon": "sync"
+    },
+    {
+      "title": "Project Management",
+      "skills": [
+        "Jira",
+        "Redmine"
+      ],
+      "icon": "assignment"
+    },
+    {
+      "title": "Source Control",
+      "skills": [
+        "Git",
+        "GitHub",
+        "GitLab"
+      ],
+      "icon": "source"
+    },
+    {
+      "title": "Development Tools",
+      "skills": [
+        "Android Studio",
+        "VSCode",
+        "Postman",
+        "Figma"
+      ],
+      "icon": "build"
+    }
+  ]
+}
