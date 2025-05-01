@@ -1,0 +1,105 @@
+{
+  "categories": [
+    {
+      "title": "Ngôn Ngữ Lập Trình",
+      "skills": [
+        "Dart",
+        "C",
+        "C++",
+        "Java",
+        "Python"
+      ],
+      "icon": "code"
+    },
+    {
+      "title": "Kiến Trúc Phần Mềm",
+      "skills": [
+        "OOP",
+        "MVC",
+        "Clean Architecture",
+        "Very good layered architecture"
+      ],
+      "icon": "architecture"
+    },
+    {
+      "title": "Phát Triển Ứng Dụng Di Động",
+      "skills": [
+        "Flutter",
+        "Android Native"
+      ],
+      "icon": "smartphone"
+    },
+    {
+      "title": "Mạng & WebRTC",
+      "skills": [
+        "WebRTC",
+        "HTTP"
+      ],
+      "icon": "wifi"
+    },
+    {
+      "title": "Backend & API",
+      "skills": [
+        "Odoo",
+        "REST API",
+        "GraphQL",
+        "Firebase Functions"
+      ],
+      "icon": "api"
+    },
+    {
+      "title": "Cơ Sở Dữ Liệu",
+      "skills": [
+        "Cloud Firestore",
+        "MySQL",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "icon": "storage"
+    },
+    {
+      "title": "Bảo Mật & Mã Hóa",
+      "skills": [
+        "Mã hóa AES",
+        "Xác thực sinh trắc học",
+        "OAuth 2.0"
+      ],
+      "icon": "lock"
+    },
+    {
+      "title": "CI/CD & Tự Động Hóa",
+      "skills": [
+        "Fastlane",
+        "GitHub Actions"
+      ],
+      "icon": "sync"
+    },
+    {
+      "title": "Quản Lý Dự Án",
+      "skills": [
+        "Jira",
+        "Redmine"
+      ],
+      "icon": "assignment"
+    },
+    {
+      "title": "Kiểm Soát Phiên Bản",
+      "skills": [
+        "Git",
+        "GitHub",
+        "GitLab"
+      ],
+      "icon": "source"
+    },
+    {
+      "title": "Công Cụ Phát Triển",
+      "skills": [
+        "Android Studio",
+        "VSCode",
+        "Postman",
+        "Figma"
+      ],
+      "icon": "build"
+    }
+  ]
+}
