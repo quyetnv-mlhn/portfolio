@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:portfolio/ui/shared/transitions/custom_transition_page.dart';
 import 'package:portfolio/ui/views/about_me/views/about_me_screen.dart';
 import 'package:portfolio/ui/views/base_screen/views/base_screen.dart';
+import 'package:portfolio/ui/views/contact/views/contact_screen.dart';
 import 'package:portfolio/ui/views/experience/views/experience_screen.dart';
 import 'package:portfolio/ui/views/home/view/home_screen.dart';
 import 'package:portfolio/ui/views/skills/views/skills_screen.dart';
@@ -81,7 +82,7 @@ class AppRouter {
             pageBuilder:
                 (context, state) => buildCustomTransitionPage(
                   state: state,
-                  child: Center(child: Text('Contact Screen')),
+                  child: const ContactScreen(),
                   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),

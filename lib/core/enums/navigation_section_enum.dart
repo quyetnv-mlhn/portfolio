@@ -33,7 +33,7 @@ extension NavigationSectionExt on NavigationSection {
       case NavigationSection.lifetime:
         return LocaleKeys.lifetime;
       case NavigationSection.contact:
-        return LocaleKeys.contact;
+        return LocaleKeys.contact_title;
     }
   }
 }

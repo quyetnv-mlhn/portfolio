@@ -9,7 +9,6 @@ import 'package:portfolio/core/enums/environment_enum.dart';
 import 'package:portfolio/core/enums/locale_enum.dart';
 import 'package:portfolio/core/utils/logging_utils.dart';
 import 'package:portfolio/core/utils/snackbar_handler.dart';
-import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/gen/codegen_loader.g.dart';
 
 Future<void> mainCommon({
@@ -22,7 +21,7 @@ Future<void> mainCommon({
     WidgetsFlutterBinding.ensureInitialized();
     // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-    await dotenv.load(fileName: Assets.env.aEnvDev);
+    await dotenv.load(fileName: envFilePath);
 
     // Initialize localization
     await _initializeLocalization();
