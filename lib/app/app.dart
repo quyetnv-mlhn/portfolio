@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/core/enums/theme_mode_enum.dart';
 import 'package:portfolio/core/utils/snackbar_handler.dart';
 import 'package:portfolio/domain/repositories/about_me_repository.dart';
+import 'package:portfolio/domain/repositories/contact_repository.dart';
 import 'package:portfolio/domain/repositories/home_repository.dart';
 import 'package:portfolio/domain/repositories/personal_info_repository.dart';
 import 'package:portfolio/domain/repositories/work_experience_repository.dart';
@@ -61,5 +62,6 @@ class _EagerInitialization extends ConsumerWidget {
     ref.watch(aboutMeStateProvider);
     ref.watch(experienceViewModelProvider);
     ref.watch(skillsViewModelProvider);
+    ref.watch(contactRepositoryProvider);
   }
 }

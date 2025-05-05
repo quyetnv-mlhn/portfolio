@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/extensions/theme_ext.dart';
 import 'package:portfolio/core/configs/app_sizes.dart';
+import 'package:portfolio/core/extensions/theme_ext.dart';
 
 class SnackBarHandler {
   static final SnackBarHandler _instance = SnackBarHandler._internal();
