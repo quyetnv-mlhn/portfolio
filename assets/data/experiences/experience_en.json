@@ -18,7 +18,38 @@
   ],
   "companies": [
     {
-      "period": "Feb 2023 - Present",
+      "period": "Apr 2025 - Present",
+      "name": "MB Bank",
+      "position": "FLUTTER DEVELOPER",
+      "logo": "assets/images/MBBank_logo.png",
+      "projects": [
+        {
+          "period": "Apr 2025 - Present",
+          "title": "MB Bank",
+          "subtitle": "FLUTTER DEVELOPER",
+          "description": "A mobile banking application for the MB Bank, designed to provide users with a seamless banking experience. The app offers features such as account management, transaction history, and real-time notifications. Available on Google Play and App Store.",
+          "main_tasks": [
+            "Built and maintained core UI for onboarding and authentication flows using Flutter.",
+            "Collaborated with backend and QA teams in Agile sprints to deliver weekly features and fixes."
+          ],
+          "app_store_url": "https://apps.apple.com/vn/app/mb-bank/id1205807363",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.mbmobile",
+          "website_url": "",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "BLoC",
+            "Biometric Authentication",
+            "AES/RSA Encryption",
+            "Third-Party SDKs"
+          ],
+          "location": "Hanoi, Vietnam",
+          "size": "8 (Agile team focused on onboarding flow)"
+        }
+      ]
+    },
+    {
+      "period": "Feb 2023 - Mar 2025",
       "name": "Bac Ha Software (BHSoft)",
       "position": "FLUTTER DEVELOPER",
       "logo": "assets/images/BHSoft_logo.png",
