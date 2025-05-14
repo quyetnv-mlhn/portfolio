@@ -18,7 +18,38 @@
   ],
   "companies": [
     {
-      "period": "02/2023 - Hiện tại",
+      "period": "04/2025 - Hiện tại",
+      "name": "MB Bank",
+      "position": "LẬP TRÌNH VIÊN FLUTTER",
+      "logo": "assets/images/MBBank_logo.png",
+      "projects": [
+        {
+          "period": "04/2025 - Hiện tại",
+          "title": "MB Bank",
+          "subtitle": "LẬP TRÌNH VIÊN FLUTTER",
+          "description": "Ứng dụng ngân hàng di động cho MB Bank, cung cấp trải nghiệm ngân hàng tiện lợi cho người dùng. Ứng dụng hỗ trợ quản lý tài khoản, xem lịch sử giao dịch và nhận thông báo thời gian thực. Có mặt trên Google Play và App Store.",
+          "main_tasks": [
+            "Xây dựng và duy trì giao diện chính cho luồng onboarding và xác thực người dùng bằng Flutter.",
+            "Phối hợp với backend và QA trong các sprint Agile để triển khai tính năng và sửa lỗi hằng tuần."
+          ],
+          "app_store_url": "https://apps.apple.com/vn/app/mb-bank/id1205807363",
+          "google_play_url": "https://play.google.com/store/apps/details?id=com.mbmobile",
+          "website_url": "",
+          "technologies": [
+            "Flutter",
+            "Dart",
+            "BLoC",
+            "Xác thực sinh trắc học",
+            "Mã hóa AES/RSA",
+            "SDK bên thứ ba"
+          ],
+          "location": "Hà Nội, Việt Nam",
+          "size": "8 (Nhóm Agile phụ trách luồng onboarding)"
+        }
+      ]
+    },
+    {
+      "period": "02/2023 - 03/2025",
       "name": "Bac Ha Software (BHSoft)",
       "position": "LÂP TRÌNH VIÊN FLUTTER",
       "logo": "assets/images/BHSoft_logo.png",
