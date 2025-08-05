@@ -6,7 +6,7 @@
 
 **A personal portfolio website built with Flutter Web**
 
-[View Demo](http://quyetnv.pantech.vn/) • [Report Bug](https://github.com/quyetnv-mlhn/portfolio/issues) • [Request Feature](https://github.com/quyetnv-mlhn/portfolio/issues)
+[View Demo](https://quyetnv-mlhn.github.io/portfolio/) • [Report Bug](https://github.com/quyetnv-mlhn/portfolio/issues) • [Request Feature](https://github.com/quyetnv-mlhn/portfolio/issues)
 
 </div>
 
