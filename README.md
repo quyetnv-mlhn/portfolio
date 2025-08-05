@@ -217,7 +217,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌍 Demo
 
-Check out the live demo of this project here: [http://quyetnv.pantech.vn/](http://quyetnv.pantech.vn/)
+Check out the live demo of this project here: [https://quyetnv-mlhn.github.io/portfolio/]([http://quyetnv.pantech.vn/](https://quyetnv-mlhn.github.io/portfolio/))
 
 ---
 
